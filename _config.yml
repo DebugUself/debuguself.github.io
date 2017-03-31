@@ -1,4 +1,5 @@
 root: /
+baseurl: http://du.zoomquiet.io
 permalink: /:year-:month/:title/
 markdown: kramdown
 
@@ -16,7 +17,7 @@ email: "zoomquiet+du@gmail.com"
 authors: 
     du:
         name: DebugUself
-        display_name: 怼
+        display_name: DU
         gravatar: 3afb962feeb8c047cde19b19ba62e27a
         email: debuguself@googlegroups.com
         web: https://github.com/DebugUself
