@@ -1,1 +1,35 @@
-theme: jekyll-theme-hacker
+root: /
+permalink: /:year-:month/:title/
+markdown: kramdown
+
+markdown_ext:  markdown,md
+
+paginate: 3
+paginate_path: '/page:num'
+
+gems:
+  - jekyll-archives
+  - jekyll-paginate
+
+title: 自怼圈
+email: "zoomquiet+du@gmail.com"
+authors: 
+    du:
+        name: DebugUself
+        display_name: 怼
+        gravatar: 3afb962feeb8c047cde19b19ba62e27a
+        email: debuguself@googlegroups.com
+        web: https://github.com/DebugUself
+        github: DebugUself
+        gittip: https://www.gittip.com/ZoomQuiet/
+    zq:
+        name: Zoom Quiet
+        display_name: Zoom.Quiet
+        gravatar: a50dc106c1d703b0c5b46be577ddd527
+        email: i@zoomquiet.io
+        web: http://zoomquiet.io
+        github: ZoomQuiet
+        gittip: https://www.gittip.com/ZoomQuiet/
+
+exclude:
+  - README.md

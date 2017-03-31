@@ -1,0 +1,108 @@
+---
+layout: default
+title: Home
+homepage: true
+type: post
+---
+
+<div class="main-index fn-clear">
+	{% for post in paginator.posts %}
+	<article class="main-excerpt fn-clear">
+
+		<h4 class="main-excerpt-title"><a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h4>
+
+		{{ post.content | split:'<!--more-->' |first }}
+
+		<p class="more">
+<a href="{{ post.url }}" title="阅读更多" rel="nofollow"
+	class="btn btn-info btn-sm" role="button">
+<span>&#10149;</span>
+	 ... 阅读更多</a>
+		</p>
+
+		<p class="date">
+		<i class="icon-calendar"></i>{{  post.date| date: "%Y-%m-%d"  }} &nbsp;
+	    <i class="icon-cogs"></i>
+	    {% for cat in post.categories %} 
+	    <a href="/categories.html#{{ cat }}-ref" title="{{ cat }}" rel="category">{{ cat }}</a>
+	    {% endfor %}
+	    &nbsp;&nbsp;
+	    <i class="icon-tags"></i>
+	    {% for tag in post.tags %}
+	    <a href="/tags.html#{{ tag }}-ref" title="{{ tag }}" rel="tag">{{ tag }} &nbsp;</a>
+	    {% endfor %}
+	    </p>
+	<!--
+	<p>{{ post.description }}</p>
+	-->
+
+	</article>
+	{% endfor %}
+	<nav class="pagination fn-clear">
+	{% if paginator.previous_page %}
+	{% if paginator.previous_page == 1 %}
+	<span class="page">&lt;<a href="/">前页</a></span>
+	{% else %}
+	<span class="page">&lt;<a href="/page{{paginator.previous_page}}">前页</a></span>
+	{% endif %}
+	{% else %}
+	<span class="page">&lt;前页</span>
+	{% endif %}
+	{% if paginator.page == 1 %}
+	<span class="currentitem"><a href="/">1</a></span>
+	{% else %}
+	<span class="pageitem"><a href="/">1</a></span>
+	{% endif %}
+	{% for count in (2..paginator.total_pages) %}
+	{% if count == paginator.page %}
+	<span class="currentitem"><a href="/page{{count}}">{{count}}</a></span>
+	{% else %}
+	<span class="pageitem"><a href="/page{{count}}">{{count}}</a></span>
+	{% endif %}
+	{% endfor %}
+	{% if paginator.next_page %}
+	<span class="page"><a class="next" href="/page{{paginator.next_page}}">后页</a>&gt;</span>
+	{% else %}
+	<span class="page" >后页&gt;</span>
+	{% endif %}
+	<span class="page">(共{{ paginator.total_posts }}篇)</span>
+	</nav>
+</div>
+<hr/>
+<section class="lost-double fn-clear">
+<article class="article article-first">
+<h3>最新文章</h3>
+<ul>
+	{% for post in site.posts limit: 7 %}
+	<li><a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
+</article>
+<article class="article article-last">
+<h3>相关链接</h3>
+<ul>
+	<li>资源
+	<ul>
+		<li><a href="http://ydlj.u.qiniudn.com/">资料空间</a>
+		</li>
+		<li><a href="https://gitcafe.com/readerneighbor/readerneighbor/">发布仓库</a>
+		</li>
+	</ul>
+	</li>
+	<li>大妈
+	<ul>
+		<li><a href="https://plus.google.com/116397511848178756417/about">Zoom.Quiet</a></li>
+	</ul>
+	</li>
+	<li>网站
+	<ul>
+		<li><a href="http://readerneighbor.gitcafe.com/">Reader as Neighbor ;-)</a>
+			</li>
+		<li><a href="http://pyconchina.github.io/pycoders-weekly-zh/archives.html">Archives | 蠎周刊 | 汇集全球蠎事儿!-)</a>
+			</li>
+	</ul>
+	</li>
+
+</ul>
+</article>
+</section>

@@ -1,3 +1,11 @@
+_site/*
+*.DS_Store
+*.default
+*.types
+*.swp
+.tmp*
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

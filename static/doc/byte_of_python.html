@@ -1,0 +1,3164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Swaroop C H">
+  <meta name="dcterms.date" content="2013-06-14">
+  <title>A Byte of Python</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<header>
+<h1 class="title">A Byte of Python</h1>
+<h2 class="author">Swaroop C H</h2>
+<h3 class="date">14 Jun 2013</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#a-byte-of-python">A Byte of Python</a><ul>
+<li><a href="#a-byte-of-python的读者对象">《A Byte of Python》的读者对象?</a></li>
+<li><a href="#学术课程">学术课程</a></li>
+<li><a href="#协议">协议</a></li>
+<li><a href="#开始阅读">开始阅读</a></li>
+<li><a href="#购买本书">购买本书</a></li>
+<li><a href="#下载">下载</a></li>
+<li><a href="#阅读本书的母语版">阅读本书的母语版</a></li>
+<li><a href="#读者对象">读者对象</a></li>
+<li><a href="#教材历史">教材历史</a></li>
+<li><a href="#本书的状态">本书的状态</a></li>
+<li><a href="#官方网站">官方网站</a></li>
+<li><a href="#要思考的一些事情">要思考的一些事情</a></li>
+</ul></li>
+<li><a href="#简介">简介</a><ul>
+<li><a href="#python的特点">Python的特点</a><ul>
+<li><a href="#简单">简单</a></li>
+<li><a href="#容易学习">容易学习</a></li>
+<li><a href="#免费开源">免费开源</a></li>
+<li><a href="#高级语言">高级语言</a></li>
+<li><a href="#可移植">可移植</a></li>
+<li><a href="#解释型">解释型</a></li>
+<li><a href="#面向对象">面向对象</a></li>
+<li><a href="#可扩展">可扩展</a></li>
+<li><a href="#可嵌入">可嵌入</a></li>
+<li><a href="#扩展库">扩展库</a></li>
+</ul></li>
+<li><a href="#python-2-与-3">Python 2 与 3</a></li>
+<li><a href="#程序员说了些什么">程序员说了些什么</a></li>
+</ul></li>
+<li><a href="#安装">安装</a><ul>
+<li><a href="#在windows上安装">在Windows上安装</a><ul>
+<li><a href="#dos提示符">DOS提示符</a></li>
+<li><a href="#在windows命令行上运行python">在Windows命令行上运行Python</a></li>
+</ul></li>
+<li><a href="#在mac-os-x上安装">在Mac OS X上安装</a></li>
+<li><a href="#在linux上安装">在Linux上安装</a></li>
+<li><a href="#总结">总结</a></li>
+</ul></li>
+<li><a href="#第一步">第一步</a><ul>
+<li><a href="#使用解释器提示符">使用解释器提示符</a></li>
+<li><a href="#选择一个编辑器">选择一个编辑器</a></li>
+<li><a href="#使用一个源文件">使用一个源文件</a><ul>
+<li><a href="#可执行的python程序">可执行的Python程序</a></li>
+</ul></li>
+<li><a href="#获得帮助">获得帮助</a></li>
+<li><a href="#总结-1">总结</a></li>
+<li><a href="#注释">注释</a></li>
+<li><a href="#字面常量">字面常量</a></li>
+<li><a href="#数字">数字</a></li>
+<li><a href="#字符串">字符串</a><ul>
+<li><a href="#单引号">单引号</a></li>
+<li><a href="#双引号">双引号</a></li>
+<li><a href="#三重引号">三重引号</a></li>
+<li><a href="#字符串是不可改变的">字符串是不可改变的</a></li>
+<li><a href="#格式方法">格式方法</a></li>
+</ul></li>
+<li><a href="#变量">变量</a></li>
+<li><a href="#标识符命名">标识符命名</a></li>
+<li><a href="#数据类型">数据类型</a></li>
+<li><a href="#对象">对象</a></li>
+<li><a href="#怎样写python程序">怎样写Python程序</a></li>
+<li><a href="#例如-使用变量和常量">例如: 使用变量和常量</a><ul>
+<li><a href="#逻辑行与物理行">逻辑行与物理行</a></li>
+<li><a href="#缩进">缩进</a></li>
+</ul></li>
+<li><a href="#小结">小结</a></li>
+<li><a href="#操作对象">操作对象</a><ul>
+<li><a href="#数学操作和赋值的快捷方式">数学操作和赋值的快捷方式</a></li>
+</ul></li>
+<li><a href="#运算顺序">运算顺序</a></li>
+<li><a href="#改变运算顺序">改变运算顺序</a></li>
+<li><a href="#结合性">结合性</a></li>
+<li><a href="#表达式">表达式</a></li>
+<li><a href="#小结-1">小结</a></li>
+<li><a href="#if-语句">if 语句</a></li>
+<li><a href="#while语句">while语句</a></li>
+<li><a href="#for循环">for循环</a></li>
+<li><a href="#break语句">break语句</a><ul>
+<li><a href="#swaroop-的诗意的python">Swaroop 的诗意的Python</a></li>
+</ul></li>
+<li><a href="#continue语句">continue语句</a></li>
+<li><a href="#小结-2">小结</a></li>
+</ul></li>
+<li><a href="#函数">函数</a><ul>
+<li><a href="#函数的参数">函数的参数</a></li>
+<li><a href="#局部变量">局部变量</a></li>
+<li><a href="#使用全局声明">使用全局声明</a></li>
+<li><a href="#默认参数">默认参数</a></li>
+<li><a href="#参数关键字">参数关键字</a></li>
+<li><a href="#变量参数">变量参数</a></li>
+<li><a href="#只有关键字的参数">只有关键字的参数</a></li>
+<li><a href="#return语句">return语句</a></li>
+<li><a href="#文档字符串">文档字符串</a></li>
+<li><a href="#小结-3">小结</a></li>
+</ul></li>
+<li><a href="#模块">模块</a><ul>
+<li><a href="#字节编译的.pyc文件">字节编译的.pyc文件</a></li>
+<li><a href="#from-...-import语句">from ... import语句</a></li>
+<li><a href="#模块的name">模块的<strong>name</strong></a></li>
+<li><a href="#dir函数">dir函数</a></li>
+<li><a href="#打包封装">打包（封装）</a></li>
+<li><a href="#小结-4">小结</a></li>
+<li><a href="#列表">列表</a><ul>
+<li><a href="#对象和类的快速介绍">对象和类的快速介绍</a></li>
+</ul></li>
+<li><a href="#元组">元组</a></li>
+<li><a href="#字典">字典</a></li>
+<li><a href="#序列">序列</a></li>
+<li><a href="#集合">集合</a></li>
+<li><a href="#关联">关联</a></li>
+<li><a href="#关于字符串的更多">关于字符串的更多</a></li>
+<li><a href="#小结-5">小结</a></li>
+<li><a href="#问题">问题</a></li>
+<li><a href="#解决方案">解决方案</a></li>
+<li><a href="#第二版">第二版</a></li>
+<li><a href="#第三版">第三版</a></li>
+<li><a href="#第四版">第四版</a></li>
+<li><a href="#更细化">更细化</a></li>
+<li><a href="#软件开发过程">软件开发过程</a></li>
+<li><a href="#小结-6">小结</a></li>
+<li><a href="#自我">自我</a></li>
+<li><a href="#类">类</a></li>
+<li><a href="#对象的方法">对象的方法</a></li>
+<li><a href="#init-方法"><strong>init</strong> 方法</a></li>
+<li><a href="#类和对象的变量">类和对象的变量</a></li>
+<li><a href="#继承">继承</a></li>
+<li><a href="#小结-7">小结</a></li>
+<li><a href="#用户输入">用户输入</a></li>
+<li><a href="#文件">文件</a></li>
+<li><a href="#拾取">拾取</a></li>
+<li><a href="#小结-8">小结</a></li>
+</ul></li>
+<li><a href="#异常处理">异常处理</a><ul>
+<li><a href="#错误">错误</a></li>
+<li><a href="#异常">异常</a></li>
+<li><a href="#处理异常">处理异常</a></li>
+<li><a href="#提出异常">提出异常</a></li>
+<li><a href="#try-..-finally">Try .. Finally</a></li>
+<li><a href="#with语句">with语句</a></li>
+<li><a href="#小结-9">小结</a></li>
+</ul></li>
+<li><a href="#标准库">标准库</a><ul>
+<li><a href="#sys系统模块">sys（系统）模块</a></li>
+<li><a href="#logging日志模块">logging（日志）模块</a></li>
+<li><a href="#week周系列模块">Week（周）系列模块</a></li>
+<li><a href="#小结-10">小结</a></li>
+</ul></li>
+<li><a href="#更多">更多</a><ul>
+<li><a href="#passing-tuples-around">Passing tuples around</a></li>
+<li><a href="#特别的方法">特别的方法</a></li>
+<li><a href="#单语句块">单语句块</a></li>
+<li><a href="#lambda-形式">Lambda 形式</a></li>
+<li><a href="#列表解析">列表解析</a></li>
+<li><a href="#在函数中接受元组和字典">在函数中接受元组和字典</a></li>
+<li><a href="#assert断言语句">assert(断言)语句</a></li>
+<li><a href="#转义字符">转义字符</a><ul>
+<li><a href="#原始字符串">原始字符串</a></li>
+</ul></li>
+<li><a href="#小结-11">小结</a></li>
+<li><a href="#示例代码">示例代码</a></li>
+<li><a href="#问题及解答">问题及解答</a></li>
+<li><a href="#学习指南">学习指南</a></li>
+<li><a href="#视频">视频</a></li>
+<li><a href="#讨论">讨论</a></li>
+<li><a href="#新闻">新闻</a></li>
+<li><a href="#安装库">安装库</a></li>
+<li><a href="#图形软件">图形软件</a><ul>
+<li><a href="#gui工具小结">GUI工具小结</a></li>
+</ul></li>
+<li><a href="#各种实现">各种实现</a></li>
+<li><a href="#函数程序设计为高级读者">函数程序设计(为高级读者)</a></li>
+<li><a href="#小结-12">小结</a></li>
+</ul></li>
+<li><a href="#免费自由和开放源码软件">免费/自由和开放源码软件</a><ul>
+<li><a href="#本书的诞生">本书的诞生</a></li>
+<li><a href="#初长成">初长成</a></li>
+<li><a href="#现在">现在</a></li>
+<li><a href="#关于作者">关于作者</a></li>
+</ul></li>
+<li><a href="#修订历史">修订历史</a></li>
+<li><a href="#翻译">翻译</a><ul>
+<li><a href="#阿拉伯语">阿拉伯语</a></li>
+<li><a href="#巴西葡萄牙语">巴西葡萄牙语</a></li>
+<li><a href="#加泰罗尼亚语">加泰罗尼亚语</a></li>
+<li><a href="#中文">中文</a></li>
+<li><a href="#繁体中文">繁体中文</a></li>
+<li><a href="#法语">法语</a></li>
+<li><a href="#德语">德语</a></li>
+<li><a href="#希腊语">希腊语</a></li>
+<li><a href="#印尼语">印尼语</a></li>
+<li><a href="#意大利语">意大利语</a></li>
+<li><a href="#日语">日语</a></li>
+<li><a href="#蒙古语">蒙古语</a></li>
+<li><a href="#挪威语bokm氓l">挪威语(bokm氓l)</a></li>
+<li><a href="#波兰语">波兰语</a></li>
+<li><a href="#葡萄牙语">葡萄牙语</a></li>
+<li><a href="#罗马尼亚语">罗马尼亚语</a></li>
+<li><a href="#俄语和乌克兰语">俄语和乌克兰语</a></li>
+<li><a href="#斯洛伐克语">斯洛伐克语</a></li>
+<li><a href="#瑞典语">瑞典语</a></li>
+<li><a href="#土耳其语">土耳其语</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="a-byte-of-python"><a href="#a-byte-of-python">A Byte of Python</a></h1>
+<p>《A Byte of Python》是一本介绍用Python语言编写程序的免费书。它为Python初学者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。</p>
+<p>尽管当今Python 2仍被普遍使用,本书还是依据最新版Python 3编写的(更多请看<a href="#python-2-＆-3">Python 2 ＆ 3 一节</a>)。</p>
+<h2 id="a-byte-of-python的读者对象"><a href="#a-byte-of-python的读者对象">《A Byte of Python》的读者对象?</a></h2>
+<p>下面是一些人对本书的评价:</p>
+<blockquote>
+<p>我发现的最好的事，是我发现了《A Byte of Python》, 它是为初学者编写的一本杰出的书，它写的很好，通过不言而喻的例子对概念作了很好的解释。</p>
+<p>-- <a href="http://littlepancakes.wordpress.com/2010/01/30/python"><em>Syed Talal</em> (19岁)</a></p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>这是我见到的最好的初学者指南！感谢你的努力。</p>
+<p>-- <em>Walt Michalik</em> (wmich50-at-theramp-dot-net)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>你做了我在网上发现的最好的Python指南，伟大的工作，谢谢！</p>
+<p>-- <em>Joshua Robin</em> (joshrob-at-poczta-dot-onet-dot-pl)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>为初学者做了Python编程的卓越介绍。</p>
+<p>-- <a href="https://twitter.com/ShanRajasekaran/status/268910645842423809">Shan Rajasekaran</a></p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>嗨，我来自多米尼加共和国，我叫Pavel。最近，我读了你的《A Byte of Python》，我认为它是极好的!! :)。从例子中我学到了很多，你的书对像我这样的初学者有很大帮助...</p>
+<p>-- <em>Pavel Simo</em> (pavel-dot-simo-at-gmail-dot-com)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>我读完了《A Byte of Python》，我想我真的应该感谢你，当我读到最后，我感到非常难过，因为我不得不再回到无趣的、乏味的学习笔记等中去。不论如何，作为Python学习手册，我欣赏你的书。</p>
+<p>-- <em>Samuel Young</em> (sy-one-three-seven-at-gmail-dot-com)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次地感谢！您把知识“掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。</p>
+<p>-- <em>Joseph Duarte</em> (jduarte1-at-cfl-dot-rr-dot-com)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>我喜欢你的书！这是最好的Python教程，非常有用的参考手册，才华横溢，真正的杰作！请继续这种好的工作！</p>
+<p>-- <em>Chris-André Sommerseth</em></p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>我给你发邮件，就是为了感谢你在线编写的《A Byte of Python 》。在偶然发现你的书之前，我已经尝试学习Python有几个月了。虽然我对pyGame取得了有限的成绩，但我从来没有完成过一个程序。</p>
+<p>感谢你对分类的简单化，Python看起来确实是一个能够达到的目标。看起来我已经学会了基础知识，并能够继续我的真正目标——游戏开发。</p>
+<p>...</p>
+<p>再一次，非常感谢你将如此结构良好而且有用的编程基础教程放到网上，它帮助我彻底理解了OOP，这之前两本书都没行。</p>
+<p>-- <em>Matt Gallivan</em> (m-underscore-gallivan12-at-hotmail-dot-com)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>我感谢你以及你的《A Byte of Python》，我发现这是学习Python最好的途径。我现在15岁，住在埃及，我的名字叫Ahmed。Python是我学习的第二个编程语言，我在学校学习了Visual Basic 6，但我并不喜欢它，可是我真的喜欢学习Python。我成功地编写了地址簿程序。我打算尝试编写、阅读更多Python程序（如果你有意给我推荐一些有帮助的源代码）。我也将开始学习Java，如果你能告诉我在哪里可以找到向你的教程一样好的Java教程，那将对我有很大帮助。多谢。</p>
+<p>-- <em>Ahmed Mohammed</em> (sedo-underscore-91-at-hotmail-dot-com)</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>初学者想更多的学习Python编程的最好的资源是Swaroop C H编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到的最好的Python入门教程。</p>
+<p>-- <em>Drew Ames</em> 在Linux.com上发表的文章<a href="http://www.linux.com/feature/126522">Scripting Scribus</a>中写道</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>昨天，我在Nokia N800上浏览了《A Byte of Python》的大部分内容，这是我至今遇到的最简明扼要的Python教程,极力推荐作为学习Python的一个起点。</p>
+<p>-- <em>Jason Delport</em> 发表在<a href="http://paxmodept.com/telesto/blogitem.htm?id=627">博客</a></p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>对我而言，@swaroopch 编写的《A Byte of Vim》和《A Byte of Python》是最棒的技术作品，读起来非常棒。#FeelGoodFactor</p>
+<p>-- <em>Surendran</em> 在其<a href="http://twitter.com/suren/status/12840485454">微博</a>上说</p>
+</blockquote>
+<blockquote>
+<p></p>
+</blockquote>
+<blockquote>
+<p>《A Byte of python》至今最好</p>
+<p>（在回答“谁能推荐一个又好又便宜的学习Python基础的资源？”中答道）</p>
+<p>-- <em>Justin LoveTrue</em> 在其<a href="http://www.facebook.com/pythonlang/posts/406873916788">Facebook 社区页面</a>说</p>
+</blockquote>
+<blockquote>
+<p>“《A Byte of Python》非常有用，多谢 :)”</p>
+<p>-- <a href="https://twitter.com/a_chinmay/status/258822633741762560">Chinmay</a></p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>永远是对新手和有经验的程序员都适合的《A BYte of Python》的爱好者。</p>
+<p>-- <a href="http://stackoverflow.com/a/457785/4869">Patrick Harrington, 在StackOverflow回答</a></p>
+</blockquote>
+<dl>
+<dt>甚至 NASA 也这么说：</dt>
+<dd>NASA甚至也使用这本书！在他们的<a href="http://dsnra.jpl.nasa.gov/software/Python/byte-of-python/output/byteofpython_html/">喷气推进实验室</a>的深空网项目中使用。
+</dd>
+</dl>
+<h2 id="学术课程"><a href="#学术课程">学术课程</a></h2>
+<p>本书正在或曾经在多个院校作为教材使用：</p>
+<ul>
+<li>'编程语言原理'，课程在<a href="http://www.few.vu.nl/~nsilvis/PPL/2007/index.html">自由大学, 阿姆斯特丹</a></li>
+<li>'计算的基本概念'课程在<a href="http://www.cs.ucdavis.edu/courses/exp_course_desc/10.html">加州大学戴维斯分校</a></li>
+<li>'使用Python编程'课程在<a href="http://www.people.fas.harvard.edu/~preshman/python_winter.html">哈佛大学</a></li>
+<li>'编程导论'课程在<a href="http://www.comp.leeds.ac.uk/acom1900/">英国利兹大学</a></li>
+<li>'应用程序编程导论'课程在<a href="http://www.cs.bu.edu/courses/cs108/materials.html">波士顿大学</a></li>
+<li>'气象学信息技术'课程在<a href="http://gentry.metr.ou.edu/byteofpython/">奥克拉荷马大学</a></li>
+<li>'地理数据处理'课程在<a href="http://www.msu.edu/~ashton/classes/825/index.html">密歇根州立大学</a></li>
+<li>'多代理语义网络系统'课程在<a href="http://homepages.inf.ed.ac.uk/ewan/masws/">英国爱丁堡大学</a></li>
+</ul>
+<h2 id="协议"><a href="#协议">协议</a></h2>
+<p>本书基于<a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-Share Alike 3.0 Unported</a>协议。</p>
+<p>这意味着：</p>
+<ul>
+<li>允许自由共享（例如复制）、分发以及传播本书</li>
+<li>允许自由混合（例如改编）本书</li>
+<li>允许商业目的自由使用</li>
+</ul>
+<p>请注意:</p>
+<ul>
+<li>请<em>不要</em>出售本书的电子或纸质版本，除非你在说明书中清晰而明显地声明，这些不是来自本书原作者。</li>
+<li>归属<em>必须</em>在序言以及文档的扉页以链接到<http://www.swaroopch.com/notes/Python>的形式标明，并明确指出原始文本可以在此地址获得。</li>
+<li>本书中提供的所有代码/脚本基于<a href="http://www.opensource.org/licenses/bsd-license.php">3-clause BSD License</a>协议许可，除非额外声明。</li>
+</ul>
+<h2 id="开始阅读"><a href="#开始阅读">开始阅读</a></h2>
+<p>你可以<a href="http://www.swaroopch.com/notes/Python_en-Preface">在线阅读本书</a>。</p>
+<h2 id="购买本书"><a href="#购买本书">购买本书</a></h2>
+<p>为了离线愉快阅读并支持本书的持续发展和改善，<a href="http://www.swaroopch.com/buybook">可以购买纸质印刷书籍</a>。</p>
+<h2 id="下载"><a href="#下载">下载</a></h2>
+<ul>
+<li><a href="http://files.swaroopch.com/python/byte_of_python.pdf">PDF</a></li>
+<li><a href="https://github.com/swaroopch/byte_of_python">完整源码</a></li>
+</ul>
+<p><em>* 如果您想支持本书的持续发展，请考虑<a href="http://www.swaroopch.com/buybook">购买本书</a></em>*。</p>
+<h2 id="阅读本书的母语版"><a href="#阅读本书的母语版">阅读本书的母语版</a></h2>
+<p>如果您对阅读或参与本书的翻译感兴趣，请看<a href="#翻译">翻译</a>。 # 前言</p>
+<p>Python可能是为数不多的既简单又强大的几个编程语言之一。它对初学者和专家都很适合，更重要的是，用Python编程很有趣。本书目的是帮助你学习这个奇妙的语言，展示如何快速而方便地完成任务——事实上的“对编程问题的完美抗毒剂”。</p>
+<h2 id="读者对象"><a href="#读者对象">读者对象</a></h2>
+<p>本书作为Python编程语言的指南或教程，主要面向初学者，同时对有经验的程序员也有帮助。</p>
+<p>本书目的是，如果对于计算机，你只知道如何保存文本文件，那么你可以从本书学习Python。如果之前你有编程经验，那么你同样可以从本书学习Python。</p>
+<p>如果您之前有过编程经验，你将对Python和你喜欢的编程语言之间的区别感兴趣——我高亮显示了这些区别。然而要提醒一点，Python将很快成为你最喜爱的编程语言！</p>
+<h2 id="教材历史"><a href="#教材历史">教材历史</a></h2>
+<p>我为我编写的“Diamond”软件编写简化安装过程的安装程序时，我第一次开始使用Python。我不得不在Python还是Perl上绑定Qt库进行选择。我在网上做了一些研究，偶然发现了[Eric S. Raymond的一篇文章] (http://pythonology.org/success&amp;story=esr), Raymond是一个著名的、值得尊敬的黑客。其中他谈道，Python是如何成为他最喜爱的编程语言的。我也发现PyQt的绑定比Perl-QT更加成熟。所以我决定选择Python。</p>
+<p>然后，我开始搜索Python的优秀书籍。我没能找到一本！我确实找到了一些O'Reilly的书，但是它们要么太贵，要么更像是参考手册而不是教程。于是，我免强接受了Python的随机文档。但是它过于简单和小巧。它的确给出了关于Python的妙计，但是不完整。由于我有编程经验，因此我能够对付它，但它并不适合于初学者。</p>
+<p>在我第一次使用Python六个月后，我安装了当时最新的Red Hat 9.0 Linux，开始使用KWord。我对它很兴奋，突然冒出一个想法，用它写一些关于Python的东西。我开始写了几页，但是很快就有30页之多。然后我认真地将其变成书的形式，使它更有用。经过<em>几次</em>重写，它已经达到了作为学习Python语言有用教程的水准。我将这本书作为我的贡献捐赠给开源社区。</p>
+<p>本书开始于我在Python上的学习笔记，尽管为满足他人的口味，我做出了大量的努力，但直到现在我依然这么认为:</p>
+<p>在开源的真正精神中，我收到了很多热心读者的建设性意见、批评和<a href="#读者对象">反馈</a>，这些帮助我改进了本书。</p>
+<h2 id="本书的状态"><a href="#本书的状态">本书的状态</a></h2>
+<p>应许多读者的要求，本书在2012年10月使用Pandoc重新编排，以便生成电子书文档，同时进行了错误修正以及更新。</p>
+<p>2008年12月版本（从以前2005年3月的大修改）的修改是更新到Python 3.0。</p>
+<p>本书需要像您这样的读者的帮助，指出任何不足、难以理解或者错误之处。请<a href="http://www.swaroopch.com/contact/">写信给主要作者</a> 或者各个<a href="#翻译">译者</a>留下您的意见和建议。</p>
+<h2 id="官方网站"><a href="#官方网站">官方网站</a></h2>
+<p>本书官方站点是<http://www.swaroopch.com/notes/Python>，您可以在线阅读整本书、下载最新版本、<a href="http://www.swaroopch.com/buybook">购买纸质版本</a>以及给我反馈。</p>
+<h2 id="要思考的一些事情"><a href="#要思考的一些事情">要思考的一些事情</a></h2>
+<blockquote>
+<p>构建软件设计有两种途径：一种是足够简单以致明显没有缺陷，另一种是足够复杂以致没有明显缺陷。</p>
+<p>-- C. A. R. Hoare</p>
+</blockquote>
+<!-- -->
+
+<blockquote>
+<p>人生的成功，专注和坚持比天才和机会更重要。</p>
+<p>-- C. W. Wendte</p>
+</blockquote>
+<h1 id="简介"><a href="#简介">简介</a></h1>
+<p>Python是可以称得上即简单又功能强大的少有的语言中的一种。你将会惊喜地发现，专注于问题的解决方案而不是你正在使用的编程语言的语法以及结构，是多么容易。</p>
+<p>官方对Python的介绍：</p>
+<blockquote>
+<p>Python是一个易于学习的、功能强大的编程语言。它具有高效的高级数据结构和能够简单有效地实现面向对象编程。Python优美的语法和动态类型，连同解释型特性一起，使其在多个平台的许多领域都成为脚本处理以及快速应用开发的理想语言。</p>
+</blockquote>
+<p>在下一章，我将更详细地讨论这些特性。</p>
+<dl>
+<dt>名字背后的故事</dt>
+<dd>Python语言的发明人Guido van Rossum以BBC的喜剧《Monty Python's Flying Circus》给这个语言命名。他不是特别喜欢那些为了食物而杀死动物的蛇，这些蛇会用它们长长的身体缠绕住那些动物从而勒死它们。
+</dd>
+</dl>
+<h2 id="python的特点"><a href="#python的特点">Python的特点</a></h2>
+<h3 id="简单"><a href="#简单">简单</a></h3>
+<p>itself.Python是一门简单而文字简约的语言。阅读好的Python程序感觉就像阅读英语，尽管是非常严格的英语。Python的这种伪代码特性是其最大强项之一，它可让你专注于解决问题的办法而不是语言本身。</p>
+<h3 id="容易学习"><a href="#容易学习">容易学习</a></h3>
+<p>正如你即将看到的，Python非常容易上手。就像刚刚提到的，Python具有格外简单的语法。</p>
+<h3 id="免费开源"><a href="#免费开源">免费开源</a></h3>
+<p>Python是一个<em>FLOSS</em>（自由/自由与开源软件）的例子。在一些简单的条款之下，你可以自由地分发这个软件的拷贝，阅读其源代码，修改它，或者将其一部分用到新的自由程序中。FLOSS是基于共享知识社区的概念，这是Python如此好的原因之一——它是由那些希望看到更好的Python的社区创建和不断改进的。</p>
+<h3 id="高级语言"><a href="#高级语言">高级语言</a></h3>
+<p>当你使用Python编写程序时，你永远不需要担心低级细节，比如你的程序管理内存的使用等。</p>
+<h3 id="可移植"><a href="#可移植">可移植</a></h3>
+<p>基于其开放源代码的特性，Python已经被移植（也就是使其工作）到许多平台。只要你足够小心，避免使用系统相关特性，你的所有Python程序都可以不加修改地运行在这其中任意平台。</p>
+<p>你可以在Linux、Windows、FreeBSD、Macintosh、Solaris、OS/2、Amiga、AROS、AS/400、BeOS、OS/390、z/OS、Palm OS、QNX、VMS、Psion、Acorn RISC OS、VxWorks、PlayStation、Sharp Zaurus、Windows CE，甚至PocketPC平台上使用Python。</p>
+<p>你甚至可以使用类似<a href="http://kivy.org/">Kivy</a>平台为iOS（iPhone、iPad）和Android创建游戏。</p>
+<h3 id="解释型"><a href="#解释型">解释型</a></h3>
+<p>这需要一些解释。</p>
+<p>使用编译型语言（像C或者C++）编写的程序，会由编译器使用一系列标志和选项，将源代码（如C或者C++）转换成一种电脑能够识别的语言（二进制代码，也就是0和1）。在运行程序时，链接器/载入软件将程序从硬盘复制到内存，然后开始运行。</p>
+<p>换句话说，Python不需要编译成二进制代码。你只需从源代码直接<em>运行</em>程序。在内部，Python将源代码转换成一种称为字节码的中间格式，然后将其翻译你的计算机的机器语言，然后开始运行。事实上，这一切都让Python的使用更为简单，因为你不必担心程序的编译、保证恰当的库被链接和载入等等。这也使得你的Python程序更易于移植，因为你只需要复制你的Python程序到另外一台计算机，然后它就可以工作了！</p>
+<h3 id="面向对象"><a href="#面向对象">面向对象</a></h3>
+<p>Python同时支持面向过程和面向对象编程。在<em>面向过程</em>语言中，程序围绕着过程或者函数（只不过是可重复使用的程序片段）构建。在<em>面向对象</em>语言中，程序围绕着对象（数据和功能的组合）构建。Python具有非常强大但是过于简洁的执行面向对象编程的方式，特别是相对于C++或者Java这种大型语言来说。</p>
+<h3 id="可扩展"><a href="#可扩展">可扩展</a></h3>
+<p>如果你需要一段运行很快的关键代码，或者是想要编写一些不愿开放的算法，你可以使用C或C++完成那部分程序，然后从你的Python程序中调用。</p>
+<h3 id="可嵌入"><a href="#可嵌入">可嵌入</a></h3>
+<p>你可以将Python嵌入到C/C++程序，让你的程序的用户获得“脚本化”的能力。</p>
+<h3 id="扩展库"><a href="#扩展库">扩展库</a></h3>
+<p>Python标准库的确很大。它能够帮助你完成许多工作，包括正则表达式、文档生成、单元测试、线程、数据库、网页浏览器、CGI（公共网关接口）、FTP（文件传输协议）、电子邮件、XML（可扩展标记语言）、XML-RPC（远程方法调用）、HTML（超文本标记语言）、WAV（音频格式）文件、加密、GUI（图形用户界面）以及其它系统相关的代码。记住，只要安装了Python，所有这些都能做到。这叫做Python的“遥控器”哲学。</p>
+<p>除了标准库，还有各式各样的其它高质量库，你可以在<a href="http://pypi.python.org/pypi">Python包索引</a>找到它们。</p>
+<dl>
+<dt>小结</dt>
+<dd>Python的确是一个激动人心的功能强大的语言。Python那种性能和特性的恰到好处的组合让使用Python编程既有趣又简单。
+</dd>
+</dl>
+<h2 id="python-2-与-3"><a href="#python-2-与-3">Python 2 与 3</a></h2>
+<p>如果你不关心Python 2和Python 3的区别，可以跳过这一节。但是必须知道你所用的版本。</p>
+<p>2008年，本书为Python 3重写过，是使用Python 3的最早的书籍之一。不幸的是，这对于那些读着本书Python 3版本，却在使用Python 2的读者感到困惑，反之亦然。但慢慢地，大家都转移到了Python 3。</p>
+<p>所以，在本书中你将要学习使用Python 3，即使最终你还想用Python 2。<em>记住，一旦你充分地理解或学习使用了其中的一个，你可以很容易学到两个版本之间的区别，然后很容易的适应。困难的是学习编程和理解Python语言的核心，这是本书的目标。一旦你达到这个目标，你可以根据自己的情形很容易的使用Python 2或Python 3。</em></p>
+<p>关于Python 2和Python 3的详细区别，见<a href="https://wiki.ubuntu.com/Python/3">Ubuntu wiki的Python/3页面</a>。</p>
+<h2 id="程序员说了些什么"><a href="#程序员说了些什么">程序员说了些什么</a></h2>
+<p>或许你会对顶尖的黑客，比如ESR，怎么看待Python感兴趣：</p>
+<ol type="1">
+<li><p><em>Eric S. Raymond</em>，是《The Cathedral and the Bazaar》的作者，也是发明<em>开放源代码</em>这一术语的人。他说，<a href="http://www.linuxjournal.com/article.php?sid=3882">Python已经成为他最喜欢的编程语言</a>。这篇文章给我第一次关注Python的真正灵感。</p></li>
+<li><p><em>Bruce Eckel</em>，是著名的《Thinking in Java》和《Thinking in C++》的作者。他说，没有什么语言能比Python更能令他高效。他说，Python或许是唯一让程序员工作更简单的一个语言。请看<a href="http://www.artima.com/intv/aboutme.html">完整的采访</a>。</p></li>
+<li><p><em>Peter Norvig</em>，是著名的Lisp的作者，Google搜索质量主管（感谢Guido van Rossum指出）。他说，Python一直是Google的主要部分。你可以通过查看<a href="http://www.google.com/jobs/index.html">Google Jobs</a>验证这句话。这个页面上显示出，Python知识是招聘软件工程师的要求之一。</p></li>
+</ol>
+<h1 id="安装"><a href="#安装">安装</a></h1>
+<h2 id="在windows上安装"><a href="#在windows上安装">在Windows上安装</a></h2>
+<p>访问<http://www.python.org/download/>下载最新版本。安装过程和其它基于Windows的软件类似。</p>
+<dl>
+<dt>警告</dt>
+<dd>当您提示某些“可选”组件的时候，不要不选。
+</dd>
+</dl>
+<h3 id="dos提示符"><a href="#dos提示符">DOS提示符</a></h3>
+<p>如果你想要在Windows命名行，例如DOS提示符，使用Python，那么你需要正确设置PATH变量。</p>
+<p>对于Windows 2000、XP、2003，点击<code>控制面板</code>---<code>系统</code>---<code>高级</code>---<code>环境变量</code>。在“系统变量”中点击<code>PATH</code>，选择<code>编辑</code>，然后在已有内容的最后部分添加<code>;C:\Python33</code>（请核实存在该文件夹，对于较新版本Python来说，文件夹的名字可能不同）。当然，要使用正确的目录名。</p>
+<p>对于早期版本的Windows，打开<code>C:\AUTOEXEC.BAT</code>文件，添加一行“PATH=%PATH%;C:33”（不含引号），然后重启系统。对于Windows NT，使用<code>AUTOEXEC.NT</code>文件。</p>
+<p>对于Windows Vista:</p>
+<ol>
+<li>点击“开始”，选择“控制面板”。</li>
+<li>点击“系统”，在右侧您将看到“查看计算机基本信息”。</li>
+<li>左侧是一个任务列表，其最后一项是“高级系统设置”，点击它。</li>
+<li>显示“系统属性”对话框“高级”选项卡。点击右下角的“环境变量”按钮。</li>
+<li>在下方标题为“系统变量”框中，滚动“Path”，点击“编辑”按钮。</li>
+<li>按需修改路径。</li>
+<li>重启系统。除非重启，Vista不会意识到系统路径变量的修改。</li>
+</ol>
+<p>对于Windows 7:</p>
+<ol>
+<li>在桌面上右击“计算机”，选择“属性”；或点击“开始”，选择“控制面板”---“系统和安全”---“系统”，点击左侧的“高级系统设置”，然后选择“高级”选项卡。点击底部的“环境变量”按钮，在下方的“系统变量”中找到PATH变量，选中它点击“编辑”。</li>
+<li>在变量值的最后，追加<code>;C:\Python33</code>。</li>
+<li>如果这个值是<code>%SystemRoot%\system32;</code>，它将变成<code>%SystemRoot%\system32;C:\Python33</code>。</li>
+<li>点击“确定”完成。不需要重启。</li>
+</ol>
+<h3 id="在windows命令行上运行python"><a href="#在windows命令行上运行python">在Windows命令行上运行Python</a></h3>
+<p>对于Windows用户，如果<a href="#dos-prompt">正确设置了<code>PATH</code>变量</a>你可以在命名行运行解释器。</p>
+<p>要打开Windows终端，点击开始按钮，点击“运行”。在对话框输入<code>cmd</code>，按下回车键。</p>
+<p>然后输入<code>python3 -V</code>，确保没有错误。</p>
+<h2 id="在mac-os-x上安装"><a href="#在mac-os-x上安装">在Mac OS X上安装</a></h2>
+<p>对于Mac OS X用户，通过按<code>Command+Space</code>键打开终端（打开Spotlight搜索），输入<code>Terminal</code>然后回车。</p>
+<p>安装<a href="http://mxcl.github.com/homebrew/">Homebrew</a>时运行：</p>
+<pre><code>ruby -e &quot;$(curl -fsSkL raw.github.com/mxcl/homebrew/go)&quot;</code></pre>
+<p>然后安装Python 3 使用</p>
+<pre><code>brew install python3</code></pre>
+<p>现在，运行python3 -V，确保没有错误。</p>
+<h2 id="在linux上安装"><a href="#在linux上安装">在Linux上安装</a></h2>
+<p>对于Linux用户，通过打开<code>Terminal</code>应用程序打开终端，或者按下<code>Alt + F2</code>，然后输入<code>gnome-terminal</code>。如果不成功，请参考文档或你所用Linux发行版的论坛。</p>
+<p>下一步，我们需要安装<code>python3</code>包。例如，在Ubuntu上，可以使用<a href="http://packages.ubuntu.com/search?keywords=python3&amp;searchon=names&amp;suite=all&amp;section=all"><code>sudo apt-get install python3</code></a>。请参阅文档或是你安装的Linux发行版的论坛，寻找正确的包管理器运行。</p>
+<p>一旦你完成安装，在shell运行<code>python3 -V</code>，在屏幕上你应该能够看到Python版本：</p>
+<pre><code>$ python3 -V
+Python 3.3.0</code></pre>
+<dl>
+<dt>注意</dt>
+<dd><p>是shell的提示符，根据你电脑上的操作系统的设置会有所不同，因此我将使用<code>$</code>符号。</p>
+</dd>
+<dt>新的发行版默认安装？</dt>
+<dd><p>新的发行版，例如<a href="https://wiki.ubuntu.com/Python/3">Ubuntu 12.10将Python 3作为默认版本</a>，所以，检查一下是不是已经安装了。</p>
+</dd>
+</dl>
+<h2 id="总结"><a href="#总结">总结</a></h2>
+<p>现在开始，我们假设你已经在你的系统上安装好了Python 3。</p>
+<p>接下来，我们将开始编写我们的第一个Python 3程序。</p>
+<h1 id="第一步"><a href="#第一步">第一步</a></h1>
+<p>现在,我们将看到在Python中如何运行一个传统的“Hello World”程序。这将教你如何写、保存和运行Python程序。</p>
+<p>使用Python运行你的程序有两种方法——使用交互式解释器提示符或使用一个源文件。现在,我们将看到如何使用这两种方法。</p>
+<h2 id="使用解释器提示符"><a href="#使用解释器提示符">使用解释器提示符</a></h2>
+<p>在您的操作系统中打开终端(如前面<a href="#安装">安装章节</a>所述),然后，输入“python3”按回车键，打开Python提示符。</p>
+<p>一旦你启动python 3,您应该看到'&gt;&gt;&gt;”,这被称为* Python解释器提示符*，你可以开始输入的东西。</p>
+<p>在Python解释器提示符下，输入‘print(“Hello World”)’后按回车键。您应该看到输出了单词“Hello World”。</p>
+<p>当使用一个Mac OS X计算机，下面是你将看到的一个例子。Python软件的细节会根据你的电脑不同而有所不同，但从提示符(即从“&gt;&gt;&gt;”开始)与操作系统无关，应该是相同。</p>
+<pre><code>$ python3
+Python 3.3.0 (default, Oct 22 2012, 12:20:36)
+[GCC 4.2.1 Compatible Apple Clang 4.0 ((tags/Apple/clang-421.0.60))] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; print(&#39;hello world&#39;)
+hello world
+&gt;&gt;&gt; </code></pre>
+<p>注意,Python让你的代码行立即输出了!你刚才输入的是一个Python <em>语句</em>。我们使用<code>print</code>打印出(不出所料)你提供给它的任何值。在这里,我们提供的是文本“Hello World”,并立即打印到屏幕上。</p>
+<dl>
+<dt>如何解释器提示符</dt>
+<dd>如果你正在使用一个Linux或Unix shell,您可以通过按下“ctrl - d’或输入“exit()“(注意:记得包含括号,“()”)，然后输入<code>回车</code> 键。如果您使用的是Windows命令行提示符,按“ctrl - z”键再按“回车”键，退出解释器提示符。
+</dd>
+</dl>
+<h2 id="选择一个编辑器"><a href="#选择一个编辑器">选择一个编辑器</a></h2>
+<p>我们不能在每次想要运行一些东西的时候都要在解释器提示符下输入我们的程序，所以我们必须把它们保存为文件，这样我们可以任意次地运行我们的程序。</p>
+<p>要创建我们的Python源文件,我们需要一个可以输入并保存它们的编辑软件。一个优秀的程序员的编辑器将使你写源代码文件的生活更容易。因此，选择一个编辑器确实至关重要。你必须选择一个编辑器，就像你选择要买的汽车一样。一个好的编辑器会帮助您很容易地编写Python程序，（就像一辆车可以让你）以一个更快和更安全的方式，让你的旅程更舒适，并且可以帮助你达到你的目的地(实现你的目标)。</p>
+<p>一个非常基本的需求是<em>语法高亮显示</em>，分别以不同的彩色显示你的Python程序所有的不同部分，以便您可以<em>看到</em>你的程序且使其运行可视化。</p>
+<p>如果你不知道从哪里开始，我推荐可以在Windows、Mac OS X和Linux上使用的<a href="http://www.activestate.com/komodo-edit/downloads">Komodo Edit</a>软件。</p>
+<p>如果您使用的是Windows，<strong>不要使用记事本</strong>——这是一个糟糕的选择，因为它不做语法高亮显示，而且更重要的是它不支持文字的缩进——之后我们在我们的例子中会看到，缩进是非常重要的。好的编辑器如Komodo Edit会自动地做到这一点。</p>
+<p>如果你是一名有经验的程序员，那么你一定已经使用<a href="http://www.vim.org/">Vim</a>或(Emacs)(http://www.gnu.org/software/emacs/)了。不用说，这是两个最强大的编辑器，使用它们来写你的Python程序，你会从中受益。就我自己而言，在我的大多数项目,甚至写一<a href="http://www.swaroopch.com/notes/vim">整本书都在用Vim</a>。,从长远来看Vim或者Emacs是非常有用的，如果你愿意花时间去学习，那么我强烈建议你使用它们。然而,正如我之前提到的,初学者在这一刻，可以从 Komodo Edit开始集中学习Python而不是编辑器。</p>
+<p>再次重申，请选择一个适当的编辑器，它可以使编写Python程序更有趣和更容易。</p>
+<dl>
+<dt>对Vim用户</dt>
+<dd><p>John M Anderson有一个很好的如何[使Vim成为强大的Python IDE)(http://blog.sontek.net/blog/detail/turning-vim-into-a-modern-python-ide)的介绍。还推荐<a href="https://github.com/davidhalter/jedi-vim">jedi-vim插件</a>和我<a href="https://github.com/swaroopch/dotvim">自己的dotvim配置</a>。</p>
+</dd>
+<dt>对Emacs用户</dt>
+<dd><p>Pedro Kroger有一个很好的如何<a href="http://pedrokroger.net/2010/07/configuring-emacs-as-a-python-ide-2/">使Emacs成为强大的Python IDE</a>的介绍。还建议<a href="https://github.com/ghoseb/dotemacs">BG的dotemacs配置</a>。</p>
+</dd>
+</dl>
+<h2 id="使用一个源文件"><a href="#使用一个源文件">使用一个源文件</a></h2>
+<p>现在让我们回到编程。每当你学习一种新的编程语言时，有一个传统，你编写和运行的第一个程序是“Hello World”程序——当你运行它时，它所做的只是说“Hello World”。正如Simon Cozens(神奇的&quot;Beginning Perl&quot;的作者)所说，这是“向编程神祈求帮你更好学习语言的传统咒语。”</p>
+<p>开始你选择的编辑器，输入以下程序并将其保存为“hello.py’。</p>
+<p>如果你使用Komodo编辑器，点击<code>File</code> --- <code>New</code> --- <code>New File</code>,输入下行:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">print</span>(<span class="st">&#39;Hello World&#39;</span>)</code></pre>
+<p>在Komodo编辑器，选<code>File</code> --- <code>Save</code>保存文件。</p>
+<p>你应将文件保存在哪里？你知道位置的任何文件夹。如果你不明白这是什么意思，创建一个新文件夹，并使用该位置保存和运行你所有的Python程序:</p>
+<ul>
+<li><code>C:\\py</code> 在Windows上</li>
+<li><code>/tmp/py</code> 在Linux上</li>
+<li><code>/tmp/py</code> 在Mac OS X上</li>
+</ul>
+<p>使用'mkdir'命令在命令行创建一个文件夹，例如,“mkdir/tmp/py”。</p>
+<dl>
+<dt>重要的</dt>
+<dd>总要确保你给它的文件扩展名是<code>.py</code>，例如，“foo.py”。
+</dd>
+</dl>
+<p>在Komodo Edit，请单击“Tools”---“Run Command”，输入&quot;python3 hello.py&quot;,单击“Run”,你应该看到像下面截图的打印输出。</p>
+<figure>
+<img src="assets/komodo-edit-hello-world.png" alt="“Hello world”程序在Komodo编辑器中的截图" /><figcaption>“Hello world”程序在Komodo编辑器中的截图</figcaption>
+</figure>
+<p>尽管最好的方式是在Komodo中输入它，但在命令行也可以：</p>
+<ol>
+<li>打开在<a href="#安装">安装章节</a>中介绍的一个命令行。</li>
+<li><em>C</em>hange <em>d</em>irectory（改变路径）到你保存文件的目录，例如<code>cd /tmp/py</code></li>
+<li>在命令行输入<code>python3 hello.py</code>命令运行程序。</li>
+</ol>
+<p>输出如下所示：</p>
+<pre><code>$ python3 hello.py
+Hello World</code></pre>
+<p>如果你得到了如上所示有输出，祝贺你!——你已经成功地运行了你的第一个Python程序。您已经成功地越过学习编程最难的部分－－开始你的第一个程序!</p>
+<p>如果你得到了一个错误，请<em>完全</em>输入如上所示程序，再次运行这个程序。注意，Python是区分大小写的，即“print”并不等于“Print”——注意，前者是小写字母“p”和后者是大写字母“P”。同样，确保每一行的第一个字母之前没有空格或制表符——之后我们将<a href="#缩进">明白为什么这很重要</a>。</p>
+<p><strong>它是如何工作的</strong></p>
+<p>Python程序是由<em>语句</em>组成，在我们的第一个程序中，我们只有一个语句，在这个语句中，我们调用“print”<em>函数</em>，它只是打印文本“Hello World”。我们在(稍后章节](#函数)将详细学习函数——你现在应该理解的是,无论你在括号提供什么，都将打印到屏幕上。在本例中，我们提供了文本“Hello World”。</p>
+<h3 id="可执行的python程序"><a href="#可执行的python程序">可执行的Python程序</a></h3>
+<p>这只适用于Linux和Unix用户，但Windows用户应该知道。</p>
+<p>每次，你想要运行一个Python程序，我们必须显式地调用的“python3 foo.py”，但是我们为什么不能像运行我们电脑中的其它任何程序一样运行它呢？我们通过使用叫<em>hashbang</em>行代码可以实现。</p>
+<p>添加下面的一行作为程序的<em>第一行</em>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python3</span></code></pre>
+<p>这样，你的程序应该像现在这样:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python3</span>
+<span class="kw">print</span>(<span class="st">&#39;Hello World&#39;</span>)</code></pre>
+<p>第二，我们必须给程序的可执行权限－－使用' chmod '命令，然后<em>运行</em>源程序。</p>
+<p>这里使用的chmod命令是<em>ch</em>ange the <em>mod</em>e of the file （改变文件的模式），通过给系统<em>A</em>ll(所有)用户e<em>x</em>ecute（可执行）权限。</p>
+<pre><code>$ chmod a+x hello.py</code></pre>
+<p>现在，我们可以直接运行我们的程序，因为我们的操作系统调用“/usr/bin/env”，它按次序找到我们的Python 3软件，然后知道如何运行我们的源文件:</p>
+<pre><code>$ ./hello.py
+Hello World</code></pre>
+<p>我们使用“./”用来指示程序在当前目录中。</p>
+<p>为了让事情变得更有趣，你可以将文件重命名为“hello”然后像“./hello”这样运行它，因为系统知道它必须使用源代码文件中第一行指定位置的解释器运行它，所以它仍将工作。</p>
+<p>到目前为止,我们已经能够运行我们的程序,只要我们知道确切的路径。如果我们希望能够运行该程序从文件夹?您可以通过将程序存储在列在“路径”环境变量中的一个文件夹中来实现。</p>
+<p>无论你何时运行任何程序，系统在列在“PATH”（路径）环境变量中的每个文件夹查找该程序，然后运行程序。我们通过简单地复制这个源文件到“PATH”（路径）列出的目录中，可以让这个程序到处可用。</p>
+<pre><code>$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/swaroop/bin
+$ cp hello.py /home/swaroop/bin/hello
+$ hello
+Hello World</code></pre>
+<p>使用'echo'（回响）命令和变量（PATH）名称加前缀'$'，指示shell我们需要“环境变量”的值，我们可以显示“PATH”（路径）变量的值。我们看到,“/home/swaroop/bin”是PATH变量中的一个目录，* swaroop *是在我的系统中我用的用户名，通常在你的系统中为你的用户名，会有一个类似的目录。</p>
+<p>如果你想添加您所选择的目录到“PATH”变量中——这可以通过运行“export PATH=$PATH:/home/swaroop/mydir”,“:/home/swaroop/mydir”是我想添加到“PATH”变量中的目录。</p>
+<p>如果你想写可以在任何时间、在任何地点运行的命令，这个方法非常有用。这就像创建你自己的在命令行使用的命令，就像“cd”或任何其他命令。</p>
+<h2 id="获得帮助"><a href="#获得帮助">获得帮助</a></h2>
+<p>如果您需要快速获取任何的Python函数或语句的信息，那么您可以使用内置的“help”(帮助)功能。这是非常有用的，尤其是当使用翻译提示符时，例如，运行‘help(print)”——这将显示print函数的帮助－－用于打印东西到屏幕上。</p>
+<dl>
+<dt>注意</dt>
+<dd>按<code>q</code>退出帮助
+</dd>
+</dl>
+<p>类似地,您可以获得Python中几乎任何事情的信息，使用“help()”去学习更多关于使用“help”本身的信息!</p>
+<p>如果你需要获取操作符，如“return”的帮助，那么你只需要把这些放到引号内部，如“help('return'），所以，对于我们试图要做的事情，Python并不感到困惑。</p>
+<h2 id="总结-1"><a href="#总结-1">总结</a></h2>
+<p>现在，你可以自由自在地编写、保存和运行Python程序了。</p>
+<p>既然你是一名Python用户，让我们学习一些Python概念。 # 基础</p>
+<p>只是打印“Hello World”是不够的，是吗？你想要做的不仅仅是这些，你想带一些输入，操纵它，得到些输出。在Python中，我们使用常量和变量可以实现这些。在这一章，我们还将学习一些其他的概念。</p>
+<h2 id="注释"><a href="#注释">注释</a></h2>
+<p><em>注释</em>是#符号右边的任何文字，它对读程序的人有很大注释用处。</p>
+<p>例如：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">print</span>(<span class="st">&#39;Hello World&#39;</span>) <span class="co"># 注意：print是一个函数</span></code></pre>
+<p>或者:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># 注意：print是一个函数</span>
+<span class="kw">print</span>(<span class="st">&#39;Hello World&#39;</span>)</code></pre>
+<p>在你的程序中，你尽可能使用有用的注释:</p>
+<ul>
+<li>解释设想</li>
+<li>解释重要决策</li>
+<li>解释重要细节</li>
+<li>解释你在试图解决的问题</li>
+<li>解释程序中你在努力克服的问题，等等。</li>
+</ul>
+<p><a href="http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html"><em>代码告诉你怎样做，注释告诉你这样做的原因。</em></a></p>
+<p>这对你的程序的读者是有用的，他们可以很容易地理解程序做什么。记住，六个月后这个人可以是你自己！</p>
+<h2 id="字面常量"><a href="#字面常量">字面常量</a></h2>
+<p>字面常量的一个例子是一个数字就像“5”、“1.23”，或一个字符串像“这是一个字符串”或“它一个字符串!”。它被称为字面，因为它是<em>字面的</em>——你使用它的字面值。数字'2'总是代表本身并没有什么其他的——它是一个<em>常数</em>，因为它的价值是不能改变的，因此，所有这些被称为字面常量。</p>
+<h2 id="数字"><a href="#数字">数字</a></h2>
+<p>数字主要有两种类型--整型和浮点数。</p>
+<p>‘2’是整数的一个例子，它只是一个完整的数。</p>
+<p>浮点数(或简称为<em>浮点</em>)的例子有<code>3.23</code>和<code>52.3E-4。符号</code>E<code>表示10的次方。在这种情况下，</code>52.3E-4<code>的意思是</code>52.3 * 10<sup>-4</sup>`。</p>
+<dl>
+<dt>有经验的程序要注意：</dt>
+<dd>Python中没有单独的<code>long</code>(长)整型。<code>int</code>(整型)可以是任意大小的整数。
+</dd>
+</dl>
+<h2 id="字符串"><a href="#字符串">字符串</a></h2>
+<p>字符串是<em>字符</em>的一个<em>序列</em>，字符串通常只是一串单词。</p>
+<p>在你写的每一个Python程序中都要使用字符串，因此要注意以下部分：</p>
+<h3 id="单引号"><a href="#单引号">单引号</a></h3>
+<p>你可以使用单引号例如<code>'Quote me on this'</code>指定字符串。所有的空白，例如空格和制表符都按原样保留。</p>
+<h3 id="双引号"><a href="#双引号">双引号</a></h3>
+<p>在双引号中的字符串和在单引号中的字符串工作起来完全一样。例如<code>&quot;What's your name?&quot;</code></p>
+<h3 id="三重引号"><a href="#三重引号">三重引号</a></h3>
+<p>您可以使用三重引号-(<code>&quot;&quot;&quot;</code>或<code>'''</code>)指定多行字符串。在三重引号中您可以自由使用单引号和双引号。例如:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;&#39;&#39;This is a multi-line string. This is the first line.</span>
+<span class="co">This is the second line.</span>
+<span class="co">&quot;What&#39;s your name?,&quot; I asked.</span>
+<span class="co">He said &quot;Bond, James Bond.&quot;</span>
+<span class="co">&#39;&#39;&#39;</span></code></pre>
+<h3 id="字符串是不可改变的"><a href="#字符串是不可改变的">字符串是不可改变的</a></h3>
+<p>这意味着，一旦您已经创建了一个字符串，你就不能改变它。虽然这看起来似乎是一件坏事，但它真不是(坏事)。在我们后面看到的各种程序中，将会明白这不是一个限制。</p>
+<dl>
+<dt>C/C++程序员要注意</dt>
+<dd><p>在Python中没有单独的“char”(字符型)数据。这里没有真正的需要它，我相信你不会错过它。</p>
+</dd>
+<dt>Perl/PHP程序员要注意</dt>
+<dd><p>记住，单引号字符串和双引号字符串是相同的——他们不以任何方式不同。</p>
+</dd>
+</dl>
+<h3 id="格式方法"><a href="#格式方法">格式方法</a></h3>
+<p>有时，我们可能想要从其它信息构建字符串。这就是“format()”方法有用之处。</p>
+<p>保存下面几行到文件&quot;<code>str_format.py</code>&quot;中:</p>
+<pre class="sourceCode python"><code class="sourceCode python">age = <span class="dv">20</span>
+name = <span class="st">&#39;Swaroop&#39;</span>
+
+<span class="kw">print</span>(<span class="st">&#39;{0} was {1} years old when he wrote this book&#39;</span>.<span class="dt">format</span>(name, age))
+<span class="kw">print</span>(<span class="st">&#39;Why is {0} playing with that python?&#39;</span>.<span class="dt">format</span>(name))</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 str_format.py
+Swaroop was 20 years old when he wrote this book
+Why is Swaroop playing with that python?</code></pre>
+<p>它是如何工作的:</p>
+<p>一个字符串可以使用特定的格式，随后调用<em>format</em>方法，用<code>format</code>方法替代那些使用适当参数的格式。</p>
+<p>观察使用第一处，我们使用“{0}”对应于变量‘name’,这是format(格式)方法的第一个参数。类似的,第二个格式是“{1}”对应的“age”,这是格式方法的第二个参数。注意，Python从0开始计数，这意味着第一位置的索引是0，第二个位置的索引是1，等等。</p>
+<p>注意，我们可以使用字符串的连接，<code>name+'is'+str(age)+'years old'</code> 实现同样的目的，但这非常讨厌、容易出错。第二，在这种情况下，通过<code>format</code>方法自动转换为字符串，而不是显式地转换为需要的字符串。第三，当使用的<code>format</code> 方法，我们可以改变消息，而无需处理使用的变量，反之亦然。</p>
+<p>还要注意，这些数字(索引)都是可选的，所以你也可以写成:</p>
+<pre class="sourceCode python"><code class="sourceCode python">age = <span class="dv">20</span>
+name = <span class="st">&#39;Swaroop&#39;</span>
+
+<span class="kw">print</span>(<span class="st">&#39;{} was {} years old when he wrote this book&#39;</span>.<span class="dt">format</span>(name, age))
+<span class="kw">print</span>(<span class="st">&#39;Why is {} playing with that python?&#39;</span>.<span class="dt">format</span>(name))</code></pre>
+<p>这将给与前面的程序相同的输出。</p>
+<p>Python在<code>format</code>方法中做的是，用每个参数值替代规格的地方。这里有更详细的规格，如:</p>
+<pre class="sourceCode python"><code class="sourceCode python"> decimal (.) precision of <span class="dv">3</span> <span class="kw">for</span> <span class="dt">float</span> <span class="st">&#39;0.333&#39;</span>
+&gt;&gt;&gt; <span class="st">&#39;{0:.3}&#39;</span>.<span class="dt">format</span>(<span class="dv">1</span>/<span class="dv">3</span>)
+ fill <span class="kw">with</span> underscores (_) <span class="kw">with</span> the text centered
+ (^) to <span class="dv">11</span> width <span class="st">&#39;___hello___&#39;</span>
+&gt;&gt;&gt; <span class="st">&#39;{0:_^11}&#39;</span>.<span class="dt">format</span>(<span class="st">&#39;hello&#39;</span>)
+ keyword-based <span class="st">&#39;Swaroop wrote A Byte of Python&#39;</span>
+&gt;&gt;&gt; <span class="st">&#39;{name} wrote {book}&#39;</span>.<span class="dt">format</span>(name=<span class="st">&#39;Swaroop&#39;</span>, book=<span class="st">&#39;A Byte of Python&#39;</span>)</code></pre>
+<h2 id="变量"><a href="#变量">变量</a></h2>
+<p>仅仅使用字面常量会很快变得无聊——我们需要某种方式存储任何信息，同样操作它们。这就要引入<em>变量</em>。变量是它的名字所指示的东西——他们的值会有所不同。例如，你可以用变量存储任何值。变量是你电脑中存储信息的内存的一部分。不像字面常量，您需要某种方法来访问这些变量，因此你要给出他们的名字。</p>
+<h2 id="标识符命名"><a href="#标识符命名">标识符命名</a></h2>
+<p>变量是标识符的一个示例。<em>标识符</em>是用来识别一些<em>东西</em>的名字。这里有一些你必须遵循的标识符命名规则:</p>
+<ul>
+<li>标识符的第一个字符必须是字母表中的一个字母(大写或小写的ASCII或Unicode字符)或下划线(“_”)。</li>
+<li>标识符名称的其余部分可以包含字母(大写或小写的ASCII或Unicode字符)、下划线(“_”)或数字(0 - 9)。</li>
+<li>标识符的名称都是区分大小写的。例如,“myname”和“myName<strong>不</strong>相同。注意前者中“n”小写和后者中'N'大写。</li>
+<li>*<em>有效</em>的标识符名称的例子有：“i”,“<em><em>my</em>name”,“name</em>23”。“无效”的标识符名字的例子有：“2things”,“this is spaced out”,“my-name”、“&gt;a1b2_c3”和<code>&quot;this_is_in_quotes&quot;</code>。</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型">数据类型</a></h2>
+<p>变量可以保存不同的被称为<strong>数据类型</strong>的数值。基本类型是数字和字符串，我们已经讨论了。在后面的章节中，我们将看到如何使用(类)(#面向对象的程序设计)创建自己的类型。</p>
+<h2 id="对象"><a href="#对象">对象</a></h2>
+<p>记住，Python把程序中使用的任何东西作为一个<em>对象</em>。在常识中这意味着，我们说‘<em>对象</em>’，而不是说‘<em>一些东西</em>’,</p>
+<dl>
+<dt>面向对象编程的用户要注意</dt>
+<dd>一切东西都是对象，包括数字、字符串和函数，在这个意义上讲，Python是坚定的面向对象的。
+</dd>
+</dl>
+<p>现在，我们将看到如何使用变量以及字面常量。保存下面的示例，运行这个程序。</p>
+<h2 id="怎样写python程序"><a href="#怎样写python程序">怎样写Python程序</a></h2>
+<p>从此以后，保存和运行一个Python程序的标准过程如下:</p>
+<ol>
+<li>打开选择的编辑器，例如Komodo Edit。</li>
+<li>输入例子中给出的程序代码。</li>
+<li>用提到的文件名保存为文件。</li>
+<li>在命令行使用<code>python3 program.py</code>命令运行程序。</li>
+</ol>
+<h2 id="例如-使用变量和常量"><a href="#例如-使用变量和常量">例如: 使用变量和常量</a></h2>
+<pre class="sourceCode python"><code class="sourceCode python"> Filename : var.py
+i = <span class="dv">5</span>
+<span class="kw">print</span>(i)
+i = i + <span class="dv">1</span>
+<span class="kw">print</span>(i)
+
+s = <span class="st">&#39;&#39;&#39;这是一个多行字符串。</span>
+<span class="st">这是第2行。&#39;&#39;&#39;</span>
+<span class="kw">print</span>(s)</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 var.py
+5
+6
+这是一个多行字符串。
+这是第2行。</code></pre>
+<p>它是如何工作的:</p>
+<p>下面介绍这个程序如何工作的。首先，我们使用赋值运算符('=')为变量'i'指定了文字常量值‘5’,这一行叫做一个声明，因为它指出应该做一些事情，在这个例子中，我们将名为'i'的变量与值‘5’相联系。接下来,我们使用'print'函数打印'i'的值，不出所料，恰恰打印变量的值到屏幕上。</p>
+<p>然后，我们给存储在变量'i'中的值加'1'后，再存回到'i'中。然后，我们把它打印出来，我我们想的一样，我们得到值'6'。</p>
+<p>同样，我们为字符串变量's'指定了文字字符串，然后打印它。</p>
+<dl>
+<dt>静态语言程序员应注意</dt>
+<dd>变量的使用只是通过给他们指定一个价。不需要/不使用声明或数据类型定义。
+</dd>
+</dl>
+<h3 id="逻辑行与物理行"><a href="#逻辑行与物理行">逻辑行与物理行</a></h3>
+<p>物理行是当你写程序时<em>看到</em>的一行。逻辑行是<em>Python 看和</em>的一个单独语句。Python默认一个<em>物理行</em>为一个<em>逻辑行</em>。</p>
+<p>一个逻辑行是一个语句，像<code>print('Hello World')</code>－－如果它本身在一行上（像你在一个编辑器中看到的），那么，它也是一个物理行。</p>
+<p>默认情况下，Python鼓励一行写一个语句的用法，这使代码更可读。</p>
+<p>如果您想要在一个物理行列举多个逻辑行，那么您必须使用一个表示逻辑行/语句结束的分号(“;”)显式地指明。例如：</p>
+<pre class="sourceCode python"><code class="sourceCode python">i = <span class="dv">5</span>
+<span class="kw">print</span>(i)</code></pre>
+<p>与</p>
+<pre class="sourceCode python"><code class="sourceCode python">i = <span class="dv">5</span>;
+<span class="kw">print</span>(i);</code></pre>
+<p>等效。</p>
+<p>同样可写成：</p>
+<pre class="sourceCode python"><code class="sourceCode python">i = <span class="dv">5</span>; <span class="kw">print</span>(i);</code></pre>
+<p>甚至是</p>
+<pre class="sourceCode python"><code class="sourceCode python">i = <span class="dv">5</span>; <span class="kw">print</span>(i)</code></pre>
+<p>然而，我<strong>强烈建议</strong>你坚持<strong>在每一个物理行编写一个最大的逻辑行</strong>。这就是你永远都不要使用分号。事实上，我<strong>从未</strong>使用，甚至在python程序中从来没有见过一个分号。</p>
+<p>这个观念是很有用的，还有一种情况：如果你有一个长代码行，你可以通过使用反斜杠把它分解为多个物理行。这是被称为<strong>显式行连接</strong>:</p>
+<pre class="sourceCode python"><code class="sourceCode python">s = <span class="st">&#39;这是一个字符串。 \</span>
+<span class="st">这是字符串的继续。&#39;</span>
+<span class="kw">print</span>(s)</code></pre>
+<p>输出结果为：</p>
+<pre><code>这是一个字符串。这是字符串的继续。</code></pre>
+<p>同样的，</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">print</span>\
+(i)</code></pre>
+<p>与</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">print</span>(i)</code></pre>
+<p>相同</p>
+<p>有时有一种隐含的假设，您不需要使用一个反斜杠。在这种情况下，逻辑行有一个开始圆括号、开始方括号或开始花括号，但不是一个结束的括号。这被称为<strong>隐式连接</strong>。当我们在以后的章节－－编写程序使用<a href="#列表">列表</a>时，你可以看到它的作用。</p>
+<h3 id="缩进"><a href="#缩进">缩进</a></h3>
+<p>在Python中的空白是重要的。实际上，<strong>在一行开始的空格是重要的</strong>。这被称为<strong>缩进</strong>。在逻辑行开头的前导空白(空格和制表符)用于确定逻辑行的缩进级别，它用于依次确定语句的分组。</p>
+<p>这意味着一起的语句<strong>必须</strong>有相同的缩进。每一个这样的语句组被称为<strong>块</strong>。在后面的章节，我们将看到的块是何等重要的例子。</p>
+<p>你应该记住的一件事是，错误的缩进可以产生错误。例如:</p>
+<pre class="sourceCode python"><code class="sourceCode python">i = <span class="dv">5</span>
+ <span class="kw">print</span>(<span class="st">&#39;值是 &#39;</span>, i) <span class="co"># 错误! 注意在行的开头有一个空格</span>
+<span class="kw">print</span>(<span class="st">&#39;重复，值是 &#39;</span>, i)</code></pre>
+<p>当运行它时，将会发生下面的错误：</p>
+<pre><code>  File &quot;whitespace.py&quot;, line 4
+    print(&#39;Value is &#39;, i) # Error! Notice a single space at the start of the line
+    ^
+IndentationError: unexpected indent</code></pre>
+<p>请注意，这里第二行的开头有一个空格。这个错误表明：Python告诉我们程序的语法是无效的，即程序写的不正确。这意味着，<em>你不能任意开始语句中的新块</em>(当然，除了默认的主块，您一直已经使用的)。您可以使用新块的情况，将在后面的章节详细，如(控制流](#控制流)。</p>
+<dl>
+<dt>如何缩进</dt>
+<dd><p>缩进只使用空白，用制表符使用4个空格。好的编辑器如Komodo Edit会为你自动这样做。确保你使用一致的数量的缩进空格，否则你的程序将显示错误。</p>
+</dd>
+<dt>静态语言程序员应注意</dt>
+<dd><p>Python为块总是使用缩进，从来不用花括号。运行<code>from __future__ import braces</code>可以了解更多。</p>
+</dd>
+</dl>
+<h2 id="小结"><a href="#小结">小结</a></h2>
+<p>现在，我们已经经历了许多细节,我们可以转到更有趣的东西，如控制流语句。一定要熟悉这一章你所读的。 # 操作符和表达式</p>
+<p>你编写的大多数语句（逻辑行）都将包含<em>表达式</em>。一个表达式的简单例子是<code>2+3</code>。一个表达式可分解成操作符和操作对象。</p>
+<p><em>操作符</em> 的功能是做一些事，通过符号，如<code>+</code>或特别的关键字表现。操作符需要一些数据来操作，这些数据被你作<em>操作对象</em>。在这个例子中<code>2</code>和<code>3</code>是操作对象。</p>
+<h2 id="操作对象"><a href="#操作对象">操作对象</a></h2>
+<p>我们将简单地看一下操作符和它的用法：</p>
+<p>注意，您可以使用交互式解释器计算例子中给出的表达式。例如,为了测试表达式“2 + 3”,使用交互式Python解释器提示符:</p>
+<pre class="sourceCode python"><code class="sourceCode python">&gt;&gt;&gt; <span class="dv">2</span> + <span class="dv">3</span>
+<span class="dv">5</span>
+&gt;&gt;&gt; <span class="dv">3</span> * <span class="dv">5</span>
+<span class="dv">15</span>
+&gt;&gt;&gt;</code></pre>
+<dl>
+<dt><code>+</code> (加号)</dt>
+<dd><p>两个对象相加</p>
+<p><code>3 + 5</code> 得 <code>8</code>. <code>'a' + 'b'</code> 得 <code>'ab'</code>.</p>
+</dd>
+<dt><code>-</code> (减号)</dt>
+<dd><p>给出一个数减去另一数的差；如果缺少第一个操作数，它默认为是0。</p>
+<p><code>-5.2</code> 得到一个负数，<code>50 - 24</code> 得 <code>26</code>.</p>
+</dd>
+<dt><code>*</code> (乘法)</dt>
+<dd><p>给出两个数的乘积或返回重复多次的字符串。</p>
+<p><code>2 * 3</code> 得 <code>6</code>. <code>'la' * 3</code> 得到 <code>'lalala'</code>.</p>
+</dd>
+<dt><code>**</code> (幂)</dt>
+<dd><p>返回x的y次幂</p>
+<p><code>3 ** 4</code> 得 <code>81</code> (也就是<code>3*3*3*3</code>)</p>
+</dd>
+<dt><code>/</code> (除法)</dt>
+<dd><p>用y分x（x除以y）</p>
+<p><code>4 / 3</code> 得<code>1.3333333333333333</code>.</p>
+</dd>
+<dt><code>//</code> (整除)</dt>
+<dd><p>得到除法的商</p>
+<p><code>4 // 3</code> 得 <code>1</code>.</p>
+</dd>
+<dt><code>%</code> (取模)</dt>
+<dd><p>返回除法的余数</p>
+<p><code>8 % 3</code> 得 <code>2</code>. <code>-25.5 % 2.25</code> 得 <code>1.5</code>.</p>
+</dd>
+<dt><code>&lt;&lt;</code> (向左移位)</dt>
+<dd><p>数字向左移动指定位数。(在内存中每个数字由比特或二进制数表示，例如：0和1）。 <code>2 &lt;&lt; 2</code> 得 <code>8</code>. <code>2</code> 用二进制表示为<code>10</code>。</p>
+<p>左移两位得到 <code>1000</code>，它表示数字<code>8</code>。</p>
+</dd>
+<dt><code>&gt;&gt;</code> (向右移位)</dt>
+<dd><p>数字向右移动指定位数。</p>
+<p><code>11 &gt;&gt; 1</code> 得 <code>5</code>.</p>
+<p><code>11</code> 用二进制表示为<code>1011</code>，向右移动1位后得到二进制<code>101</code>，表示数字<code>5</code>。</p>
+</dd>
+<dt><code>&amp;</code> (位与)</dt>
+<dd><p>数字的位相与</p>
+<p><code>5 &amp; 3</code>得 <code>1</code>。</p>
+</dd>
+<dt><code>|</code> (位或)</dt>
+<dd><p>数字的位相或</p>
+<p><code>5 | 3</code>得 <code>7</code></p>
+</dd>
+<dt><code>^</code> (位异或)</dt>
+<dd><p>数字的位相异或</p>
+<p><code>5 ^ 3</code> 得 <code>6</code></p>
+</dd>
+<dt><code>~</code> (位求反)</dt>
+<dd><p>x的位求反结果为-(x+1)</p>
+<p><code>~5</code> 得 <code>-6</code>.</p>
+</dd>
+<dt><code>&lt;</code> (小于)</dt>
+<dd><p>返回x是否小于y。所有的比较运算符返回<code>True</code>或<code>False</code>。注意这些名字的大小写。</p>
+<p><code>5 &amp;lt; 3</code> 返回 <code>False</code> 而 <code>3 &amp;lt; 5</code> 返回 <code>True</code>.</p>
+<p>比较运算符可以任意连接：<code>3 &amp;lt; 5 &amp;lt; 7</code> 返回 <code>True</code>.</p>
+</dd>
+</dl>
+<p><code>&gt;</code> (大于)</p>
+<p>: 返回x是否大于y</p>
+<pre><code>`5 &amp;gt; 3` 返回 `True`。如果操作对象都是数字，它们首先转换为普通型，否则，将返回`False`。</code></pre>
+<dl>
+<dt><code>&lt;=</code> (小于等于)</dt>
+<dd><p>返回x是否小于等于y</p>
+<p><code>x = 3; y = 6; x &amp;lt;= y</code> 返回 <code>True</code>.</p>
+</dd>
+<dt><code>&gt;=</code> (大于等于)</dt>
+<dd><p>返回x是否大于等于y</p>
+<p><code>x = 4; y = 3; x &amp;gt;= 3</code> 返回 <code>True</code>。</p>
+</dd>
+<dt><code>==</code> (等于)</dt>
+<dd><p>比较操作对象是否相等</p>
+<p><code>x = 2; y = 2; x == y</code> 返回 <code>True</code>.</p>
+<p><code>x = 'str'; y = 'stR'; x == y</code> 返回 <code>False</code>.</p>
+<p><code>x = 'str'; y = 'str'; x == y</code> 返回 <code>True</code>.</p>
+</dd>
+<dt><code>!=</code> (不等于)</dt>
+<dd><p>比较操作对象是否不相等</p>
+<p><code>x = 2; y = 3; x != y</code> 返回 <code>True</code>.</p>
+</dd>
+<dt><code>not</code> (逻辑非)</dt>
+<dd><p>如果 x 是 <code>True</code>,它返回 <code>False</code>。如果 x 是 <code>False</code>，它返回 <code>True</code>。</p>
+<p><code>x = True; not x</code> 返回 <code>False</code>.</p>
+</dd>
+<dt><code>and</code> (逻辑与)</dt>
+<dd><p>如果x是<code>False</code>, <code>x and y</code> 返回 <code>False</code>，否则它返回y的值。</p>
+<p><code>x = False; y = True; x and y</code> 返回 <code>False</code>，因为 x 为假。在这种情况下，Python将不计算y，因为它知道and左边表达式是 <code>False</code> ，这意味着整个表达式将为 <code>False</code> ，而不论其它值为什么。这叫做求值捷径。</p>
+</dd>
+<dt><code>or</code> (逻辑或)</dt>
+<dd><p>如果 x 为 <code>True</code>, 它返回真，否则它返回y的值。</p>
+<p><code>x = True; y = False; x or y</code> 返回 <code>True</code>。求值捷径这也适用。</p>
+</dd>
+</dl>
+<h3 id="数学操作和赋值的快捷方式"><a href="#数学操作和赋值的快捷方式">数学操作和赋值的快捷方式</a></h3>
+<p>对一个变量进行数学操作是常见的。然后将操作的结果返回给变量，今后，对这样的表达式有一个快捷方式:</p>
+<p>你可以把：</p>
+<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">2</span>
+a = a * <span class="dv">3</span></code></pre>
+<p>写成：</p>
+<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">2</span>
+a *= <span class="dv">3</span></code></pre>
+<p>注意：将 <code>var = var operation expression</code> 写成 <code>var operation= expression</code>。</p>
+<h2 id="运算顺序"><a href="#运算顺序">运算顺序</a></h2>
+<p>如果你有一个表达式如 <code>2 + 3 * 4</code>, 是先做加法还是先做乘法呢？我们的高中数学告诉我们，应该先做乘法。这意味着乘法操作符比加法操作符具有更高的优先级。</p>
+<p>下面的表给出了Python运算顺序的优先表，从最低（最小约束力）到最高(最高约束力)。 意思是说，在给定的表达式中，Python将在计算表上方列出的对象和表达式之前，首先运算表下方的。</p>
+<p>下面的表取自Python参考手册](http://docs.python.org/py3k/reference/expressions.html#summary)，是为了提供完整性。为了显式地指定优先级，更好的做法是使用圆括号组织运算符和操作对象。这可使程序更加可读。详见下面<a href="#改变运算顺序">更改运算顺序</a>。</p>
+<dl>
+<dt><code>lambda</code></dt>
+<dd><p>Lambda表达式</p>
+</dd>
+<dt><code>or</code></dt>
+<dd><p>逻辑或</p>
+</dd>
+</dl>
+<p><code>and</code></p>
+<p>: 逻辑与</p>
+<dl>
+<dt><code>not x</code></dt>
+<dd><p>逻辑非</p>
+</dd>
+<dt><code>in, not in</code></dt>
+<dd><p>成员检测</p>
+</dd>
+<dt><code>is, is not</code></dt>
+<dd><p>鉴别检测</p>
+</dd>
+</dl>
+<p><code>&lt;, &lt;=, &gt;, &gt;=, !=, ==</code></p>
+<p>: 比较</p>
+<dl>
+<dt><code>|</code></dt>
+<dd><p>位或</p>
+</dd>
+<dt><code>^</code></dt>
+<dd><p>位异或</p>
+</dd>
+<dt><code>&amp;</code></dt>
+<dd><p>位与</p>
+</dd>
+<dt><code>&lt;&lt;, &gt;&gt;</code></dt>
+<dd><p>移位</p>
+</dd>
+<dt><code>+, -</code></dt>
+<dd><p>加和减</p>
+</dd>
+<dt><code>*, /, //, %</code></dt>
+<dd><p>乘法，除法，浮点除和余数</p>
+</dd>
+<dt><code>+x, -x</code></dt>
+<dd><p>正，负</p>
+</dd>
+<dt><code>~x</code></dt>
+<dd><p>按位非</p>
+</dd>
+<dt><code>**</code></dt>
+<dd><p>乘方</p>
+</dd>
+<dt><code>x.attribute</code></dt>
+<dd><p>属性引用</p>
+</dd>
+<dt><code>x[index]</code></dt>
+<dd><p>索引</p>
+</dd>
+<dt><code>x[index1:index2]</code></dt>
+<dd><p>切片</p>
+</dd>
+<dt><code>f(arguments ...)</code></dt>
+<dd><p>函数调用</p>
+</dd>
+</dl>
+<p><code>(expressions, ...)</code></p>
+<p>: 显示 Binding 或元组</p>
+<dl>
+<dt><code>[expressions, ...]</code></dt>
+<dd><p>显示列表</p>
+</dd>
+<dt><code>{key:datum, ...}</code></dt>
+<dd><p>显示字典</p>
+</dd>
+</dl>
+<p>我们没有遇到的操作符将在后面的章节解释。</p>
+<p>上表中在同一行列出的操作符具有<em>相同优先级</em>。例如，“+”和“-”具有相同的优先级。</p>
+<h2 id="改变运算顺序"><a href="#改变运算顺序">改变运算顺序</a></h2>
+<p>为使表达式更具可读性，我们可以使用圆括号。例如<code>2 + (3 * 4)</code> 肯定比需要知道操作符运算优先级的 <code>2 + 3 * 4</code> 更容易理解。与其他方面一样，应该合理使用括号不应该冗余(不要过分使用),如<code>(2 + (3 * 4))</code>。</p>
+<p>使用括号有一个额外的优势——它帮助我们更改运算顺序。例如，如果您想要在一个表达式中加法在乘法之前运算，那么你可以这样写 <code>(2 + 3) * 4</code>。</p>
+<h2 id="结合性"><a href="#结合性">结合性</a></h2>
+<p>操作符通常从左到右。这意味着具有相同优先级的操作符从左到右的方式计算。例如<code>2 + 3 + 4</code>计算为 <code>(2 + 3) + 4</code>。一些操作符，像赋值操作符，有从右到左的结合性，即 <code>a = b = c</code> 被视为 <code>a = (b = c)</code>。</p>
+<h2 id="表达式"><a href="#表达式">表达式</a></h2>
+<p>例子 (保存为<code>expression.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">5</span>
+breadth = <span class="dv">2</span>
+
+area = length * breadth
+<span class="kw">print</span>(<span class="st">&#39;Area is&#39;</span>, area)
+<span class="kw">print</span>(<span class="st">&#39;Perimeter is&#39;</span>, <span class="dv">2</span> * (length + breadth))</code></pre>
+<p>输出:</p>
+<pre><code>$ python3 expression.py
+Area is 10
+Perimeter is 14</code></pre>
+<p>它是如何工作的</p>
+<p>矩形的长度和宽度以同样的名字存储在变量中，在表达式的帮助下，我们使用这些计算矩形的面积和周长。我们存储表达式<code>length * breadth</code> 的结果在变量area<code>中，然后使用</code>print<code>函数打印它。在第二种情况下,在打印函数中我们直接使用表达式</code>2 * (length + breadth)` 的值。</p>
+<p>同样要注意，Python'完美打印'是如何输出的。即使我们没有在<code>'Area is'</code> 和变量<code>area</code>,之间指定一个空间，Python为我们得到一个干净漂亮的输出，而且这种方式使用程序的可读性更强(因为我们不需要担心为输入我们在字符串中间使用的空格)。这只是让Python程序员的生活更方便的一个例子。</p>
+<h2 id="小结-1"><a href="#小结-1">小结</a></h2>
+<p>我们已经看到了如何使用操作符，操作对象和表达式——这是任何程序的基石。接下来,我们将看到在使用语句的程序中如何利用这些。 # 控制流</p>
+<p>在程序中，到现在为止，我们看到，一直有一系列的语句被Python以由上而下的顺序如实地执行。如果你想改变它的流程，它会如何工作呢？例如，你想让程序作出一些决定，而且不同的情况做不同的事情，例如，根据一天的时间不同，打印“早上好”或“晚上好”？</p>
+<p>正如你可能已经猜到的，这要通过使用控制流语句。在Python中有三个控制流语句-- <code>if</code>, <code>for</code> 和 <code>while</code>。</p>
+<h2 id="if-语句"><a href="#if-语句">if 语句</a></h2>
+<p><code>if</code> 语句是用来检查一个条件:<em>如果</em>条件为真,我们运行一个语句块(你为<em>if块</em>)，<em>(否则)else</em>，我们执行另一个语句块(称为<em>else块</em>)。<em>else</em>子语句是可选的。</p>
+<p>例如 (保存为 <code>if.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">number = <span class="dv">23</span>
+guess = <span class="dt">int</span>(<span class="dt">input</span>(`请输入一个整数: `))
+
+<span class="kw">if</span> guess == number:
+    <span class="kw">print</span>(`恭喜，你猜对了。`) <span class="co"># 新块从这里开始</span>
+    <span class="kw">print</span>(`(但你没有获得任何奖品！)`) <span class="co"># 新块在这里结束</span>
+<span class="kw">elif</span> guess &lt; number:
+    <span class="kw">print</span>(`不对，你猜的有点儿小`) <span class="co"># 另一个块</span>
+    <span class="co"># 在一个块中你可以做你想做的任何事...</span>
+<span class="kw">else</span>:
+    <span class="kw">print</span>(`不对，你猜的有点大`)
+    <span class="co"># 你猜的数比number大时才能到这里</span>
+
+<span class="kw">print</span>(`完成`)
+<span class="co"># if语句执行完后，最后的语句总是被执行</span></code></pre>
+<p>输出:</p>
+<pre><code>$ python3 if.py
+请输入一个整数: 50
+不对，你猜的有点儿大
+完成
+
+$ python3 if.py
+请输入一个整数: 22
+不对，你猜的有点儿小
+完成
+
+$ python3 if.py
+请输入一个整数: 23
+恭喜，你猜对了。
+ (但你没有获得任何奖品！)
+完成</code></pre>
+<p>它是如何工作的:</p>
+<p>在这个程序中，我们获取来自用户的猜测，并检查这个数是否是我们设定的数。我们给变量<code>number</code>设置我们想要的任何整数，比如 <code>23</code>。然后，我们使用<code>input()</code> 函数获取用户的猜的数。函数是可重用的程序块。我们在<a href="#函数">下一章</a>中会阅读关于它们的更多东西。</p>
+<p>我们给内置的<code>input</code> 函数提供一个字符串，该函数将其打印到屏幕上并等待用户输入。一旦我们输入一些东西并按下<code>enter</code>键，<code>input()</code>函数把我们的输入作为一个字符串返回。然后，我们使用<code>int</code>将这个字符串转换为整数，然后将其存储在变量<code>guess</code>中。实际上，<code>int</code> 是一个类，但现在所有你需要知道的是，您可以使用它来将一个字符串转变为一个整数(假设文本中的字符串包含一个有效的整数)。</p>
+<p>接下来,我们比较用户猜的数和我们选择的数，如果他们相等，我们打印一条成功的消息。注意，我们使用缩进级别告诉Python语句属于哪个块。这就是为什么缩进P在ython中是如此重要。我希望你坚持&quot;一致的缩进&quot;的规则，好吗?</p>
+<p>注意，<code>if</code>语句在最后有一个冒号——我们指示Python一个语句块将跟随其后。</p>
+<p>然后,我们检查猜的数是否小于这个数字，如果是，我们通知用户，他们猜的数必须比那个数稍高。我们这里使用的是“elif”子句，实际上将两个相关的 <code>if else-if else</code>语句组合为一个语句<code>if-elif-else</code>，这使程序更简单且减少所需要的缩进。</p>
+<p><code>elif</code>和<code>else</code>语句也必须在逻辑行结束时有一个冒号，后跟相应的语句块(当然要通过适当的缩进)</p>
+<p>你可以在<code>if</code>语句的if块中有另一个<code>if</code>语句——这称为if语句嵌套。</p>
+<p>记住，<code>elif</code> 和<code>else</code>部分是可选的。一个最小的有效的<code>if</code>语句是： <sub><del>python if True: print(<code>是的，它为真</code>)</del></sub></p>
+<p>在Python执行完成完整的<code>if</code>语句以及相关的<code>elif</code>和<code>else</code>子句，它移动到<code>if</code>包含语句的块中下一个语句块。在本例中，它是主要的块(程序开始执行的地方)，接下来的语句是 <code>print(</code>完成<code>)</code>。在这之后，Python将看到程序的结尾，并简单的完成。</p>
+<p>尽管这是一个非常简单的程序，但你应该注意，我已经指出很多东西。所有这些都是相当的直截了当(对那些有c/c++背景的人是惊人的简单)。最初，你需要意识到所有这些事情，但经过一些练习，对它们你将感到舒服，<code>自然</code>将是你所有的感觉。</p>
+<dl>
+<dt>C/C++程序员需要注意</dt>
+<dd>在Python中没有<code>switch</code>语句。您可以使用一个<code>if..elif..else</code>语句做同样的事(和在某些情况下,使用<a href="#词典">词典</a>去做更快速)
+</dd>
+</dl>
+<h2 id="while语句"><a href="#while语句">while语句</a></h2>
+<p>只要条件为真，<code>while</code>语句允许您多次执行一个语句块。<code>while</code>语句是被称为<strong>循环语句</strong>的一种。<code>while</code>语句可以有一个可选的<code>else</code>子句。</p>
+<p>例如 (保存为<code>while.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">number = <span class="dv">23</span>
+running = <span class="ot">True</span>
+
+<span class="kw">while</span> running:
+    guess = <span class="dt">int</span>(<span class="dt">input</span>(`输入一个整数 : `))
+
+    <span class="kw">if</span> guess == number:
+        <span class="kw">print</span>(`恭喜，你猜对了。`)
+        running = <span class="ot">False</span> <span class="co"># 这使while循环停止</span>
+    <span class="kw">elif</span> guess &lt; number:
+        <span class="kw">print</span>(`不对，你猜的有点儿小。`)
+    <span class="kw">else</span>:
+        <span class="kw">print</span>(`不对，你猜的有点儿大。`)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(`while循环结束。`)
+    <span class="co"># 在这做你想做的任何事</span>
+
+<span class="kw">print</span>(`完成`)</code></pre>
+<p>输出:</p>
+<pre><code>$ python3 while.py
+输入一个整数 : 50
+不对，你猜的有点儿大。
+输入一个整数 : 22
+不对，你猜的的点儿小。
+输入一个整数 : 23
+恭喜，你猜对了。
+while循环结束。
+完成</code></pre>
+<p>它是如何工作的：</p>
+<p>在这个程序中，我们还是玩猜谜游戏，但优点在于，允许用户一直猜直到他猜对——每次猜测不需要重复运行该程序，正如我们在前一节中所做的。这演示了如何恰当的使用<code>while</code>语句。</p>
+<p>我们移动<code>input</code>和<code>if</code>语句到<code>while</code>循环中，在while循环前，设置变量<code>running</code>为<code>True</code>。首先，我们检测变量<code>running</code>是否为<code>True</code>，然后往下执行相应的<em>while块</em>。在这个块执行完后，再检测条件，在这里是变量<code>running</code>，为真，我们再次执行while块，否则，我们执行可选的else块，然后执行下面的语句。</p>
+<p>当<code>while</code>循环的条件变为<code>False时</code>--这也可能发生在条件检测时的第一次，执行<code>else</code>块。如果在<code>while</code>循环中有<code>else</code>子句，它将一直执行，除非你使用<code>break</code>语句打破循环。</p>
+<p>在这里<code>True</code>和<code>False</code>被称为布尔类型，你可以认为它们分别相当于值<code>1</code>和<code>0</code>。</p>
+<dl>
+<dt>C/C++程序员注意：</dt>
+<dd>记住， <code>while</code>循环可以的<code>else</code>子句。
+</dd>
+</dl>
+<h2 id="for循环"><a href="#for循环">for循环</a></h2>
+<p><code>for..in</code>语句是另一个循环语句，它<em>迭代</em>一个对象的序列，例如经历序列中的第一项。在后面的章节，我们将会看到更多关于<a href="#序列">序列</a>的细节。现在，你需要知道的是一个序列只是一个有序的项目的集合。</p>
+<p>例如 (保存为 <code>for.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):
+    <span class="kw">print</span>(i)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(`for循环结束`)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 for.py
+1
+2
+3
+4
+for循环结束</code></pre>
+<p>它是如何工作的：</p>
+<p>打印一个数字<em>序列</em>。我们使用内置的<code>range</code>函数生成这个数字序列。</p>
+<p>我们在这里所做的是提供两个数字，<code>range</code>返回一个从第一个数字到第二个数字的一个数字序列。例如, <code>range(1,5)</code>给出序列<code>[1, 2, 3, 4]</code>。默认情况下，<code>range</code> 步距取为1。如果我们提供第三个数字，<code>range</code>那么它变成了步距。例如<code>range(1,5,2)</code>得到<code>[1,3]</code>。请记住，范围扩展<em>到</em>第二号码，即它<strong>不</strong>包括第二个数字。</p>
+<p>注意,range()生成一个数字序列，当for循环请求下一个项目时，它一次只生成一个数字。如果你想立刻看到完整的数字序列,使用list(range())。list(列表)将在[<a href="#数据结构">数据结构章</a>]中解释。</p>
+<p><code>for</code>循环然后遍历这个范围，<code>for i in range(1,5)</code>相当于 <code>for i in [1, 2, 3, 4]</code> 这就像把序列中的每一个数(或对象)分配给i,一次一个,然后为每个<code>i</code>值执行该语句块。在本例中，在语句块中我们只是打印它的值。</p>
+<p>记住，<code>else</code>部分是可选的。当包括它时，除非遇到[break][#中断)语句，当<code>for</code>循环结束时，它执行一次。</p>
+<p>记住,<code>for..in</code>循环可以作用于任何序列。在这里，我们对一个由内建的<code>range</code>函数生成的一个数字列表，但是一般来说，我们可以使用任何种类对象的任何类型的序列！在后面的章节，我们将详细探讨这个想法。</p>
+<dl>
+<dt>C/C++/Java/C#程序要注意</dt>
+<dd><p>Python的<code>for</code>循环完全不同于C/c++的<code>for</code>循环。c#程序员会注意到,在Python中<code>for</code>循环类似于c中的<code>foreach</code>循环c#。Java程序员会注意到，同样类似于在Java 1.5中的to <code>for (int i : IntArray)</code>。</p>
+<p>在C/c++中，如果你想写<code>for (int i = 0; i &amp;lt; 5; i++)</code>，那么在Python中你只要写 <code>for i in range(0,5)</code>。正如您可以看到的,在Python中<code>for</code>循环更简单，更富有表现力且不易出错。</p>
+</dd>
+</dl>
+<h2 id="break语句"><a href="#break语句">break语句</a></h2>
+<p><code>break</code>语句是用来<em>跳出</em>一个循环语句，即停止执行一个循环语句，即使循环条件还没有成为<code>False</code>或序列的项目没有被完全遍历。</p>
+<p>很重要的一点是，如果你<em>跳出</em><code>for或</code>while<code>循环，任何相应的循环</code>else`块是<strong>不</strong>执行的。</p>
+<p>例子 (保存为<code>break.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">while</span> <span class="ot">True</span>:
+    s = <span class="dt">input</span>(`输入一些东西 : `)
+    <span class="kw">if</span> s == `quit`:
+        <span class="kw">break</span>
+    <span class="kw">print</span>(`字符串的长度是`, <span class="dt">len</span>(s))
+<span class="kw">print</span>(`完成`)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 break.py
+输入一些东西: Programming is fun
+字符串的长度是 18
+输入一些东西: When the work is done
+字符串的长度是 21
+输入一些东西 : if you wanna make your work also fun:
+字符串的长度是 37
+输入一些东西 : use Python!
+字符串的长度是 12
+输入一些东西 : quit
+完成</code></pre>
+<p>它是如何工作的：</p>
+<p>在这个程序中，我们重复获取用户输入的东西并打印每次输入字符串的长度。我们提供一个特殊的条件--通过检查用户输入是否是 `<code>quit</code>来结束程序。我们通过<em>跳出k</em>循环停止程序，达到该程序的结束位置。</p>
+<p>输入字符串的长度可以使用内建的<code>len</code>函数。</p>
+<p>记住， <code>break</code>语句同样适用于<code>for</code>循环。</p>
+<h3 id="swaroop-的诗意的python"><a href="#swaroop-的诗意的python">Swaroop 的诗意的Python</a></h3>
+<p>我在这里输入的是一个我写的、名为<em>Swaroop 的诗意的Python</em>:的迷你诗：</p>
+<pre><code>当工作完成时
+编程是有趣的
+如果你想让你的工作也很有趣:
+    使用Python!</code></pre>
+<h2 id="continue语句"><a href="#continue语句">continue语句</a></h2>
+<p><code>continue</code>语句是用来告诉Python跳过当前循环块中其余的语句，<em>继续</em>循环的下一次迭代。</p>
+<p>例子 (保存为<code>continue.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">while</span> <span class="ot">True</span>:
+    s = <span class="dt">input</span>(`输入一些东西: `)
+    <span class="kw">if</span> s == `quit`:
+        <span class="kw">break</span>
+    <span class="kw">if</span> <span class="dt">len</span>(s) &lt; <span class="dv">3</span>:
+        <span class="kw">print</span>(`太小`)
+        <span class="kw">continue</span>
+    <span class="kw">print</span>(`输入的东西有足够的长度`)
+    <span class="co"># 在这做其它各种处理...</span></code></pre>
+<p>输出:</p>
+<pre><code>$ python3 continue.py
+输入一些东西: a
+太小
+输入一些东西: 12
+太小
+输入一些东西: abc
+输入的东西有足够的长度
+输入一些东西: quit</code></pre>
+<p>它是如何工作的：</p>
+<p>在这个程序中，我们接受来自用户的输入，但是只有在输入的字符串至少有3个字符时才处理。因此，我们使用内建的<code>len</code>函数来获得长度，如果长度小于3，通过使用<code>continue</code>句，我们跳过块中的其余语句。否则，在循环中的其余语句将被执行--在这做其它各种处理。</p>
+<p>注意，<code>continue</code>语句同样适用于<code>for</code>循环。</p>
+<h2 id="小结-2"><a href="#小结-2">小结</a></h2>
+<p>我们已经看到了如何使用三个控制流语句--<code>if</code>、<code>while</code>和<code>for</code>以及与它们相关的 <code>break</code>和<code>continue</code>语句。这些都是Python最常用的部分，因此，变得对他们感到舒适是至关重要的。</p>
+<p>接下来，我们将学习如何创建和使用函数。</p>
+<h1 id="函数"><a href="#函数">函数</a></h1>
+<p>函数是重用的程序片段。它们允许你给一块语句一个名字，允许您在你的程序的任何地方使用指定的名字运行任何次数。这就是所谓的<em>函数</em>调用。我们已经使用了许多内置函数, 如<code>len</code>和<code>range</code>。</p>
+<p>函数概念可能是任何有价值软件中<em>最</em>重要的块(在任何编程语言中)，所以，在这一章，我们将探索函数的各各方面。</p>
+<p>定义函数使用<code>def</code>关键字。在这个关键字之后是<em>标识</em>函数的名字，其次是在一对括号中可以附上一些变量名，最后在行的末尾是冒号。接下来是语句块--函数的一部分。一个例子将展示这些，这实际上是非常简单的:</p>
+<p>例子 (保存为<code>function1.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sayHello():
+    <span class="kw">print</span>(<span class="st">&#39;世界您好!&#39;</span>) <span class="co"># 属于函数的块</span>
+<span class="co"># End of function</span>
+
+sayHello() <span class="co"># 调用函数</span>
+sayHello() <span class="co"># 再次调用函数</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 function1.py
+世界您好! 
+世界您好! </code></pre>
+<p>它是如何工作的：</p>
+<p>我们使用上述的语法，定义了一个称为<code>sayHello</code>函数。这个函数没有参数，因此没有在圆括号中声明变量。函数的参数只是输入到函数中，以便我们可以给它传递不同的值返回相应的结果。</p>
+<p>注意，我们可以调用相同的函数两次，这意味着我们不需要再写同样的代码。</p>
+<h2 id="函数的参数"><a href="#函数的参数">函数的参数</a></h2>
+<p>一个函数可以带参数--你提供给函数的值，利用这些值该函数可以<em>做</em>一些事情。这些参数就像变量除了当我们调用函数时这些变量的值已经被定义，当函数运行时，它们已经有了指定的的值。</p>
+<p>参数是在函数定义中在一对括号中指定，之间用逗号分隔。当我们调用这个函数，我们以同样的方式提供这些值。注意使用的术语——在函数的定义中给出的名字叫<em>形参</em>，而在函数调用时您提供的值被称为<em>实参</em>。</p>
+<p>例子 (保存为<code>func_param.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> printMax(a, b):
+    <span class="kw">if</span> a &gt; b:
+        <span class="kw">print</span>(a, <span class="st">&#39;大&#39;</span>)
+    <span class="kw">elif</span> a == b:
+        <span class="kw">print</span>(a, <span class="st">&#39;等于&#39;</span>, b)
+    <span class="kw">else</span>:
+        <span class="kw">print</span>(b, <span class="st">&#39;大&#39;</span>)
+
+printMax(<span class="dv">3</span>, <span class="dv">4</span>) <span class="co"># 直接给出字面值</span>
+
+x = <span class="dv">5</span>
+y = <span class="dv">7</span>
+
+printMax(x, y) <span class="co"># 给出参数的变量</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_param.py
+4 大
+7 大</code></pre>
+<p>它如何工作的：</p>
+<p>在这里，我们定义了一个称为<code>printMax</code>的函数，它使用叫做<code>a</code>和<code>b</code>的两个参数。我们使用简单的<code>if..else</code>语句找出比较大的数，然后打印较大的数。</p>
+<p>我们第一次调用函数<code>printMax</code>，我们直接提供了数字作为参数。在第二种情况下，我们调用函数使用变量作为参数。<code>printMax</code>把实参<code>x</code>分配给形参<code>a</code>，<code>y</code>分配给<code>b</code>。在这两种情况下，printMax函数以同样方式工作。</p>
+<h2 id="局部变量"><a href="#局部变量">局部变量</a></h2>
+<p>你在函数定义中声明的变量，他们与在函数外使用的其它同名变量没有任何关系，即变量名称对函数来说是<em>局部</em>的。这叫变量的<em>范围</em>。所有变量都有它们被声明的块的范围，从名称定义的点开始。</p>
+<p>例子 (保存为<code>func_local.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">x = <span class="dv">50</span>
+
+<span class="kw">def</span> func(x):
+    <span class="kw">print</span>(<span class="st">&#39;x等于&#39;</span>, x)
+    x = <span class="dv">2</span>
+    <span class="kw">print</span>(<span class="st">&#39;局部变量x改变为&#39;</span>, x)
+
+func(x)
+<span class="kw">print</span>(<span class="st">&#39;x一直是&#39;</span>, x)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_local.py
+x等于50
+局部变量x改变为2
+x一直是50</code></pre>
+<p>它是如何工作的：</p>
+<p>第一次，我们使用函数体中第一行打印变量<em>x</em>的<em>值</em>，Python使用在主块中，函数定义上声明的实参。</p>
+<p>接下来，我们给<code>x</code>赋值为<code>2</code>，变量为<code>x</code>对我们的函数来说是局部变量，因此在函数中当我们改变<code>x</code>的值时，在主块中定义的变量<code>x</code>不受影响。</p>
+<p>最后调用的<code>print</code>函数，显示在主块中定义的变量<code>x</code>，因此证实，它不受在前面调用函数的局部变量的影响。</p>
+<h2 id="使用全局声明"><a href="#使用全局声明">使用全局声明</a></h2>
+<p>如果你想给在顶层的程序(即未在任何类型的范围如函数或类之中)定义的变量赋值,那么你必须告诉Python，变量不是局部的，而是<em>全局</em>的。我们使用<code>global</code>语句，没有<code>global</code>语句赋值给一个在函数外定义的变量是不可能的。</p>
+<p>您可以使用这些在函数外定义的变量的值(假设在函数内没有同名的变量)。然而，这并不鼓励，应该避免，因为这使程序的读者不清楚变量是在哪里定义的，使用 <code>global</code> 语句就非常清楚，变量定义在一个最外的块中。</p>
+<p>例子 (保存为<code>func_global.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">x = <span class="dv">50</span>
+
+<span class="kw">def</span> func():
+    <span class="kw">global</span> x
+
+    <span class="kw">print</span>(<span class="st">&#39;x的值是&#39;</span>, x)
+    x = <span class="dv">2</span>
+    <span class="kw">print</span>(<span class="st">&#39;全局变量x改为&#39;</span>, x)
+
+func()
+<span class="kw">print</span>(<span class="st">&#39;x的值是&#39;</span>, x)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_global.py
+x的值是50
+全局变量to改为2
+x的值是2</code></pre>
+<p>它是如何工作的：</p>
+<p><code>global</code>语句用来声明<code>x</code>是全局变量，当我们在函数内给<code>x</code>赋值时，它的改变映射到我们在主块中使用的<code>x</code>的值。</p>
+<p>用同样的<code>global</code>语句可以指定多个全局变量，比如： <code>global x, y, z</code>。</p>
+<h2 id="默认参数"><a href="#默认参数">默认参数</a></h2>
+<p>对于一些函数，你可能想要一些参数是<em>可选</em>，即在用户不希望为它们提供值时使用默认值，这在默认的参数值的帮助下完成的。你可以在函数定义中通过在参数名称后使用赋值操作符(<code>=</code>)后跟默认值来指定默认的参数值。</p>
+<p>注意，默认参数值应该是一个常数。更准确的说，默认的参数值应该是不可变的——这在后面的章节中做了详细解释。现在，只要记住这点。</p>
+<p>例子 (保存为 <code>func_default.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> say(message, times = <span class="dv">1</span>):
+    <span class="kw">print</span>(message * times)
+
+say(<span class="st">&#39;你好&#39;</span>)
+say(<span class="st">&#39;世界&#39;</span>, <span class="dv">5</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_default.py
+你好
+世界世界世界世界世界</code></pre>
+<p>它是如何工作的：</p>
+<p>函数<code>say</code>是用来按照指定的次数打印一个字符串。如果我们不提供一个值，那么在默认情况下字符串只打印一次。为此，我们为参数<code>times</code>指定一个默认参数值<code>1</code>。</p>
+<p>在第一次使用函数<code>say</code>时，我们只提供了字符串，它打印字符串一次。在第二次使用<code>say</code>时，我们提供了字符串和一个实参<code>5</code>两个参数，说明我们想要<em>say</em>字符串5次。</p>
+<dl>
+<dt>重要一点</dt>
+<dd><p>只有在参数列表后面的的参数可以被赋予默认参数值，即在参数列表中，你不能在没有默认值的参数前有有默认参数值的参数。</p>
+<p>这是因为，值按位置分配给参数。例如，<code>def func(a, b=5)</code>是有效的，而<code>def func(a=5, b)</code>是<em>无效</em>的。</p>
+</dd>
+</dl>
+<h2 id="参数关键字"><a href="#参数关键字">参数关键字</a></h2>
+<p>如果你有一些有许多参数的函数，您想要指定参数中的一些，那么，你可以通过为参数命名来为它们赋值——这叫做<em>参数关键字</em>——我们使用名称(关键字)而不是位置(我们一直使用的)来指定函数的参数。</p>
+<p>这有两个<em>优势</em>，一是，使用函数容易，因为我们不需要担心参数的顺序。二是，如果其他参数有默认参数值，我们可以只给我们想赋值的参数赋值。</p>
+<p>例子 (保存为<code>func_key.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> func(a, b=<span class="dv">5</span>, c=<span class="dv">10</span>):
+    <span class="kw">print</span>(<span class="st">&#39;a为&#39;</span>, a, <span class="st">&#39;和b为&#39;</span>, b, <span class="st">&#39;和c为&#39;</span>, c)
+
+func(<span class="dv">3</span>, <span class="dv">7</span>)
+func(<span class="dv">25</span>, c=<span class="dv">24</span>)
+func(c=<span class="dv">50</span>, a=<span class="dv">100</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_key.py
+a为3 和b为7 和c为10
+a为25 和b为5 和c为24
+a为100 和b为5 和c为50</code></pre>
+<p>它是如何工作的：</p>
+<p>名为<code>func</code>的函数中有一个参数没有默认参数值，后面两个参数有默认参数值。</p>
+<p>第一次使用<code>func(3, 7)</code>，参数<code>a</code>得到值<code>3</code>，参数<code>b</code>得到值<code>7</code>，参数<code>c</code>得到默认值<code>10</code>。</p>
+<p>第二次使用<code>func(25, c=24)</code>, 参数<code>a</code>按照参数的位置得到值<code>25</code>，然后参数<code>c</code>按照参数名，也就是参数关键字，得到值<code>24</code>，变量<code>b</code>得到默认值<code>5</code>。</p>
+<p>第三次使用<code>func(c=50, a=100)</code>，我们为所有给定的值使用了参数关键字。注意，我们为参数<code>c</code>指定值是在参数<code>a</code>之前，尽管在函数定义中<code>a</code>在<code>c</code>前。</p>
+<h2 id="变量参数"><a href="#变量参数">变量参数</a></h2>
+<p>有时你可能想定义一个函数，它可以获取参数的<em>任何</em>值，这可以通过使用星号(另存为<code>total.py</code>)实现：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> total(initial=<span class="dv">5</span>, *numbers, **keywords):
+    count = initial
+    <span class="kw">for</span> number in numbers:
+        count += number
+    <span class="kw">for</span> key in keywords:
+        count += keywords[key]
+    <span class="kw">return</span> count
+
+<span class="kw">print</span>(total(<span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, vegetables=<span class="dv">50</span>, fruits=<span class="dv">100</span>))</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 total.py
+166</code></pre>
+<p>它是如何工作的：</p>
+<p>当我们声明一个星号的参数，如<code>*param</code>，那么从这一点开始到结束的所有位置的参数都被收集到一个叫<code>param</code>的元组中。</p>
+<p>同样,当我们声明一个双星参数，如<code>**param</code>，那么人那一点开始到结束的所有关键字参数都被收集到一个叫<code>param</code>的字典中。</p>
+<p>我们将在[后面章节)(#数据结构)中探讨元组和字典。</p>
+<h2 id="只有关键字的参数"><a href="#只有关键字的参数">只有关键字的参数</a></h2>
+<p>如果我们想要指定特定的关键字参数作为只有关键字的参数，而<em>不</em>是位置参数，它们可以被声明在星号参数后(另存为<code>keyword_only.py</code>)：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> total(initial=<span class="dv">5</span>, *numbers, extra_number):
+    count = initial
+    <span class="kw">for</span> number in numbers:
+        count += number
+    count += extra_number
+    <span class="kw">print</span>(count)
+
+total(<span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, extra_number=<span class="dv">50</span>)
+total(<span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+<span class="co"># Raises error because we have not supplied a default argument value for &#39;extra_number&#39;</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 keyword_only.py
+66
+Traceback (most recent call last):
+  File &quot;keyword_only.py&quot;, line 12, in &lt;module&gt;
+total(10, 1, 2, 3)
+TypeError: total() needs keyword-only argument extra_number</code></pre>
+<p>它是如何工作的：</p>
+<p>在星号参数后面声明参数，结果是只有关键字参数，如果这些参数没有提供一个默认值，那么如果关键字参数没有提供值，函数调用会产生错误，如上所示。</p>
+<p>注意，<code>+=</code>的用法是操作符的缩写，因此，<code>x = x + y</code>，你可以写成<code>x += y</code>。</p>
+<p>如果你不需要星号参数，但还想使用只有关键字参数，那么只需简单使用一个星号而不使用任何名字，例如，<code>def total(initial=5, *, extra_number)</code>。</p>
+<h2 id="return语句"><a href="#return语句">return语句</a></h2>
+<p><code>return</code> 语句用来从函数中<em>return(返回)</em>，也就是说跳出函数。同样，我们也可以从函数中选择性地<em>返回一个值</em>。</p>
+<p>例子 (保存为<code>func_return.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> maximum(x, y):
+    <span class="kw">if</span> x &gt; y:
+        <span class="kw">return</span> x
+    <span class="kw">elif</span> x == y:
+        <span class="kw">return</span> <span class="st">&#39;两个数相等&#39;</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> y
+
+<span class="kw">print</span>(maximum(<span class="dv">2</span>, <span class="dv">3</span>))</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_return.py
+3</code></pre>
+<p>它是如何工作的：</p>
+<p>函数<code>maximum</code>返回参数中的最大值，在这个例子中是提供给函数的数值。它使用了简单的<code>if..else</code>语句找到比较大的值，然后<em>return(返回)</em>那个值。</p>
+<p>注意，没有一个值的<code>return</code>语句相当于<code>return None(什么也不返回)</code>。<code>None</code>是Python中的一个特殊类型，它代表什么也没有。例如，如果一个变量的值是<code>None</code>，它说明这个变量没有值。</p>
+<p>除非你已经写了自己的<code>return</code>语句，否则，每个函数都默认包含一个<code>return None</code>语句。通过运行<code>print(someFunction())</code>你可以看到这一点，这里<code>someFunction</code> 没有使用<code>return</code>语句，比如：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> someFunction():
+    <span class="kw">pass</span></code></pre>
+<p>在Python中<code>pass</code>语句用来说明一个空的语句块。</p>
+<dl>
+<dt>注意</dt>
+<dd>已经有一个叫<code>max</code>的内建函数能够完成'find maximum'函数的功能 ，因此，只要可能使用这个内建函数。
+</dd>
+</dl>
+<h2 id="文档字符串"><a href="#文档字符串">文档字符串</a></h2>
+<p>Python有一个叫<em>documentation strings(文档字符串)</em>的好特性，通常用缩写名<em>docstrings</em>来指定。 文档字符串是你应该使用的一个重要工具，它对程序文档有助，令其容易理解。令人惊讶的是，当程序实际运行时，我们甚至可以从例如一个函数返回文档字符串。</p>
+<p>例子 (保存为<code>func_doc.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> printMax(x, y):
+    <span class="co">&#39;&#39;&#39;打印两个数中的最大值。</span>
+
+<span class="co">    两个值必须是整数。&#39;&#39;&#39;</span>
+    x = <span class="dt">int</span>(x) <span class="co"># 如果可能，转换为整数</span>
+    y = <span class="dt">int</span>(y)
+
+    <span class="kw">if</span> x &gt; y:
+        <span class="kw">print</span>(x, <span class="st">&#39;最大&#39;</span>)
+    <span class="kw">else</span>:
+        <span class="kw">print</span>(y, <span class="st">&#39;最大&#39;</span>)
+
+printMax(<span class="dv">3</span>, <span class="dv">5</span>)
+<span class="kw">print</span>(printMax.__doc__)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 func_doc.py
+5 最大
+打印两个数中的最大值。
+
+            两个值必须是整数。</code></pre>
+<p>它是如何工作的：</p>
+<p>函数的第一个逻辑行的字符串是那个函数的<em>文档字符串</em>。注意，文档字符串也适用于在各自 的章节将要学习的<a href="#模块">模块</a>和(类)(#面向对象的程序设计)。</p>
+<p>文档的以贯例是多行字符串，第一行以大写字母开头以句点(.)结束(注：中文在V3.3中也可以)，第二行是空行，从第三行开始是详细描述。<em>强烈建议</em>，为你重要的函数写文档字符串要遵循此贯例。</p>
+<p>我们可以使用函数的<code>__doc__</code>(注意，<strong>双下划线</strong>)属性(属于名字的)访问<code>printMax</code>函数的文档字符串。只要记住，Python把<em>一切任何事情</em>作为一个对象对待，这也包括函数。我们将在<a href="#面向对象编程">类</a>这一章学习关于对象的更多知识。</p>
+<p>如果你在Python中已经使用过<code>help()</code>，那么你已经看到如何使用文档字符串了!它所做的仅仅是获取函数的 <code>__doc__</code> 属性，并以一个整洁的方式显示给你。你可以在上面的函数——在你的程序中仅包括<code>help(printMax)</code>尝试一下。记得按下<code>q</code>键，退出<code>help</code>。</p>
+<p>自动化工具可以从你的程序中以这种方式检索文档。因此，我<em>强烈建议</em>，为你写的任何重要函数使用文档字符串。来自Python的自动化工具<code>pydoc</code>命令使用文档字符串的工作原理类似于<code>help()</code>。</p>
+<h2 id="小结-3"><a href="#小结-3">小结</a></h2>
+<p>我们已经见过函数的很多方面，但请注意，我们仍然没有覆盖它们的所有方面。然而，我们已经覆盖了Python函数日常使用的大部分。</p>
+<p>接下来，我们将看到如何创建及使用Python模块。</p>
+<h1 id="模块"><a href="#模块">模块</a></h1>
+<p>您已经看到如何通过一次定义函数在程序中重用代码。如果你想在其它程序中重用一定数量的函数，你将写什么？正如你可能已经猜到了，答案是模块。</p>
+<p>编写模块有各种各样的方法，但是最简单的方法是创建一个以<code>.py</code> 为扩展名、包含函数和变量的文件。</p>
+<p>编写模块的另一种方式是使用编写Python解释器本身的本机语言，例如，你可以使用[C 编程语言)(http://docs.python.org/py3k/extending/index.html)编写模块，当它们被编译后，当使用标准的Python解释器时，在你Python代码中可以使用（这些模块）。</p>
+<p>一个模块可以因另一个程序使用其功能而被<em>imported(导入)</em>。同样，我们可以使用Python标准库。首先 ,我们将看到如何使用标准库模块。</p>
+<p>例子 (保存为 <code>using_sys.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
+
+<span class="kw">print</span>(<span class="st">&#39;命令行参数是：&#39;</span>)
+<span class="kw">for</span> i in sys.argv:
+    <span class="kw">print</span>(i)
+
+<span class="kw">print</span>(<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">PYTHONPATH在&#39;</span>, sys.path, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 using_sys.py we are arguments
+命令行参数是
+using_sys.py
+we
+are
+arguments
+
+PYTHONPATH在[&lt;nowiki&gt;&#39;&#39;&lt;/nowiki&gt;, &#39;C:\\Windows\\system32\\python30.zip&#39;,
+&#39;C:\\Python30\\DLLs&#39;, &#39;C:\\Python30\\lib&#39;,
+&#39;C:\\Python30\\lib\\plat-win&#39;, &#39;C:\\Python30&#39;, 
+&#39;C:\\Python30\\lib\\site-packages&#39;]</code></pre>
+<p>它是如何工作的:</p>
+<p>首先,我们使用<code>import</code>语句<em>import</em>导入<code>sys</code>（系统）模块。基本上，这意味着我们我们想告诉Python，我们想使用这个模块。<code>sys</code>模块包含了与Python解释器和其环境即<em>system系统</em>有关的函数。</p>
+<p>当Python执行<code>import sys</code> 语句时，它查找<code>sys</code>模块。在这里，它是一个内建模块，因此，Python知道到去哪里找到它。</p>
+<p>如果它不是一个编译的，也就是用Python写的模块，那么，Python解释器将在<code>sys.path</code>变量列表中的目录中搜索。如果模块被发现，那么，模块中的代码将运行，对你来说，使用模块变为<em>有效</em>。注意，初始化只有在我们<em>第一次</em>导入一个模块时完成。</p>
+<p>在<code>sys</code>模块中的<code>argv</code>变量是通过点符号访问的，例如，例如，<code>sys.argv</code>。它清楚地表明，这个名字是<code>sys</code>模块的一部分。这种方法的另一个优点是，这个名字与你的程序中使用的任何<code>argv</code>变量都不冲突。</p>
+<p><code>sys.argv</code>变量一个字符串<em>list(列表)</em>(list列表将在<a href="#数据结构">后面章节</a>中详细解释）。具体来说，<code>sys.argv</code>包含<em>命令行参数</em>，也就是使用命令行向你的程序传递参数，的列表。</p>
+<p>如果您正在使用IDE编写并运行这些程序，在菜单中寻找一种方法来指定命令行参数传递给你的程序。</p>
+<p>这里，当我们执行<code>python using_sys.py we are arguments</code>时，我们使用 <code>python</code>命令和其后的传递给程序的参数运行<code>using_sys.py</code>模块。Python把命令行参数存储在 <code>sys.argv</code>变量中供我们使用。</p>
+<p>记住，运行脚本的名字通常是<code>sys.argv</code>列表中的第一个参数。因此，在这里将有<code>'using_sys.py'</code>作为<code>sys.argv[0]</code>，<code>'we'</code>作为<code>sys.argv[1]</code>，<code>'are'</code>作为<code>sys.argv[2]</code>和<code>'arguments'</code>作为<code>sys.argv[3]</code>。注意，Python从0而不是1开始数数。</p>
+<p><code>sys.path</code>包含被导入的模块所在的目录名列表。观察到<code>sys.path</code>就是的第一个字符串是空的——这个空字符串表示当前目录是和<code>PYTHONPATH</code>环境变量相同的、<code>sys.path</code>变量的一部分。这意味着你可以直接导入位于当前目录中的模块。否则，你将不得不把你的模块存放在<code>sys.path</code>列表中的一个目录中。</p>
+<p>请注意，,当前目录是程序启动的目录。运行<code>import os; print(os.getcwd())</code>找到你的程序的当前目录。</p>
+<h2 id="字节编译的.pyc文件"><a href="#字节编译的.pyc文件">字节编译的.pyc文件</a></h2>
+<p>导入一个模块是一个相对昂贵的事情，所以Python做 了一些技巧使它更快。一种方法是创建扩展名为<code>.pyc</code>的<em>字节编译</em>文件，是Python将程序转换成的一种中间形式。(记得在Python如何工作的[简介部分)(#介绍))。当你下次从一个不同程序导入模块时，这种<code>.pyc</code>文件是有很用的--它将快得多，因为导入模块一部分需要的处理已经完成。同时，这些字节编译的文件是独立于平台的。</p>
+<dl>
+<dt>注意</dt>
+<dd>这些<code>.pyc</code>文件通常在与之相应的<code>.py</code>文件的同一个目录中创建。如果Python在那个目录中没有写入权限，那么<code>.pyc</code>文件将不会创建。
+</dd>
+</dl>
+<h2 id="from-...-import语句"><a href="#from-...-import语句">from ... import语句</a></h2>
+<p>如果你想直接导入<code>argv</code>变量到程序中(为了避免每次为它键入<code>sys.</code>)，那么您可以使用<code>from sys import argv</code>语句。</p>
+<p>一般来说，你<em>应该避免</em>使用这个语句，而应该使用<code>import</code>语句，因为你的程序将避免名称冲突，将更具可读性。</p>
+<p>例如：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> math <span class="ch">import</span> sqrt
+<span class="kw">print</span>(<span class="st">&quot;16的平方根是&quot;</span>, sqrt(<span class="dv">16</span>))</code></pre>
+<h2 id="模块的name"><a href="#模块的name">模块的<strong>name</strong></a></h2>
+<p>每个模块都有一个名字，在模块中的语句能够找出它所在的模块的名字。这对于搞清楚模块是否正在运行或被导入这样的特殊用途是很方便的。正如前面提到的，当一个模块被第一次导入时，其所包含的代码被执行。我们可以通过使用这个，根据模块是否被自己使用或从另一个 模块被导入，使模块以不同的方式起作用，这些可以通过使用模块的 <code>__name__</code>属性来实现。</p>
+<p>例子 (保存为 <code>using_name.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="dt">__name__</span> == <span class="st">&#39;__main__&#39;</span>:
+    <span class="kw">print</span>(<span class="st">&#39;这个程序正在被自己运行&#39;</span>)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;我从别的模块被导入&#39;</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 using_name.py
+这个程序正在被自己运行
+$ python3
+&gt;&gt;&gt; import using_name
+我从别的模块被导入
+&gt;&gt;&gt;</code></pre>
+<p>它是如何工作的：</p>
+<p>每个Python模块有其<code>__name__</code> 定义，如果是<code>__name__</code> ，这意味着模块在被用户独立的运行，我们可以采取适当的行动。 ## 制作属于你自己的模块</p>
+<p>创建自己的模块是很容易的，你一直在这样做，始终都是！这是因为每个Python程序也是一个模块。 你只需要确保它有一个<code>.py</code>扩展名。下面的例子会让你明白。</p>
+<p>例子 (保存为<code>mymodule.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sayhi():
+    <span class="kw">print</span>(<span class="st">&#39;嗨，这是我的模块在讲话。&#39;</span>)
+
+__version__ = <span class="st">&#39;0.1&#39;</span></code></pre>
+<p>上面的是<em>模块</em>的一个示例。正如您可以看到的，和我们通过的Python程序相比，没有什么特别的。接下来我们要看如何在我们的其它程序中使用这个模块。</p>
+<p>记住,该模块要么放置在我们导入它的程序相同的目录中，要么放置在<code>sys.path</code>目录列表中的一个目录中。</p>
+<p>另一个模块(保存为<code>mymodule_demo.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> mymodule
+
+mymodule.sayhi()
+<span class="kw">print</span> (<span class="st">&#39;版本&#39;</span>, mymodule.__version__)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 mymodule_demo.py
+嗨，这是我的模块在讲话。
+版本 0.1</code></pre>
+<p>它是如何工作的：</p>
+<p>注意，我们使用相同的点符号来访问模块的成员。Python充分重用相同的符号产生了独特的'神谕的'的感觉，这样我们不需要不断学习新的方法来做事情。</p>
+<p>这是使用<code>from..import</code>语法的一个版本(保存为<code>mymodule_demo2.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> mymodule <span class="ch">import</span> sayhi, __version__
+
+sayhi()
+<span class="kw">print</span>(<span class="st">&#39;版本&#39;</span>, __version__)</code></pre>
+<p><code>mymodule_demo2.py</code>和<code>mymodule_demo.py</code>的输出相同。</p>
+<p>注意，如果在导入模块中已经有一个<code>__version__</code>名字的声明，这里会有一个冲突。这也可能是因为它是常见的做法--对于每个模块使用这个名字声明它的版本号。因此，总是推荐选择<code>import</code>语句，虽然它可能让你的程序有点长。</p>
+<p>你还可以使用：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> mymodule <span class="ch">import</span> *</code></pre>
+<p>这将导入所有的公共名称如 <code>sayhi</code>，但不会导入<code>__version__</code>，因为它始于双下划线。</p>
+<dl>
+<dt>Python的禅</dt>
+<dd>Python的一个指导原则是&quot;显式优于隐式&quot;。运行<code>import this</code>去学习更多，看[栈溢出讨论)(http://stackoverflow.com/questions/228181/zen-of-python)，那里列出了每个原则的例子。
+</dd>
+</dl>
+<h2 id="dir函数"><a href="#dir函数">dir函数</a></h2>
+<p>您可以使用内置的<code>dir</code>函数列出一个定义对象的标识符。例如,对于一个模块，包括在模块中定义的函数，类和变量。</p>
+<p>当你给<code>dir()</code>提供一个模块名字时，它返回在那个模块中定义的名字的列表。当没有为其提供参数时, 它返回当前模块中定义的名字的列表。</p>
+<p>例如：</p>
+<pre><code>$ python3
+
+&gt;&gt;&gt; import sys # 获得属性列表，在这里是sys模块的属性列表
+
+&gt;&gt;&gt; dir(sys)
+[&#39;__displayhook__&#39;, &#39;__doc__&#39;, &#39;__excepthook__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__s
+tderr__&#39;, &#39;__stdin__&#39;, &#39;__stdout__&#39;, &#39;_clear_type_cache&#39;, &#39;_compact_freelists&#39;,
+&#39;_current_frames&#39;, &#39;_getframe&#39;, &#39;api_version&#39;, &#39;argv&#39;, &#39;builtin_module_names&#39;, &#39;
+byteorder&#39;, &#39;call_tracing&#39;, &#39;callstats&#39;, &#39;copyright&#39;, &#39;displayhook&#39;, &#39;dllhandle&#39;
+, &#39;dont_write_bytecode&#39;, &#39;exc_info&#39;, &#39;excepthook&#39;, &#39;exec_prefix&#39;, &#39;executable&#39;,
+&#39;exit&#39;, &#39;flags&#39;, &#39;float_info&#39;, &#39;getcheckinterval&#39;, &#39;getdefaultencoding&#39;, &#39;getfil
+esystemencoding&#39;, &#39;getprofile&#39;, &#39;getrecursionlimit&#39;, &#39;getrefcount&#39;, &#39;getsizeof&#39;,
+&#39;gettrace&#39;, &#39;getwindowsversion&#39;, &#39;hexversion&#39;, &#39;intern&#39;, &#39;maxsize&#39;, &#39;maxunicode
+&#39;, &#39;meta_path&#39;, &#39;modules&#39;, &#39;path&#39;, &#39;path_hooks&#39;, &#39;path_importer_cache&#39;, &#39;platfor
+m&#39;, &#39;prefix&#39;, &#39;ps1&#39;, &#39;ps2&#39;, &#39;setcheckinterval&#39;, &#39;setprofile&#39;, &#39;setrecursionlimit
+&#39;, &#39;settrace&#39;, &#39;stderr&#39;, &#39;stdin&#39;, &#39;stdout&#39;, &#39;subversion&#39;, &#39;version&#39;, &#39;version_in
+fo&#39;, &#39;warnoptions&#39;, &#39;winver&#39;]
+
+&gt;&gt;&gt; dir() # 获得当前模块的属性列表
+[&#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;sys&#39;]
+
+&gt;&gt;&gt; a = 5 # 创建了一个新变量 &#39;a&#39;
+
+&gt;&gt;&gt; dir()
+[&#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;a&#39;, &#39;sys&#39;]
+
+&gt;&gt;&gt; del a # 删除/移除一个名字
+
+&gt;&gt;&gt; dir()
+[&#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;sys&#39;]
+
+&gt;&gt;&gt;</code></pre>
+<p>它是如何工作的：</p>
+<p>首先，我们看到在导入<code>sys</code>模块上使用使用<code>dir</code>。我们能看到模块包含的巨大的属性列表。</p>
+<p>然后，我们使用没有传递参数的<code>dir</code>函数。默认情况下，它返回模块的属性的列表。注意，导入模块的列表仍然是这个列表的一部分。</p>
+<p>为了看到 <code>dir</code>在起作用，我们定义了一个新的变量，并为其赋值，然后检查<code>dir</code>，我们发现列表中添加了一个同名变量。我们使用<code>del</code>语句移除当前模块的变量或属性，在 <code>del</code>函数的输出中变化再次得到体现。</p>
+<p>关于<code>del</code>的一点注意事项--这个语句用于<em>删除</em>一个变量/属性，语句运行后，这里是<code>del a</code>，你不能再访问变量<code>a</code>--就像它从来根本没有存在过。</p>
+<p>注意，<code>dir()</code>函数对<em>任何</em>对象都起作用。例如，运行<code>dir('print')</code>来学习print函数的属性的更多知识，或运行<code>dir(str)</code>学习str类的属性的更多知识。</p>
+<h2 id="打包封装"><a href="#打包封装">打包（封装）</a></h2>
+<p>现在，你必须开始观察组织你的程序的层次结构。变量通常在函数内部。函数和全局变量通常在模块内部。如果你想组织模块？这就到了牵涉到打包的地方了。</p>
+<p>包只是模块的文件夹，使用一个特殊的<code>__init__.py</code> 文件，指示Python，这个文件夹是特殊的，因为它包含Python模块。</p>
+<p>假设你想创建一个叫做'世界'的程序包，分装'亚洲'、'非洲'等等，分包按序包含'印度'、'马达加斯加'等等。</p>
+<p>这是你将组织的文件夹： <sub>~</sub> - <在sys.path中现有的一些文件夹>/ - world/ - <strong>init</strong>.py - asia/ - <strong>init</strong>.py - india/ - <strong>init</strong>.py - foo.py - africa/ - <strong>init</strong>.py - madagascar/ - <strong>init</strong>.py - bar.py <sub>~</sub></p>
+<p>包只是为了分层次组织模块的方便。在<a href="#标准库">标准库</a>中，你会看到包的许多实例。</p>
+<h2 id="小结-4"><a href="#小结-4">小结</a></h2>
+<p>就像函数是可重用的部分的程序一样，模块也是可重用的程序。包是组织模块的另一个层次结构。来自Python的标准库，是包和模块的集合中的一个例子。</p>
+<p>我们已经看到了如何使用这些模块和创建我们自己的模块。</p>
+<p>接下来，我们将学习一些有趣的称为数据结构的概念。 # 数据结构</p>
+<p>数据结构基本上是由于--他们是<em>结构</em>可将一些<em>数据</em>容纳在一起。换句话说，它们是用来存储一系列关的数据。</p>
+<p>在Python中有四种 内建数据结构--列表、元组、字典和集合（set)，我们将看到如何使用它们中的每一个，它们是怎样使我们的生活更容易的。</p>
+<h2 id="列表"><a href="#列表">列表</a></h2>
+<p><code>列表</code>是一种数据结构，它保存条目的有序集合。例如，你可以在列表中存储一个<em>序列</em>。这很容易想象，你想像一下购物清单,那里有你要购买物品的一个清单。除非在你的清单上每一行列有一个单独物品，然而，在python中，你在它们中间放上逗号。</p>
+<p>条目的列表应包含在方括号内，以便Python明白你在指定一个列表。一旦您创建了一个列表，你可以添加、删除或是搜索列表中的条目。因为我们可以添加和删除条目，我们说一个列表是一个<em>可变的</em>数据类型，即这种类型可以更改。</p>
+<h3 id="对象和类的快速介绍"><a href="#对象和类的快速介绍">对象和类的快速介绍</a></h3>
+<p>尽管直到现在，我一直推迟讨论对象和类，现在需要一个小小的解释，这样你可以更好的理解列表。我们将在<a href="#面向对象的程序设计">后面章节</a>中详细探讨这一课题。</p>
+<p>列表是使用对象和类的一个例子。当我们使用一个变量 <code>i</code>，为它分配一个值，例如把整数<code>5</code>赋值给它，你可以认为它是创建一个<strong>类</strong>为<code>int</code>（即类型）的<em>对象</em>(即实例)<code>i</code>。事实上，你可以阅读的<code>help(int)</code>更好地理解这一点。</p>
+<p>类也有<strong>方法</strong>，也就是为了使用而定义的只关于那个类的函数，只有当你有那个类的对象时，你才可以使用这些函数.例如，Python为<code>list</code>（列表）类提供了一个<code>append</code>方法，它允许你在列表的整改添加一个条目。例如，<code>mylist.append('an item')</code>将给列表<code>mylist</code>添加字符串。注意，我们使用点操作符访问对象的方法。</p>
+<p>类也有<strong>字段</strong>，除了为了使用而定义的只与那个类相关的变量，它什么也没有。只有当你有那个类的对象时，你可以使用那些变量或名字。字段孔明通过点操作符访问的。例如，<code>mylist.field</code>。</p>
+<p>例子 (保存为<code>using_list.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># 这是我的购物清单</span>
+shoplist = [<span class="st">&#39;苹果&#39;</span>, <span class="st">&#39;芒果&#39;</span>, <span class="st">&#39;胡萝卜&#39;</span>, <span class="st">&#39;香蕉&#39;</span>]
+
+<span class="kw">print</span>(<span class="st">&#39;我要买&#39;</span>, <span class="dt">len</span>(shoplist), <span class="st">&#39;个物品。&#39;</span>)
+
+<span class="kw">print</span>(<span class="st">&#39;清单是：&#39;</span>, end=<span class="st">&#39; &#39;</span>)
+<span class="kw">for</span> item in shoplist:
+    <span class="kw">print</span>(item, end=<span class="st">&#39; &#39;</span>)
+
+<span class="kw">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">我还要买大米。&#39;</span>)
+shoplist.append(<span class="st">&#39;大米&#39;</span>)
+<span class="kw">print</span>(<span class="st">&#39;现在我的清单是&#39;</span>, shoplist)
+
+<span class="kw">print</span>(<span class="st">&#39;现在我将要为我的清单排序&#39;</span>)
+shoplist.sort()
+<span class="kw">print</span>(<span class="st">&#39;排序后的购物清单是&#39;</span>, shoplist)
+
+<span class="kw">print</span>(<span class="st">&#39;我要买的第一个物品是&#39;</span>, shoplist[<span class="dv">0</span>])
+olditem = shoplist[<span class="dv">0</span>]
+<span class="kw">del</span> shoplist[<span class="dv">0</span>]
+<span class="kw">print</span>(<span class="st">&#39;我已经买了&#39;</span>, olditem)
+<span class="kw">print</span>(<span class="st">&#39;现在我的清单是&#39;</span>, shoplist)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 using_list.py
+我要买 4 个物品。
+清单是: 苹果 芒果 胡萝卜 香蕉
+我还要买大米。
+现在我的清单是 [&#39;苹果&#39;, &#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;, &#39;大米&#39;]
+现在我将要为我的清单排序
+排序后的购物清单是 [&#39;大米&#39;, &#39;胡萝卜&#39;, &#39;芒果&#39;, &#39;苹果&#39;, &#39;香蕉&#39;]
+我要买的第一个物品是 大米
+我已经买了大米
+现在我的清单是 [&#39;胡萝卜&#39;, &#39;芒果&#39;, &#39;苹果&#39;, &#39;香蕉&#39;]</code></pre>
+<p>（注：原文为英文，翻译为中文排序后结果与英文不一致，其后的运行结果也不一样了）</p>
+<p>它是如何工作的:</p>
+<p>变量<code>shoplist</code>是将要去超市的人的一个购物清单。在<code>shoplist</code>中，我们只存储了要买的物品的名字的字符串，你可以向清单中添加包括数字甚至是其它清单的<em>任何对象</em>。</p>
+<p>我们也使用了循环<code>for..in</code>遍历清单中的所有条目。到现在为止，你必须认识到一个清单也是一个序列。序列的特性将在<a href="#序列">后面的章节</a>中讨论。</p>
+<p>注意，在<code>print</code>函数中使用<code>end</code>关键字参数，表明输出以一个空格结束而不是通常的换行。</p>
+<p>接下来，和前面讨论过的一样，我们使用列表对象的<code>append</code>方法向列表中添加一个项目。然后，我们只把列表简单地传递给<code>print</code>语句，整洁地打印列表的内容，以检查这个条目确实添加到了列表中。</p>
+<p>然后，我们使用列表对象的<code>sort</code>方法为列表排序。 这个方法作用到列表本身，并不返回一个修改过的列表，理解这一点很很重要，它不同于对字符串的操作。这也是为什么我们列表是<em>可修改的</em>，而字符串是<em>不可修改的</em>原因。</p>
+<p>然后，我们在超市购买了一个物品，我们想把它从购物清单中移除，通过使用<code>del</code>语句来实现。这里，我们提到我们想要移除清单中的哪个物品，<code>del</code>语句为我们将它从清单中移除。我们指定，我们想从清单移除第一项，因此，我们使用<code>del shoplist[0]</code>(记住，Python从0开始数数数）。</p>
+<p>如果你想知道列表对象定义的所有方法，详见<code>help(list)</code>。</p>
+<h2 id="元组"><a href="#元组">元组</a></h2>
+<p>元组是用来容纳多个对象。认为它们是类似于列表，但是没有列表给你的广泛功能。元组的一个主要特征是他们是<strong>不可变</strong>，像字符串，即您不能修改元组。</p>
+<p>元组是通过在一对可选的圆括号中，项目之间用逗号分隔来定义的。</p>
+<p>元组通常用在，一个语句或一个用户定义的函数能够安全地假设为值的集合，即值的元组，不会改变。</p>
+<p>例子 (保存为<code>using_tuple.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">zoo = (<span class="st">&#39;蟒蛇&#39;</span>, <span class="st">&#39;大象&#39;</span>, <span class="st">&#39;企鹅&#39;</span>) <span class="co"># 记住圆括号是可选的</span>
+<span class="kw">print</span>(<span class="st">&#39;动物园中动物有数量有&#39;</span>, <span class="dt">len</span>(zoo))
+
+new_zoo = <span class="st">&#39;猴子&#39;</span>, <span class="st">&#39;骆驼&#39;</span>, zoo
+<span class="kw">print</span>(<span class="st">&#39;在新动物园中笼子的数量是&#39;</span>, <span class="dt">len</span>(new_zoo))
+<span class="kw">print</span>(<span class="st">&#39;在新动物园所有的动物是&#39;</span>, new_zoo)
+<span class="kw">print</span>(<span class="st">&#39;从老动物园中带来的动物是&#39;</span>, new_zoo[<span class="dv">2</span>])
+<span class="kw">print</span>(<span class="st">&#39;从老动物园带来最后的动物是&#39;</span>, new_zoo[<span class="dv">2</span>][<span class="dv">2</span>])
+<span class="kw">print</span>(<span class="st">&#39;在新动物园中动物的数量有&#39;</span>, <span class="dt">len</span>(new_zoo)-<span class="dv">1</span>+<span class="dt">len</span>(new_zoo[<span class="dv">2</span>]))</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 using_tuple.py
+动物园中动物有数量有 3
+在新动物园中笼子的数量是 3
+在新动物园所有的动物是 (&#39;猴子&#39;, &#39;骆驼&#39;, (&#39;蟒蛇&#39;, &#39;大象&#39;, &#39;企鹅&#39;))
+从老动物园中带来的动物是 (&#39;蟒蛇&#39;, &#39;大象&#39;, &#39;企鹅&#39;)
+从老动物园带来最后的动物是 企鹅
+在新动物园中动物的数量有 5</code></pre>
+<p>它是如何工作的：</p>
+<p>变量<code>zoo</code>指的是一个物品的元组。我们看到<code>len</code>函数可以用来获取元组的长度。这也表明，一个元组同样也是一个(序列)(#序列)。</p>
+<p>因为老动物园zoo将要关闭，我们现在将这些动物迁移到一个新的动物园new_zoo。因此，（新动物园）<code>new_zoo</code>的tuple包含一些已经存在的动物以及从老动物园zoo带来的动物。回到现实，请注意，在一个元组中的元组不失去其特性。</p>
+<p>就像列表一样，我们可以通过在一对方括号中指定条目的位置，访问元组中的物品。这被称为<em>索引</em>操作符。我们通过指定<code>new_zoo[2]</code>访问新动物园new_zoo中的第三项，通过指定new_zoo[2][2]`访问新动物园new_zoo的第三项。一旦理解这个习语，这是非常简单的。</p>
+<dl>
+<dt>圆括号</dt>
+<dd><p>尽管括号是可选的，我总是使用它们以便使它是一个元组更明显，特别是因为，它避免歧义。例如<code>print(1,2,3)</code>和print( (1,2,3) )`两件不同意思的事情——前者打印3个数，而后者输出一个元组(包含三个数字)。</p>
+</dd>
+<dt>有0个或1个条目的元组</dt>
+<dd><p>一个空的元组由一对空的括号如<code>myempty = ()</code>组成。 然而，只有一个对象的元组并非如此简单。你必须通过在第一个对象（唯一的一个）后紧跟一个逗号来指定它，这样Python可以区分是一个元组还是一个表达式中一个对象的括号，例如，如果你想定义一个只含一个对象这为<code>2</code>的元组，你必须使用 <code>singleton = (2 , )</code>。</p>
+</dd>
+<dt>Perl程序员应该注意</dt>
+<dd><p>在一个列表中的列表不会失去其特性，也就是说并不像在Perl中夷为平地。这同样适用于在一个元组中的一个元组，或在一个列表中的元组，或在一个元组中的列表等。就Python而言，他们只是存储在另一个对象中的一个对象。</p>
+</dd>
+</dl>
+<h2 id="字典"><a href="#字典">字典</a></h2>
+<p>字典就像一个地址簿，在那里你只通过知道他/她的名字，就可以找到地址或联系人详细信息。也就是说，我们使用<strong>键*(姓名)与</strong>值**(细节)相联系。注意，键必须是独一无二的，就像如果有两个完全相同的名字的人，你无法找到正确的信息。</p>
+<p>注意，字典的关键字你只能使用不可变的对象(比如字符串)，你可以使用不可变或可变的对象作为字典的值。这基本上意味着，简单地说，对于键你只能使用简单对象。</p>
+<p>在字典中的一对键和值是通过使用冒号指定的，如，<code>d = {key1 : value1, key2 : value2 }</code>。注意，键值对用冒号分隔，彼此之间以逗号分隔，所有这些都是包含在一对大括号中。</p>
+<p>记住，在字典中键-值对不以任何方式排序。如果你想要一个特定的顺序，那么你将不得不在使用前自己排序。</p>
+<p>你将要使用的字典是<code>dict</code>类的对象或实例。</p>
+<p>例子 (保存为 <code>using_dict.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># &#39;ab&#39;是英文address　book(地址簿)的首个字母</span>
+
+ab = {  <span class="st">&#39;Swaroop&#39;</span>   : <span class="st">&#39;swaroop@swaroopch.com&#39;</span>,
+        <span class="co">&#39;Larry&#39;</span>     : <span class="st">&#39;larry@wall.org&#39;</span>,
+        <span class="co">&#39;Matsumoto&#39;</span> : <span class="st">&#39;matz@ruby-lang.org&#39;</span>,
+        <span class="co">&#39;Spammer&#39;</span>   : <span class="st">&#39;spammer@hotmail.com&#39;</span>
+    }
+
+<span class="kw">print</span>(<span class="st">&quot;Swaroop的地址是&quot;</span>, ab[<span class="st">&#39;Swaroop&#39;</span>])
+
+<span class="co"># 删除一个键-值对</span>
+<span class="kw">del</span> ab[<span class="st">&#39;Spammer&#39;</span>]
+
+<span class="kw">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">地址薄中有 {0} 个联系人</span><span class="ch">\n</span><span class="st">&#39;</span>.<span class="dt">format</span>(<span class="dt">len</span>(ab)))
+
+<span class="kw">for</span> name, address in ab.items():
+    <span class="kw">print</span>(<span class="st">&#39;联系人 {0} 的地址是 {1}&#39;</span>.<span class="dt">format</span>(name, address))
+
+<span class="co"># 添加一个键-值对</span>
+ab[<span class="st">&#39;Guido&#39;</span>] = <span class="st">&#39;guido@python.org&#39;</span>
+
+<span class="kw">if</span> <span class="st">&#39;Guido&#39;</span> in ab:
+    <span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Guido的地址是&quot;</span>, ab[<span class="st">&#39;Guido&#39;</span>])</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 using_dict.py
+Swaroop的地址是 swaroop@swaroopch.com
+
+地址薄中有 3 个联系人
+
+联系人 Larry 的地址是 larry@wall.org
+联系人 Matsumoto 的地址是 matz@ruby-lang.org
+联系人 Swaroop 的地址是 swaroop@swaroopch.com
+
+Guido的地址是 guido@python.org</code></pre>
+<p>它是如何工作的：</p>
+<p>我们使用已经讨论过的符号创建字典<code>ab</code>。然后我们通过使用在列表和元组中讨论过的索引操作符－－指定关键字来访问键-值对，遵守简单的语法。</p>
+<p>我们可以使用我们的老朋友——<code>del</code>语句删除键值对，我们简单地指定字典和要删除的关键字的索引操作符，并将它传递给<code>del</code>语句。对于这个操作，没有必要知道对应于关键字的值。</p>
+<p>接下来，我们我们使用字典的<code>items</code>方法，访问字典的每个键-值对的。它返回一个元组的列表，每个元组包含一对值--关键字及紧随其后的值。我们检索这对值并使用<code>for..in</code>循环为每一对分配给相应的变量<code>name</code>和<code>address</code>，然后在for块中打印这些值。</p>
+<p>我们可以通过简单地使用索引操作符来访问一个键并分配值的方式添加新的键值对，像上面的例子中我们所做的添加Guido。</p>
+<p>我们可以使用<code>in</code>操作符来检查一个键值对是否存在。</p>
+<p>字典<code>dict</code>类的列表方法，请看<code>help(dict)</code>。</p>
+<dl>
+<dt>关键字参数和字典</dt>
+<dd>有一点不同需要注意，如果你在您已经在使用字典的函数中使用关键字参数，只是这样想，这个键值对是在函数定义的参数列表中指定的，而当你在函数中访问变量，它只是访问字典的一个键(在编译器设计术语中称为<em>符号表</em>)。
+</dd>
+</dl>
+<h2 id="序列"><a href="#序列">序列</a></h2>
+<p>列表、元组和字符串都序列的一个实例，但是什么是序列，它们为什么如此特殊呢 ？</p>
+<p>主要特点是<strong>成员测试</strong>，(即<code>in</code>(在)和<code>not in</code>(不在)表达式中)和<strong>索引操作</strong>，这使我们在一个序列中能够直接获取一个特定的对象。</p>
+<p>上面提到的——列表、元组和字符串这三种类型的序列，也有允许我们找回一彼序列即序列的一部分的<strong>切片</strong>操作。</p>
+<p>例子 (保存为<code>seq.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">shoplist = [<span class="st">&#39;苹果&#39;</span>, <span class="st">&#39;芒果&#39;</span>, <span class="st">&#39;胡萝卜&#39;</span>, <span class="st">&#39;香蕉&#39;</span>]
+name = <span class="st">&#39;swaroop&#39;</span>
+
+<span class="co"># Indexing or &#39;Subscription&#39; operation</span>
+<span class="kw">print</span>(<span class="st">&#39;第0项是&#39;</span>, shoplist[<span class="dv">0</span>])
+<span class="kw">print</span>(<span class="st">&#39;第1项是&#39;</span>, shoplist[<span class="dv">1</span>])
+<span class="kw">print</span>(<span class="st">&#39;第2项是&#39;</span>, shoplist[<span class="dv">2</span>])
+<span class="kw">print</span>(<span class="st">&#39;第3项是&#39;</span>, shoplist[<span class="dv">3</span>])
+<span class="kw">print</span>(<span class="st">&#39;第-1项是&#39;</span>, shoplist[-<span class="dv">1</span>])
+<span class="kw">print</span>(<span class="st">&#39;第-2项是&#39;</span>, shoplist[-<span class="dv">2</span>])
+<span class="kw">print</span>(<span class="st">&#39;第0个字符是&#39;</span>, name[<span class="dv">0</span>])
+
+<span class="co"># 一个列表的切片</span>
+<span class="kw">print</span>(<span class="st">&#39;第1项到第3项是&#39;</span>, shoplist[<span class="dv">1</span>:<span class="dv">3</span>])
+<span class="kw">print</span>(<span class="st">&#39;第2项到末尾是&#39;</span>, shoplist[<span class="dv">2</span>:])
+<span class="kw">print</span>(<span class="st">&#39;第1到-1项是&#39;</span>, shoplist[<span class="dv">1</span>:-<span class="dv">1</span>])
+<span class="kw">print</span>(<span class="st">&#39;开头到结尾是&#39;</span>, shoplist[:])
+
+<span class="co"># 字符串的切片</span>
+<span class="kw">print</span>(<span class="st">&#39;第1到第3个字符是&#39;</span>, name[<span class="dv">1</span>:<span class="dv">3</span>])
+<span class="kw">print</span>(<span class="st">&#39;第2到末尾的字符是&#39;</span>, name[<span class="dv">2</span>:])
+<span class="kw">print</span>(<span class="st">&#39;第1到-1的字符是&#39;</span>, name[<span class="dv">1</span>:-<span class="dv">1</span>])
+<span class="kw">print</span>(<span class="st">&#39;从头到尾的字符是&#39;</span>, name[:])</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 seq.py
+第0项是 苹果
+第1项是 芒果
+第2项是 胡萝卜
+第3项是 香蕉
+第-1项是 香蕉
+第-2项是 胡萝卜
+第0个字符是 s
+第1项到第3项是 [&#39;芒果&#39;, &#39;胡萝卜&#39;]
+第2项到末尾是 [&#39;胡萝卜&#39;, &#39;香蕉&#39;]
+第1到-1项是 [&#39;芒果&#39;, &#39;胡萝卜&#39;]
+开头到结尾是 [&#39;苹果&#39;, &#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+第1到第3个字符是 wa
+第2到末尾的字符是 aroop
+第1到-1的字符是 waroo
+从头到尾的字符是 swaroop</code></pre>
+<p>它是如何工作的：</p>
+<p>首先，我们看看如何使用索引来获得一个序列的个别项，这也称为<em>订阅操作</em>。当你在方括号中指定一个数字对应一个序列中的某项，如上所示，Python会为你取得序列中相对应位置的项。记住，Python从0开始数数。因此，在序列<code>shoplist</code>中， <code>shoplist[0]</code>取第一项和<code>shoplist[3]</code>获取第四项。</p>
+<p>索引也可以是负数，在这种情况下，这个位置从序列的结尾开始计算。因此， <code>shoplist[-1]</code>指的是序列的最后一项， <code>shoplist[-2]</code>取倒数第二个项。</p>
+<p>这个切片操作是通过指定序列的名称后面加上一个方括号，方括号中有一对可选的用冒号分隔的数。注意，这非常类似于你到现在一直使用的索引操作，记住这些数字是可选的但冒号不是。</p>
+<p>在切片操作中的第一个数字(在冒号前)是切片开始的位置，第二个数字(在冒号后)是切片停止的位置。如果第一个数字没有指定，Python会从序列开头开始，如果第二个数字被冷落，Python会在序列的末尾停止。注意，返回的切片在开始位置<em>开始</em>，在<em>结束</em>位置前结束，也就是说，返回的切片包含开始位置，但不包含结束位置。</p>
+<p>因此， <code>shoplist[1:3]</code> 返回序列的切片从位置1开始，包括位置2，但是在位置3停止，因此，返回两个项目的<em>切片</em>。同样，<code>shoplist[:]</code>返回整个序列的一个副本。</p>
+<p>你也可以使用负位置做切片。负数用于从序列的结尾开始。例如，shoplist[:-1]` 将返回一个不包括序列最后一项，但包含了其它一切的切片。</p>
+<p>你也可以为切片提供第三个参数，这是切片的<em>步长</em>(默认情况下，步长为1)：</p>
+<pre><code>&gt;&gt;&gt; shoplist = [&#39;苹果&#39;, &#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+&gt;&gt;&gt; shoplist[::1]
+[&#39;苹果&#39;, &#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+&gt;&gt;&gt; shoplist[::2]
+[&#39;苹果&#39;, &#39;胡萝卜&#39;]
+&gt;&gt;&gt; shoplist[::3]
+[&#39;苹果&#39;, &#39;香蕉&#39;]
+&gt;&gt;&gt; shoplist[::-1]
+[&#39;香蕉&#39;, &#39;胡萝卜&#39;, &#39;芒果&#39;, &#39;苹果&#39;]</code></pre>
+<p>注意，当步长是2时，我们获得位置0、2、……的项目，当步长是3晨，我们获得位置是0、3、等等的项目。</p>
+<p>使用Python解释器的交互式提示，尝试指定切片的不同组合，以便你可以立刻看到结果。序列的一大好处是，你可以以同样的方式访问元组、列表和字符串！</p>
+<h2 id="集合"><a href="#集合">集合</a></h2>
+<p>集合是简单对象的<em>无序</em>集合，用于一个集合中对象的存在比它的顺序或发生多少次更重要的时候。</p>
+<p>使用集合，你可以测试成员，它是否是集合的子集以及找到两个集合的交集，等等。</p>
+<pre><code>&gt;&gt;&gt; bri = set([&#39;巴西&#39;, &#39;俄罗斯&#39;, &#39;印度&#39;])
+&gt;&gt;&gt; &#39;印度&#39; in bri
+True
+&gt;&gt;&gt; &#39;usa&#39; in bri
+False
+&gt;&gt;&gt; bric = bri.copy()
+&gt;&gt;&gt; bric.add(&#39;中国&#39;)
+&gt;&gt;&gt; bric.issuperset(bri)
+True
+&gt;&gt;&gt; bri.remove(&#39;俄罗斯&#39;)
+&gt;&gt;&gt; bri &amp; bric # 或者 bri.intersection(bric)
+{&#39;巴西&#39;, &#39;印度&#39;}</code></pre>
+<p>它是如何工作的：</p>
+<p>这个例子是非常一目了然的，因为它涉及到学校教的数学的基本集合理论。</p>
+<h2 id="关联"><a href="#关联">关联</a></h2>
+<p>当你创建一个对象，并赋给它一个值，该变量只是<em>指向</em>对象，并不代表对象本身！也就是说，变量名称指向你电脑中内存中的存储对象的那部分。这就是所谓的把名字<strong>绑定</strong>给对象。</p>
+<p>一般来说，你不需要担心这个，但是对引用有一个需要你注意的微妙的影响：：</p>
+<p>Example (save as <code>reference.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">print</span>(<span class="st">&#39;简单的分配&#39;</span>)
+shoplist = [<span class="st">&#39;苹果&#39;</span>, <span class="st">&#39;芒果&#39;</span>, <span class="st">&#39;胡萝卜&#39;</span>, <span class="st">&#39;香蕉&#39;</span>]
+mylist = shoplist <span class="co"># mylist是指向同一对象的另一个名字！</span>
+
+<span class="kw">del</span> shoplist[<span class="dv">0</span>] <span class="co"># 我买到了第一项物品，因此我从清单中移除它</span>
+
+<span class="kw">print</span>(<span class="st">&#39;shoplist是&#39;</span>, shoplist)
+<span class="kw">print</span>(<span class="st">&#39;mylist是&#39;</span>, mylist)
+<span class="co"># 注意shoplist和mylist都打印没有‘苹果’的相同的清单</span>
+<span class="co"># 证明它们指向相同的对象</span>
+
+<span class="kw">print</span>(<span class="st">&#39;通过制作完整的切片复制&#39;</span>)
+mylist = shoplist[:] <span class="co"># 通过制作完整的切片复制</span>
+<span class="kw">del</span> mylist[<span class="dv">0</span>] <span class="co"># 移除第一项</span>
+
+<span class="kw">print</span>(<span class="st">&#39;shoplist是&#39;</span>, shoplist)
+<span class="kw">print</span>(<span class="st">&#39;mylist是&#39;</span>, mylist)
+<span class="co"># 注意，现在两个清单不同</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 reference.py
+简单的分配
+shoplist是 [&#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+mylist是 [&#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+通过制作完整的切片复制
+shoplist是 [&#39;芒果&#39;, &#39;胡萝卜&#39;, &#39;香蕉&#39;]
+mylist是 [&#39;胡萝卜&#39;, &#39;香蕉&#39;]</code></pre>
+<p>它是如何工作的:</p>
+<p>在注释中有更多有用的解释。</p>
+<p>记住,如果你想要复制一个列表或这种类型的序列或复杂的对象(而不是简单的<em>对象</em>如整数)，那么您必须使用切片操作复制。如果你只是用另一个变量名指定，两个变量将“关联”到相同的对象，如果你不小心，这可能会引起麻烦。</p>
+<dl>
+<dt>Per程序员需要注意</dt>
+<dd>记住，列表的一个赋值语句并<strong>不</strong>创建一个副本。你必须使用切片操作复制序列。
+</dd>
+</dl>
+<h2 id="关于字符串的更多"><a href="#关于字符串的更多">关于字符串的更多</a></h2>
+<p>之前，我们已经详细讨论了字符串。在这能了解更多吗？嗯，你知道吗，字符串也是对象和也有做任何事情的方法－－从检查的部分字符串到从字符串中分离。</p>
+<p>在程序中你使用的字符串都是<code>str</code>类的对象，在下面的例子中将演示这个类的一些有用的方法，这些方法的完整列表，请看<code>help(str)</code>。</p>
+<p>例子 (保存为 <code>str_methods.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">name = <span class="st">&#39;Swaroop&#39;</span> <span class="co"># 这是一个字符串对象</span>
+
+<span class="kw">if</span> name.startswith(<span class="st">&#39;Swa&#39;</span>):
+    <span class="kw">print</span>(<span class="st">&#39;是的，字符串以&quot;Swa&quot;开始&#39;</span>)
+
+<span class="kw">if</span> <span class="st">&#39;a&#39;</span> in name:
+    <span class="kw">print</span>(<span class="st">&#39;是的，它包含字符串&quot;a&quot;&#39;</span>)
+
+<span class="kw">if</span> name.find(<span class="st">&#39;war&#39;</span>) != -<span class="dv">1</span>:
+    <span class="kw">print</span>(<span class="st">&#39;是的，它包含字符串&quot;war&quot;&#39;</span>)
+
+delimiter = <span class="st">&#39;_*_&#39;</span>
+mylist = [<span class="st">&#39;巴西&#39;</span>, <span class="st">&#39;俄罗斯&#39;</span>, <span class="st">&#39;印度&#39;</span>, <span class="st">&#39;中国&#39;</span>]
+<span class="kw">print</span>(delimiter.join(mylist))</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 str_methods.py
+是的，字符串以&quot;Swa&quot;开始
+是的，它包含字符串&quot;a&quot;
+是的，它包含字符串&quot;war&quot;
+巴西_*_俄罗斯_*_印度_*_中国</code></pre>
+<p>它是如何工作的：</p>
+<p>在这里，我们看到字符串的很多方法在起作用。<code>startswith</code>方法是用来找出字符串是否以给定的字符串开始的。<code>in</code>操作符是用来检查一个给定的字符串是否是一个字符串的一部分。</p>
+<p><code>find</code>方法用于定位给定的子字符串在字符串内的位置，如果不能成功找到子字符串它返回-1。<code>str</code>类也有一个整洁的方法来连接一个序列的字符串，用充当分隔符的字符串连接序列中每个条目，返回一个由它生成的巨大的字符串。</p>
+<h2 id="小结-5"><a href="#小结-5">小结</a></h2>
+<p>我们详细探索了Python各种内建的数据结构，写合理大小的程序，这些数据结构是至关重要的。</p>
+<p>现在，我们有很多Python的基本知识已经到位，下面，我们看看如何设计和写一个真实的Python程序。 # 解决问题</p>
+<p>我们已经探索过了Python语言的各种部分，现在我们通过设计和编写一个<em>做</em>有用事情的程序，看一看如何将所有这些组合在一起，学习如何自己编写一个Python脚本可以实现这个想法。</p>
+<h2 id="问题"><a href="#问题">问题</a></h2>
+<p>我们想要解决的问题是<em>&quot;我需要一个为我所有重要的程序创建备份的一个程序&quot;</em>。</p>
+<p>尽管这是一个简单的问题，但是我们没有着手解决这个问题的足够的信息。多一点的<strong>分析</strong>是必需的，例如，我们如何指定<em>哪一个</em>文件需要备份？他们是<em>怎样</em>存储的？</p>
+<p>在得当的问题分析后，我们<strong>设计</strong>我们的程序。我们为程序如何工作列一个列表，在本例中，我创建了<em>我</em>希望它如何工作的以下列表。如果你做这个设计，你可能不会拿出同样的分析，因为每个人都有自己做事的方式，这是非常好的。</p>
+<ul>
+<li>在列表中指出需要备份的文件和目录。</li>
+<li>备份必须存储在一个主备份目录中。</li>
+<li>备份的文件压缩到一个压缩文件中。</li>
+<li>压缩文件的名称是当前的日期和时间。</li>
+<li>在标准的 Linux/Unix 发行版上，我们默认使用标准的<code>zip</code>命令，Windows用户可以从<a href="http://gnuwin32.sourceforge.net/packages/zip.htm">GnuWin32项目页</a> <a href="http://gnuwin32.sourceforge.net/downlinks/zip.php">安装</a>，并向你的系统环境变量 PATH追加<code>C:\Program Files\GnuWin32\bin</code>，这和<a href="#dos提示符">为识别Python命令我们所做的</a>类似。注意，只要它有一个命令行，你可以使用任何你想要归档的命令。</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案">解决方案</a></h2>
+<p>由于我们的程序的设计现在相当稳定，我们可以写<em>实现</em>解决方案的代码。</p>
+<p>保存为<code>backup_ver1.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> os
+<span class="ch">import</span> time
+
+<span class="co"># 1. 在列表中指出需要备份的文件和目录。</span>
+source = [<span class="st">&#39;&quot;C:</span><span class="ch">\\</span><span class="st">My Documents&quot;&#39;</span>, <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Code&#39;</span>]
+<span class="co"># 注意我们在有空格的名字的字符串内不得不使用双引号。</span>
+
+<span class="co"># 2. 备份必须存储在一个主备份目录中。</span>
+target_dir = <span class="st">&#39;E:</span><span class="ch">\\</span><span class="st">Backup&#39;</span> <span class="co"># 记住把它改为你要使用的目录</span>
+
+<span class="co"># 3. 备份的文件压缩到一个压缩文件中。</span>
+<span class="co"># 4. 压缩文件的名称是当前的日期和时间。</span>
+target = target_dir + os.sep + time.strftime(<span class="st">&#39;%Y%m</span><span class="ot">%d</span><span class="st">%H%M%S&#39;</span>) + <span class="st">&#39;.zip&#39;</span>
+
+<span class="co"># 5. 我们使用zip命令把文件压缩到一个压缩文件中</span>
+zip_command = <span class="st">&quot;zip -qr {0} {1}&quot;</span>.<span class="dt">format</span>(target, <span class="st">&#39; &#39;</span>.join(source))
+
+<span class="co"># 运行备份</span>
+<span class="kw">if</span> os.system(zip_command) == <span class="dv">0</span>:
+    <span class="kw">print</span>(<span class="st">&#39;成功备份到&#39;</span>, target)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;备份失败&#39;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python backup_ver1.py
+成功备份到 E:\Backup\20080702185040.zip</code></pre>
+<p>现在，我们是在测试我们的程序能否正常工作的<strong>测试</strong>阶段。如果它不像预期的那样,则我们必须<strong>调试</strong>我们的程序，也就是从程序中去掉<em>bug</em>(错误)。</p>
+<p>如果上面的程序不为你工作，在<code>os.system</code>调用之前放置一个<code>print(zip_command)</code>，然后运行程序。 现在复制/粘贴<code>print(zip_command)</code>到shell提示符，看看它自己是否正常运行。如果这个命令失败,检查压缩命令手册，是什么可能是错的。如果这个命令成功，然后检查Python程序是否和上面的程序完全匹配。</p>
+<p>它是如何工作的：</p>
+<p>你会注意到，我们是如何以一个循序渐进的方式将我们的<strong>设计</strong>转换成<strong>代码</strong>的。</p>
+<p>我们通过先导入和使用<code>os</code>和<code>time</code>模块，然后，我们在<code>source</code>清单中指定要备份的文件和目录，目标目录存储在变量 <code>target_dir</code>中，是我们要存储的所有的备份文件的地方，我们将要创建的压缩文件的名称是使用 <code>time.strftime()</code> 函数由当前日期和时间生成的。它也包含 <code>.zip</code>扩展名，将存储在<code>target_dir</code>目录中。</p>
+<p>注意，变量<code>os.sep</code>的使用--目录的分隔符依你的操作系统而定，即，在Linux和 Unix中是<code>'/'</code>，在Windows中是<code>'\\'</code>，在Mac OS中是<code>':'</code>。使用<code>os.sep</code>而不是直接使用这些字符将使我们的程序更具可移植性，在所有这些系统上都能工作。</p>
+<p><code>time.strftime()</code>函数获取一个技术参数，像在上面的程序中我们已经使用过的。<code>%Y</code>参数将被替换为带着世纪的年份数字。<code>%m</code>参数将被一个位于<code>01</code>到<code>12</code>的数字替换，如此等等。这种参数的完整列表可<a href="http://docs.python.org/py3k/library/time.html%20#time.strftime">Python参考手册</a>中找到。</p>
+<p>我们创建目标文件的名称zip文件使用了加法操作符。加法操作符<em>连接</em>字符串，也就是，它将两个字符串连接在一起，并返回一个新的。然后,我们创建一个包含我们要执行的命令的字符串<code>zip_command</code>。你可以通过在shell(Linux终端或DOS提示符)运行来检查这个命令的工作。</p>
+<p>我们使用了有一些选项并传递参数的<code>zip</code>命令。<code>-q</code>选项用于表明zip命令应该<strong>quietly(默默地)</strong>工作，<code>-r</code>选项指定zip命令应该<strong>rrecursively(递归地)</strong>工作，即它应该包括所有的子目录和文件。这两个选项组合在一起可缩写为<code>-qr</code>。要创建的压缩文件名后的选项后面紧跟要备份的文件和目录列表，我们使用字符串的<code>join</code>方法，这种方法我们已经知道如何使用，将<code>source</code>列表转换成一个字符串。</p>
+<p>然后，我们终于使用<code>os.system</code>函数<em>运行</em>命令。<code>os.system</code>函数运行命令就仿佛在<em>系统</em>上也就是shell上运行它，如果命令运行成功，它返回<code>0</code>，否则返回一个错误号。</p>
+<p>根据命令的结果，我们打印相应的消息，备份失败或成功。</p>
+<p>就是这样，我们已经创建了一个备份我们重要文件的一个脚本!</p>
+<dl>
+<dt>Windows用户应注意</dt>
+<dd>您还可以使用原始字符串，而不是双反斜杠转义序列，例如，使用<code>'C:\\Documents'</code>或<code>r'C:\Documents'</code>。然而，<strong>不要</strong>使用<code>'C:\Documents'</code>，因为你最终用一个未知的转义序列<code>\D</code>。
+</dd>
+</dl>
+<p>现在，我们有一个能够工作的备份脚本，当我们想要备份文件时，我们可以用它。正如前面所讨论的，建议Linux/Unix用户使用(可执行方式)(#可执行的python程序)，这样他们可以随时随地运行备份脚本。这被称为软件的<strong>操作</strong>阶段或<strong>部署</strong>阶段。</p>
+<p>上面的程序正常工作，但(通常)第一个程序不会像你期望的那么样工作。例如，如果没有正确地设计程序或当键入代码时如果你犯了一个错误等，可能出现问题。相应地，你将不得不回到设计阶段或你需要调试您的程序。</p>
+<h2 id="第二版"><a href="#第二版">第二版</a></h2>
+<p>第一个版本的脚本工作了。然而，我们还可以做一些改进，以便每天工作得更好。这被称为软件的<strong>维护</strong>阶段。</p>
+<p>我觉得有用的改进之一是有一个更好的文件命名机制——在一个目录中，使用<em>时间</em>作为文件的名称，使用当前<em>日期</em>作为主备份目录中的一个目录。第一个优势是，你的备份以分层以方式存储，因此它更容易管理。第二个优势是，文件名短得多。第三个优势是单独的目录将帮助你检查每天是否创建了一个备份，如果某一天你备份了，将会创建一个目录。</p>
+<p>保存为 <code>backup_ver2.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> os
+<span class="ch">import</span> time
+
+<span class="co"># 1. 在列表中指出需要备份的文件和目录。</span>
+source = [<span class="st">&#39;&quot;C:</span><span class="ch">\\</span><span class="st">My Documents&quot;&#39;</span>, <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Code&#39;</span>]
+<span class="co"># 注意，因为名字字符串中有空格，我们不得不使用双引号。</span>
+
+<span class="co"># 2. 备份必须存储在一个主备份目录中。</span>
+target_dir = <span class="st">&#39;E:</span><span class="ch">\\</span><span class="st">Backup&#39;</span> <span class="co"># 记住把它改为你要使用的目录</span>
+
+<span class="co"># 3. 备份的文件压缩到一个压缩文件中。</span>
+<span class="co"># 4. 当前日期是主备份目录中子目录的名字</span>
+today = target_dir + os.sep + time.strftime(<span class="st">&#39;%Y%m</span><span class="ot">%d</span><span class="st">&#39;</span>)
+<span class="co"># 当前时间是压缩文件的名字</span>
+now = time.strftime(<span class="st">&#39;%H%M%S&#39;</span>)
+
+<span class="co"># 如果子目录不存在，创建它</span>
+<span class="kw">if</span> not os.path.exists(today):
+    os.mkdir(today) <span class="co"># 建立目录</span>
+    <span class="kw">print</span>(<span class="st">&#39;成功创建目录&#39;</span>, today)
+
+<span class="co"># 压缩文件的名字</span>
+target = today + os.sep + now + <span class="st">&#39;.zip&#39;</span>
+
+<span class="co"># 5. 我们使用zip命令把文件压缩到一个压缩文件中</span>
+zip_command = <span class="st">&quot;zip -qr {0} {1}&quot;</span>.<span class="dt">format</span>(target, <span class="st">&#39; &#39;</span>.join(source))
+
+<span class="co"># 运行备份</span>
+<span class="kw">if</span> os.system(zip_command) == <span class="dv">0</span>:
+    <span class="kw">print</span>(<span class="st">&#39;成功备份到&#39;</span>, target)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;备份失败&#39;</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 backup_ver2.py
+成功创建目录 E:\Backup\20080702
+成功备份到 E:\Backup\20080702\202311.zip
+
+$ python3 backup_ver2.py
+成功备份到 E:\Backup\20080702\202325.zip</code></pre>
+<p>它是如何工作的:</p>
+<p>大部分程序还保留了原样，变化是，我们使用<code>os.path.exists</code>函数检查在主备份目录中是否存在以当前日期为名字的目录，如果不存在，我们使用<code>os.mkdir</code>函数创建它。</p>
+<h2 id="第三版"><a href="#第三版">第三版</a></h2>
+<p>当我们做一些备份时，第二版工作起来很好了。但当有许多备份时，我发现区分为什么备份是很困难的。例如，对一个程序或描述做一些重要的改变，然后我想知道这些变化与压缩文件的名字有什么联系。这个可以通过为压缩文件的名字附加上一个用户提供的注释而轻易实现。</p>
+<dl>
+<dt>注意</dt>
+<dd>下面的程序不工作，所以不要惊慌，请继续，因为在这里有一个教训。
+</dd>
+</dl>
+<p>保存为 <code>backup_ver3.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> os
+<span class="ch">import</span> time
+
+<span class="co"># 1.  在列表中指出需要备份的文件和目录。</span>
+source = [<span class="st">&#39;&quot;C:</span><span class="ch">\\</span><span class="st">My Documents&quot;&#39;</span>, <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Code&#39;</span>]
+<span class="co"># 注意，因为名字字符串中有空格，我们不得不使用双引号。</span>
+
+<span class="co"># 2. 备份必须存储在一个主备份目录中。</span>
+target_dir = <span class="st">&#39;E:</span><span class="ch">\\</span><span class="st">Backup&#39;</span> <span class="co"># 记住把它改为你要使用的目录</span>
+
+<span class="co"># 3. 备份的文件压缩到一个压缩文件中。</span>
+<span class="co"># 4. 当前日期是主备份目录中子目录的名字</span>
+today = target_dir + os.sep + time.strftime(<span class="st">&#39;%Y%m</span><span class="ot">%d</span><span class="st">&#39;</span>)
+<span class="co"># 当前时间是压缩文件的名字</span>
+now = time.strftime(<span class="st">&#39;%H%M%S&#39;</span>)
+
+<span class="co"># 为创建一个压缩文件的名字从用户取得一个注释</span>
+comment = <span class="dt">input</span>(<span class="st">&#39;Enter a comment --&gt; &#39;</span>)
+<span class="kw">if</span> <span class="dt">len</span>(comment) == <span class="dv">0</span>: <span class="co"># 检查是否输入注释</span>
+    target = today + os.sep + now + <span class="st">&#39;.zip&#39;</span>
+<span class="kw">else</span>:
+    target = today + os.sep + now + <span class="st">&#39;_&#39;</span> +
+        comment.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;_&#39;</span>) + <span class="st">&#39;.zip&#39;</span>
+
+<span class="co"># 如果子目录不存在，创建它</span>
+<span class="kw">if</span> not os.path.exists(today):
+    os.mkdir(today) <span class="co"># 建立目录</span>
+    <span class="kw">print</span>(<span class="st">&#39;成功创建目录&#39;</span>, today)
+
+<span class="co"># 5. 我们使用zip命令把文件压缩到一个压缩文件中</span>
+zip_command = <span class="st">&quot;zip -qr {0} {1}&quot;</span>.<span class="dt">format</span>(target, <span class="st">&#39; &#39;</span>.join(source))
+
+<span class="co"># 运行备份</span>
+<span class="kw">if</span> os.system(zip_command) == <span class="dv">0</span>:
+    <span class="kw">print</span>(<span class="st">&#39;成功备份到&#39;</span>, target)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;备份失败&#39;</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 backup_ver3.py
+  File &quot;backup_ver3.py&quot;, line 25
+    target = today + os.sep + now + &#39;_&#39; +
+                                        ^
+SyntaxError: invalid syntax</code></pre>
+<p>这怎么（不）工作：</p>
+<p><strong>这个程序不工作！</strong>Python说有语法错误这意味着脚本不满足Python预计的结构。当我们观察Python给出的错误，它还告诉我们它检测到错误的地方。所以我们从那一行开始<em>调试</em>我们的程序。</p>
+<p>在仔细观察后，我们发现单一的逻辑行被分成两个物理行，但我们没有指定这两个物理行属于同一个逻辑行。基本上，Python发现在那个逻辑行添加操作符(<code>+</code>)没有任何操作对象，因此不知道如何继续。记住，我们可以通过在物理行的结束位置使用反斜杠指定当前行与下一物理行是连续的。所以，我们要改正我们的程序。我们找到错误时的这样修正叫做<strong>修复bug</strong>。</p>
+<h2 id="第四版"><a href="#第四版">第四版</a></h2>
+<p>保存为 <code>backup_ver4.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> os
+<span class="ch">import</span> time
+
+<span class="co"># 1. 在列表中指出需要备份的文件和目录。</span>
+source = [<span class="st">&#39;&quot;C:</span><span class="ch">\\</span><span class="st">My Documents&quot;&#39;</span>, <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Code&#39;</span>]
+<span class="co"># 注意，因为名字字符串中有空格，我们不得不使用双引号。</span>
+
+<span class="co"># 2. 备份必须存储在一个主备份目录中。</span>
+target_dir = <span class="st">&#39;E:</span><span class="ch">\\</span><span class="st">Backup&#39;</span> <span class="co">#记住把它改为你要使用的目录</span>
+
+<span class="co"># 3. 备份的文件压缩到一个压缩文件中。</span>
+<span class="co"># 4. 当前日期是主备份目录中子目录的名字</span>
+today = target_dir + os.sep + time.strftime(<span class="st">&#39;%Y%m</span><span class="ot">%d</span><span class="st">&#39;</span>)
+<span class="co"># 当前时间是压缩文件的名字</span>
+now = time.strftime(<span class="st">&#39;%H%M%S&#39;</span>)
+
+<span class="co"># 为创建一个压缩文件的名字从用户取得一个注释</span>
+comment = <span class="dt">input</span>(<span class="st">&#39;输入注释--&gt; &#39;</span>)
+<span class="kw">if</span> <span class="dt">len</span>(comment) == <span class="dv">0</span>: <span class="co"># 检查是否输入注释</span>
+    target = today + os.sep + now + <span class="st">&#39;.zip&#39;</span>
+<span class="kw">else</span>:
+    target = today + os.sep + now + <span class="st">&#39;_&#39;</span> + \
+        comment.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;_&#39;</span>) + <span class="st">&#39;.zip&#39;</span>
+
+<span class="co"># 如果子目录不存在，创建它</span>
+<span class="kw">if</span> not os.path.exists(today):
+    os.mkdir(today) <span class="co">#  建立目录</span>
+    <span class="kw">print</span>(<span class="st">&#39;成功创建目录&#39;</span>, today)
+
+<span class="co"># 5. 我们使用zip命令把文件压缩到一个压缩文件中</span>
+zip_command = <span class="st">&quot;zip -qr {0} {1}&quot;</span>.<span class="dt">format</span>(target, <span class="st">&#39; &#39;</span>.join(source))
+
+<span class="co"># 运行备份</span>
+<span class="kw">if</span> os.system(zip_command) == <span class="dv">0</span>:
+    <span class="kw">print</span>(<span class="st">&#39;成功备份到 &#39;</span>, target)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;备份失败&#39;</span>)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 backup_ver4.py
+输入注释--&gt; added new examples
+成功备份到 E:\Backup\20080702\202836_added_new_examples.zip
+
+$ python3 backup_ver4.py
+输入注释--&gt;
+成功备份到 E:\Backup\20080702\202839.zip</code></pre>
+<p>它是如何工作的：</p>
+<p>这个程序现在工作了！让我们仔细检查第三版的实际增强，我们使用<code>input</code>函数获取 用户的注解，然后通过使用<code>len</code>函数找到输入的长度检查用户确实输入了一些东西。如果用户只是按<code>enter</code>（回车键），没有输入任何东西(也许这只是一个常规备份或没有特殊的改变)，那么，我们按照我们之前所做的处理。</p>
+<p>然而，如果提供了一个注释，那么，它将附加到压缩文档名字中、 <code>.zip</code>扩展名前。请注意，我们将注释中的空格用开线正在取代空间在评论中用下划线——这是因为管理没有空格的文件名容易得多。</p>
+<h2 id="更细化"><a href="#更细化">更细化</a></h2>
+<p>第四版对于大多数用户来说是一个令人满意的工作脚本，但总有改进的余地。例如，您可以为程序包括一个<em>冗长</em>级别，在那里你可以指定一个<code>-v</code>选项，从而使你的程序变得更加健谈。</p>
+<p>另一个可能的优化处理是将允许额外的文件和目录被传递给该脚本的命令行。我们可从<code>sys.argv</code>列表得到这些文件名，我们可以使用<code>list</code>类提供的<code>extend</code>方法将它们添加到我们的<code>source</code>列表中。</p>
+<p>最重要的改进是不使用的创建文档的<code>os.system</code> 方式，而是使用转而使用内建的 <code>zipfile</code> 或 <code>tarfile</code>模块创建文档。他们是标准库的一部分，在你的计算机上已经为您提供使用没有外部依赖的压缩程序。</p>
+<p>然而，在上面的例子中，纯粹是为教学的目的，我一直使用 <code>os.system</code>的方式创建一个备份，这样的例子对每个人的理解足够简单，但不是真正足够的有效。</p>
+<p>你能使用<a href="http://docs.python.org/py3k/library/zipfile.html">zipfile(压缩文件)</a>模块，而不是<code>os.system</code>调用尝试写第五版吗？</p>
+<h2 id="软件开发过程"><a href="#软件开发过程">软件开发过程</a></h2>
+<p>我们已经经历了编写一个软件过程中的各种<strong>阶段</strong>。这些阶段可以概括如下：</p>
+<ol>
+<li>什么 (分析)</li>
+<li>怎样 (设计)</li>
+<li>做 (实现)</li>
+<li>测试 (测试和调试)</li>
+<li>使用 (操作和部署)</li>
+<li>维护 (优化)</li>
+</ol>
+<p>编写程序的推荐方法是我们创建备份脚本的过程：做了分析和设计，开始实现用一个简单的版本，测试和调试它，来确保它能按预期工作。现在，添加你想要的任何功能，继续重复需要次数的做－试验循环。记住，<strong>软件是在成长，而不是建立</strong>。</p>
+<h2 id="小结-6"><a href="#小结-6">小结</a></h2>
+<p>我们已经看到了如何创建我们自己的Python程序/脚本和编写这种程序的不同阶段。你可能会发现创建你自己的程序就像我们在这一章做的是有用的，以便你熟悉Python以及解决问题。</p>
+<p>接下来，我们将讨论面向对象编程。 # 面向对象编程</p>
+<p>到现在为止，在我们编写的所有程序中，我们围绕着函数，也就是处理数据的语句块来设计我们的程序，这叫做<em>面向过程</em>的编程方式，还有一种组织你的程序的方式，是将数据和函数组合起来打包到称为对象的东西里面，这叫做<em>面向对象</em>编程技术。大多数情况下，你可以使用面向过程的编程方式，但当你编写大型程序或者有一些适用于这种方式更好的问题时，你可以使用面向对象的编程技术。</p>
+<p>类和对象是面向对象编程的两个主要方面，一个<em>类</em>创建一个新的<em>类型</em>，在这里<em>对象</em>是类的一个<em>实例</em>。一个比喻，你可以有<code>int</code>型变量，换句话说，存储整数的变量是<code>int</code>类的一个<em>实例</em>（对象）。</p>
+<dl>
+<dt>静态语言的程序员应该注意</dt>
+<dd>注意，整数甚至被看作（<code>int</code>类的)对象。这不像在C++和(1.5版本以前的)Java语言中整数是原始的原生数据类型，关于类的更多细节，请看<code>help(int)</code>。
+</dd>
+</dl>
+<p>C#Java 1.5程序员将发现这和<em>装箱和拆封</em>的概念相似。</p>
+<p>对象可以使用<em>属于</em>对象的普通变量存储数据。属于一个对象或类的对象被称为<strong>字段</strong>。对象也可以通过使用<em>属于</em>类的函数有函数性。这样的函数被称为类的<strong>方法</strong>，这个术语是很重要的，因为它帮助我们区分函数和变量哪些是独立的，那些是属于一个类或对象的。总体而言，这些字段和方法可以被称为<strong>类</strong>的属性。</p>
+<p>字段有两种类型，它们可以属于类的每个实例/对象，或属于类本身。它们被分别称为<strong>实例变量</strong>和<strong>类变量</strong>。</p>
+<p>要创建一个类使用<code>class</code>的关键字，类的字段和方法在一个缩进块中列出。</p>
+<h2 id="自我"><a href="#自我">自我</a></h2>
+<p>类的方法与普通的函数只有一个特别的不同点--他们必须有一个额外的第一个名字、必须被添加到参数列表的开始处，但你调用该方法时，<strong>不用</strong>给此参数的值，Python将提供它。这个特别的变量指向对象<em>本身</em>，按照惯例，它的名字是<code>self</code>。</p>
+<p>虽然,你可以给这个参数任何名字，<em>强烈推荐</em>你使用名称<code>self</code> --任何其他的名字肯定是不清楚的。使用标准的名字，有许多优势--你的程序的任何读者将立即认出它，如果你使用<code>self</code>，甚至专门的ide(集成开发环境)也可以帮助你。</p>
+<dl>
+<dt>C++/Java/C#程序员要注意</dt>
+<dd>在Python中，<code>self</code>相当于C++中的指针<code>this</code>、Java和C#中的<code>this</code>引用。
+</dd>
+</dl>
+<p>你一定很想知道Python怎样给<code>self</code>赋值，为什么你不需要给它一个值。一个例子会使这个清楚。假设，你有一个称为<code>MyClass</code>的类和这个类的实例称为<code>myobject</code>。当你调用这个对象的方法<code>myobject.method(arg1, arg2)</code>时，Python将自动转换成<code>MyClass.method(myobject, arg1, arg2)</code>--这是关于<code>self</code>的所有特殊之处。</p>
+<p>这也意味着,如果你有一个不带任何参数的方法，那么你还得有一个参数——<code>self</code>。</p>
+<h2 id="类"><a href="#类">类</a></h2>
+<p>最简单的类可能是如下面的示例所示(另存为<code>simplestclass.py</code>).</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Person:
+    <span class="kw">pass</span> <span class="co"># 一个空块</span>
+
+p = Person()
+<span class="kw">print</span>(p)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 simplestclass.py
+&lt;__main__.Person object at 0x019F85F0&gt;</code></pre>
+<p>它是如何工作的：</p>
+<p>我们使用的类的声明和类的名称创建一个新的类，接下来是形成类的主体语句的一个缩进块。在这里，我们使用<code>pass</code>语句表示这是一个空的块。</p>
+<p>接下来，我们使用类名后跟一对圆括号创建这个类的一个对象/实例(在接下来的部分，我们将学习<a href="#初始化方法">更多关于实例化</a>的知识)。为了验证，我们通过简单地打印它确认变量的类型。它告诉我们，在<code>__main__</code>模块中有一个<code>Person</code>类的实例。</p>
+<p>注意，你的对象存储在计算机内存的地址也被打印了。因为Python找到任何地址就存储对象，因而，在你的计算机上地址会有所不同。</p>
+<h2 id="对象的方法"><a href="#对象的方法">对象的方法</a></h2>
+<p>我们已经讨论了类/对象除了有额外的<code>self</code>变量外，还可以有方法，就像函数。现在,我们将看到一个例子(另存为”的方法py”)。</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Person:
+    <span class="kw">def</span> sayHi(<span class="ot">self</span>):
+        <span class="kw">print</span>(<span class="st">&#39;嗨，你好吗？&#39;</span>)
+
+p = Person()
+p.sayHi()
+
+<span class="co"># 这个小例子也可写成Person().sayHi()</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 method.py
+嗨，你好吗？</code></pre>
+<p>它是如何工作的：</p>
+<p>在这里我们看到<code>self</code>在起作用。注意， <code>sayHi</code>方法不包含任何参数，但在函数定义中仍有 <code>self</code>。</p>
+<h2 id="init-方法"><a href="#init-方法"><strong>init</strong> 方法</a></h2>
+<p>在Python中有许多特别重要的方法名称，现在，我们看看<code>__init__</code>方法的重要性。</p>
+<p>类的一个对象一被初始化， <code>__init__</code>方法就运行。这个方法对你的对象做任何<em>初始化</em>都是有用的。</p>
+<p>例子 (保存为 <code>class_init.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Person:
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, name):
+        <span class="ot">self</span>.name = name
+    <span class="kw">def</span> sayHi(<span class="ot">self</span>):
+        <span class="kw">print</span>(<span class="st">&#39;嗨，我的名字是&#39;</span>, <span class="ot">self</span>.name)
+
+p = Person(<span class="st">&#39;Swaroop&#39;</span>)
+p.sayHi()
+
+<span class="co"># 这个小程序也可以写成 Person(&#39;Swaroop&#39;).sayHi()</span></code></pre>
+<p>输出：</p>
+<p><sub>~</sub> $ python3 class_init.py 嗨，我的名字是 Swaroop<sub>~</sub></p>
+<p>它是如何工作的：</p>
+<p>在这里，我们定义一个带参数<code>name</code>(和通常的 <code>self</code>)的<code>__init__</code>方法。在这里，我们只是创建一个新的称作<code>name</code>的字段。注意，尽管它们都叫 <code>name</code>，但它们是两个不同的变量。因为<code>self.name</code>中的点符号意味着&quot;self&quot;对象的一部分有个叫&quot;name&quot; 的东西，而另一个&quot;name&quot;是一个局部变量,因此没有问题。因为我们明确地表明我们所指的是哪个的名字，没有混乱。</p>
+<p>最重要的是。请注意。我们没有显式地调用 <code>__init__</code> 方法，而是当创建类的一个实例时，通过在类名称后的括号内传递参数，这是该方法的特殊意义。</p>
+<p>现在，我们可以在我们的方法中使用<code>self.name</code>字段了，在<code>sayHi</code>方法中已经做了演示。</p>
+<h2 id="类和对象的变量"><a href="#类和对象的变量">类和对象的变量</a></h2>
+<p>我们已经讨论了类与对象的部分功能(即方法)，现在让我们了解一下数据部分。数据部分，即字段，只不过是被<em>绑定</em>到对象和类的<strong>空间名字</strong>的普通变量。这意味着，这些名字只有在类和对象的环境内有效。这就是为什么他们被叫做<em>空间名字</em>的原因。</p>
+<p>有两种类型的<em>字段</em>--类变量和对象变量，它们的分类取决于类和对象分别<em>属于</em>哪种变量。</p>
+<p><em>类变量</em>是共享的——他们可以被该类的所有实例访问。类变量只是一个拷贝，当任何一个对象改变一个类变量时，所有的其它实例都将改变。</p>
+<p><em>对象变量</em>是类的每个对象或实例所特有的。既然这样，每个对象都有自己的字段拷贝，也就是说，在不同的实例中，它们不共享，同名的字段没有任何联系。一个例子能使你容易理解（保存为<code>objvar.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Robot:
+    <span class="co">&#39;&#39;&#39;表示人一机器人，有一个名字。&#39;&#39;&#39;</span>
+
+    <span class="co"># 一个类变量，数机器人的数量</span>
+    population = <span class="dv">0</span>
+ 
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, name):
+        <span class="co">&#39;&#39;&#39;初始化数据。&#39;&#39;&#39;</span>
+        <span class="ot">self</span>.name = name
+        <span class="kw">print</span>(<span class="st">&#39;(初始化 {0})&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+ 
+        <span class="co"># 当创建一个人时，机器人</span>
+        <span class="co"># 人口加1</span>
+        Robot.population += <span class="dv">1</span>
+ 
+    <span class="kw">def</span> <span class="ot">__del__</span>(<span class="ot">self</span>):
+        <span class="co">&#39;&#39;&#39;我将要死了。&#39;&#39;&#39;</span>
+        <span class="kw">print</span>(<span class="st">&#39;{0} 正在被毁！&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+ 
+        Robot.population -= <span class="dv">1</span>
+ 
+        <span class="kw">if</span> Robot.population == <span class="dv">0</span>:
+            <span class="kw">print</span>(<span class="st">&#39;{0}是最后一个。&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+        <span class="kw">else</span>:
+            <span class="kw">print</span>(<span class="st">&#39;还有{0:d}机器人在工作。&#39;</span>.<span class="dt">format</span>(Robot.population))
+ 
+    <span class="kw">def</span> sayHi(<span class="ot">self</span>):
+        <span class="co">&#39;&#39;&#39;机器人问候。</span>
+<span class="co"> </span>
+<span class="co">        是的，它们能做作那个。&#39;&#39;&#39;</span>
+        <span class="kw">print</span>(<span class="st">&#39;你好，我的主人叫我&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+
+    <span class="kw">def</span> howMany():
+        <span class="co">&#39;&#39;&#39;打印当前人口。&#39;&#39;&#39;</span>
+        <span class="kw">print</span>(<span class="st">&#39;我们有{0:d}个机器人。&#39;</span>.<span class="dt">format</span>(Robot.population))
+    howMany = <span class="dt">staticmethod</span>(howMany)
+ 
+droid1 = Robot(<span class="st">&#39;R2-D2&#39;</span>)
+droid1.sayHi()
+Robot.howMany()
+ 
+droid2 = Robot(<span class="st">&#39;C-3PO&#39;</span>)
+droid2.sayHi()
+Robot.howMany()
+ 
+<span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">机器人在这能做一些工作。</span><span class="ch">\n</span><span class="st">&quot;</span>)
+
+<span class="kw">print</span>(<span class="st">&quot;机器人已经完成了它们的工作，因此，让我们销毁它们。&quot;</span>)
+<span class="kw">del</span> droid1
+<span class="kw">del</span> droid2
+
+Robot.howMany()</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 objvar.py
+(初始化 R2-D2)
+你好，我的主人叫我
+我们有1个机器人。
+(初始化 C-3PO)
+你好，我的主人叫我
+我们有2个机器人。
+
+机器人在这能做一些工作。
+
+机器人已经完成了它们的工作，因此，让我们销毁它们。
+R2-D2 正在被毁！
+还有1机器人在工作。
+C-3PO 正在被毁！
+C-3PO是最后一个。
+我们有0个机器人。</code></pre>
+<p>它是如何工作的：</p>
+<p>这是一个很长的例子，但有助于展示类和对象变量的特性。在这里，<code>population</code> 属于<code>Robot</code>类，因此是一个类变量。<code>name</code>变量属于对象(使用<code>self</code>分配)，因此是一个对象变量。</p>
+<p>因此，我们提到<code>population</code>类变量使用<code>Robot.population</code> 而不是<code>self.population</code>。我们在那个对象的中提到对象变量<code>name</code>使用<code>self.name</code>符号。记住对象和类变量的简单区别。还请注意，一个对象变量与一个类变量名字相同时，类变量将被隐藏！</p>
+<p><code>howMany</code>实际上是一个属于类而不是对象的方法，这意味着我们可以将其定义成 <code>classmethod</code> 或<code>staticmethod</code>中的任何一个，这取决于我们是否需要知道是哪个类。因为，我们不需要这样的信息，我们主张<code>staticmethod</code> 。</p>
+<p>我们也可以使用(decorator)(http://www.ibm.com/developerworks/linux/library/l-cpdecor.html)达到同样的目的：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ot">@staticmethod</span>
+<span class="kw">def</span> howMany():
+    <span class="co">&#39;&#39;&#39;打印当前人口。&#39;&#39;&#39;</span>
+    <span class="kw">print</span>(<span class="st">&#39;我们有{0:d}个机器人。&#39;</span>.<span class="dt">format</span>(Robot.population))</code></pre>
+<p>修饰符可以被想象为一个调用显式声明的捷径，正如我们在这个例子中已经看到的。</p>
+<p>注意到，<code>__init__</code>方法用于使用一个名字初始化 <code>Robot</code> 实例。在这个方法中，因为还有一个机器人被添加,我们为<code>population</code>计数加了1。还发现，<code>self.name</code>的值是针对每一个对象的，这表明对象变量的特性。</p>
+<p>记住,你必须<em>只有</em>使用<code>self</code>引用同一对象的变量和方法，这就是所谓的<em>属性引用</em>。</p>
+<p>在这个程序中,我们也看到了类和方法的<strong>文档字符串</strong>的用法。在运行时我们可能通过使用<code>Robot.__doc__</code>访问类的文档字符串，使用 <code>Robot.sayHi.__doc__</code> 访问方法的为文档字符串。</p>
+<p>就像<code>__init__</code>方法一样，还有一个特殊的方法<code>__del__</code> ，该方法是在当对象将要毁灭时被调用，也就是说它不再被使用、能够为计算机系统释放出被它使用的内存。在这个方法中，我们简单地给 <code>Robot.population</code> 减1。</p>
+<p><strong>del</strong>`方法在对象不再使用时使用，<em>当这个方法被运行时</em>没有保证。如果你想明确地看到它在起作用，我们所能做的是必须使用del语句。</p>
+<p>所有的类成员是公共的，一个例外是：如果你使用的数据成员的名字使用了<em>双下划线前缀</em>如<code>__privatevar</code>, Python使用名称改编来有效地使它成为一个私有变量。</p>
+<p>因此,下面的惯例是，只在对象和类中使用的任何变量，首先应该以一个下划线开始，其他所有的名字都是公共的，且可以被用于其他的类/对象使用。记住，这只是一个惯例和不是被Python强制执行的(除了双下划线前缀)。</p>
+<dl>
+<dt>Note for C++/Java/C# Programmers</dt>
+<dd>在Python中，所有类成员(包括数据成员)是<em>公共有</em>和所有的方法是<em>虚拟</em>。
+</dd>
+</dl>
+<h2 id="继承"><a href="#继承">继承</a></h2>
+<p>面向对象编程的一个好处是代码的<em>重用</em>，一种方式是通过<em>继承</em>机制实现，继承可以被想像为实现类之间的一种<em>类型和子类型</em>的关系。</p>
+<p>假设您想编写一个大学里教师和学生记录的程序，他们有一些共同的特性，如姓名、年龄和地址。他们也有特定的特性，如老师的工资、课程和树叶和学生的学费、分数。</p>
+<p>您可以为每个类型创建两个独立的类，并且处理它们，但要添加一个新的共同特征意味着要在这两种独立的类中都要添加，很快就会变得难以处理。</p>
+<p>一个更好的方法是创建一个共同的类称为 <code>SchoolMember</code> ，然后从这个类<em>继承</em>老师类和学生类，也就是说它们成为这个类的子类，可以对这些子类添加特定的特征。</p>
+<p>这种方式有很多优点，如果我们在<code>SchoolMember</code>中添加/更改任何功能，在子类中会自动反映出来。例如，您可以为学生和老师添加一个新的身份证字段，可能通过直接把它们添加到SchoolMember类中来实现。然而，子类中的变化不影响其他子类。另一个优点是，如果你引用<code>SchoolMember</code>类的一个老师或学生对象，在某些情况下如计算学校成员的数量时会很有用。这就是所谓的<strong>多态性</strong>，如果父类是预期的，子类在任何情况下可以被取代，即对象可以当做父类的一个实例。</p>
+<p>还观察到，我们<em>重用</em>父类的代码，在不同的类中我们不需要重复，而在使用独立的类的情况下我们不得不重复。</p>
+<p>在这种情况下，<code>SchoolMember</code>类被称为<em>基类</em>或<em>超类</em>。<code>Teacher</code>和<code>Student</code>类被称为<em>派生类</em>或<em>子类</em>。</p>
+<p>现在，我们将看到作为程序的这个例子(保存为 <code>inherit.py</code>)：</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> SchoolMember:
+    <span class="co">&#39;&#39;&#39;代表任何学校成员。&#39;&#39;&#39;</span>
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, name, age):
+        <span class="ot">self</span>.name = name
+        <span class="ot">self</span>.age = age
+        <span class="kw">print</span>(<span class="st">&#39;(初始化学校成员： {0})&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+    
+    <span class="kw">def</span> tell(<span class="ot">self</span>):
+        <span class="co">&#39;&#39;&#39;告诉我细节。&#39;&#39;&#39;</span>
+        <span class="kw">print</span>(<span class="st">&#39;Name:&quot;{0}&quot; Age:&quot;{1}&quot;&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name, <span class="ot">self</span>.age), end=<span class="st">&quot; &quot;</span>)
+
+<span class="kw">class</span> Teacher(SchoolMember):
+    <span class="co">&#39;&#39;&#39;代表老师。&#39;&#39;&#39;</span>
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, name, age, salary):
+        SchoolMember.<span class="ot">__init__</span>(<span class="ot">self</span>, name, age)
+        <span class="ot">self</span>.salary = salary
+        <span class="kw">print</span>(<span class="st">&#39;(初始化老师： {0})&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+
+    <span class="kw">def</span> tell(<span class="ot">self</span>):
+        SchoolMember.tell(<span class="ot">self</span>)
+        <span class="kw">print</span>(<span class="st">&#39;Salary: &quot;{0:d}&quot;&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.salary))
+
+<span class="kw">class</span> Student(SchoolMember):
+    <span class="co">&#39;&#39;&#39;代表学生。&#39;&#39;&#39;</span>
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, name, age, marks):
+        SchoolMember.<span class="ot">__init__</span>(<span class="ot">self</span>, name, age)
+        <span class="ot">self</span>.marks = marks
+        <span class="kw">print</span>(<span class="st">&#39;(初始化学生： {0})&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.name))
+    
+    <span class="kw">def</span> tell(<span class="ot">self</span>):
+        SchoolMember.tell(<span class="ot">self</span>)
+        <span class="kw">print</span>(<span class="st">&#39;Marks: &quot;{0:d}&quot;&#39;</span>.<span class="dt">format</span>(<span class="ot">self</span>.marks))
+
+t = Teacher(<span class="st">&#39;Mrs. Shrividya&#39;</span>, <span class="dv">40</span>, <span class="dv">30000</span>)
+s = Student(<span class="st">&#39;Swaroop&#39;</span>, <span class="dv">25</span>, <span class="dv">75</span>)
+
+<span class="kw">print</span>() <span class="co"># 打印一个空行</span>
+
+members = [t, s]
+<span class="kw">for</span> member in members:
+    member.tell() <span class="co"># 为Teachers和Students工作</span></code></pre>
+<p>输出：</p>
+<p><sub>~</sub> $ python3 inherit.py (初始化学校成员： Mrs. Shrividya) (初始化老师： Mrs. Shrividya) (初始化学校成员： Swaroop) (初始化学生： Swaroop)</p>
+<p>Name:&quot;Mrs. Shrividya&quot; Age:&quot;40&quot; Salary: &quot;30000&quot; Name:&quot;Swaroop&quot; Age:&quot;25&quot; Marks: &quot;75&quot;<sub>~</sub></p>
+<p>它是如何工作的：</p>
+<p>使用继承，在类定义中，在类的名称后，我们在元组中指定基类名称，接下来，我们观察到使用 <code>self</code>变量，显式地调用基类的 <code>__init__</code>方法，这样我们可以初始化对象的基类部分。这是非常重要的，记住——Python不会自动调用基类的构造函数，您自己必须显式地调用它。</p>
+<p>我们还观察到，我们可以在类名前加前缀调用基类的方法，然后和其它参数一道传递给 <code>self</code>变量值。</p>
+<p>注意，当我们使用<code>SchoolMember</code>类的<code>tell</code>方法时，我们可以把<code>Teacher</code>或<code>Student</code>的实例作为<code>SchoolMember</code>的实例。</p>
+<p>同时，观察到子类的<code>tell</code>方法的调用，不是<code>SchoolMember</code>类的<code>tell</code>方法。要理解这一点的一种方法是，Python <em>总是</em>在实际的类型中开始寻找方法，如本例。如果它不能找到方法，它开始按在类定义中元组中指定的顺序一个接一个地查找属于它的基类的方法。</p>
+<p>术语提示--如果在继承元组中不止列出一个类，那么它被称为<em>多重继承</em>。</p>
+<p>在<code>tell()</code>方法中，<code>end</code>参数是用于来将换行变为在 <code>print()</code>调用结束后以空格开始。</p>
+<h2 id="小结-7"><a href="#小结-7">小结</a></h2>
+<p>我们已经探讨了类和对象的各个方面以及与之关联的各种术语。我们也看到了面向对象编程的好处和缺陷。Python是高度面向对象，从长远看仔细理解这些概念仔细将对你很有帮助。</p>
+<p>接下，我们将学习如何处理输入/输出和如何在Python中访问文件。 # 输入 输出</p>
+<p>会有这种情况，你的程序必须与用户进行交互。例如，你想获取来自用户的输入，然后打印一些返回的结果。我们可以分别使用<code>input()</code>和<code>print()</code>函数来实现。</p>
+<p>对于输出，我们还可以使用<code>str</code>(字符串)类的各种方法。例如，您可以使用<code>rjust</code>方法来获取一个指定宽度的字符串。更多细节，见 <code>help(str)</code>。</p>
+<p>另一个常见的输入/输出类型是处理文件。创建、读和写文件是许多程序至关重要的，我们将在本章探讨这方面。</p>
+<h2 id="用户输入"><a href="#用户输入">用户输入</a></h2>
+<p>将这个程序保存为 <code>user_input.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> reverse(text):
+    <span class="kw">return</span> text[::-<span class="dv">1</span>]
+
+<span class="kw">def</span> is_palindrome(text):
+    <span class="kw">return</span> text == reverse(text)
+
+something = <span class="dt">input</span>(<span class="st">&#39;输入文本： &#39;</span>)
+<span class="kw">if</span> (is_palindrome(something)):
+    <span class="kw">print</span>(<span class="st">&quot;是的，这是回文&quot;</span>)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&quot;不，这不是回文&quot;</span>)</code></pre>
+<p>输出：</p>
+<pre><code>输入文本： 蜜蜂
+不，这不是回文
+输入文本： 人上人
+是的，这是回文</code></pre>
+<p>它是如何工作的：</p>
+<p>我们使用切片特性来颠倒文本。我们已经看到使用<code>seq[a:b]</code>代码获取从<code>a</code>到<code>b</code><a href="#序列">来自序列的切片</a>。我们还可以提供一个第三个确定<em>步长</em>的参数，切片默认的步长是 <code>1</code>，它返回一个连续文本的一部分。给一个负的步长，即 <code>-1</code> ，将以反向返回文本。</p>
+<p><code>input()</code>函数将一个字符串作为参数，并显示给用户。然后等待用户输入和按回车键。一旦用户输入和按下回车键，<code>input()</code>函数将返回用户输入的文本。</p>
+<p>我们获取文本并颠倒它。如果原始文本和颠倒的文本是相等的，那么那个文本是一个<a href="[http://en.wiktionary.org/wiki/palindrome">回文</a>。</p>
+<dl>
+<dt>家庭作业</dt>
+<dd><p>检查一个文本是否是一个回文应该忽略标点符号、空格和案例。例如，&quot;Rise to vote, sir.&quot; 也是一个回文，但我们当前的程序并没有说它是。你能改善上述程序来识别这个回文吗?</p>
+<p><em>下面的提示(不要读)</em></p>
+<p>使用一个元组(从这里(http://grammar.ccc.commnet.edu/grammar/marks/marks.htm)你可以找到所有标点符号的一个列表)来保存所有的禁止字符，然后使用会员测试，以确定是否应该删除一个字符，即forbidden = ('!', '?', '.', ...)。</p>
+</dd>
+</dl>
+<h2 id="文件"><a href="#文件">文件</a></h2>
+<p>为了读写，你可以通过创建一个<code>file</code>类的对象，分别使用<code>read</code>、<code>readline</code>或 <code>write</code>方法来，打开和使用文件。能够读取或写入文件取决于文件打开时指定的模式。最后，当你完成对文件的操作时，你要调用<code>close</code>方法告诉Python，文件我们使用完了。</p>
+<p>例子 (保存为 <code>using_file.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">poem = <span class="st">&#39;&#39;&#39;\</span>
+<span class="st">当工作完成时</span>
+<span class="st">编程是有趣的</span>
+<span class="st">如果想让你的工作有趣</span>
+<span class="st">    使用Python！</span>
+<span class="st">&#39;&#39;&#39;</span>
+ 
+f = <span class="dt">open</span>(<span class="st">&#39;poem.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="co"># 为&#39;写w&#39;打开文件</span>
+f.write(poem) <span class="co"># 文本写入文件</span>
+f.close() <span class="co"># 关闭文件</span>
+ 
+f = <span class="dt">open</span>(<span class="st">&#39;poem.txt&#39;</span>) <span class="co"># 如果不指定打开模式，默认为&#39;读&#39;</span>
+<span class="kw">while</span> <span class="ot">True</span>:
+    line = f.readline()
+    <span class="kw">if</span> <span class="dt">len</span>(line) == <span class="dv">0</span>: <span class="co"># 0长度表示文件结尾</span>
+        <span class="kw">break</span>
+    <span class="kw">print</span>(line, end=<span class="st">&#39;&#39;</span>)
+f.close() <span class="co"># 关闭文件</span></code></pre>
+<p>输出：</p>
+<pre><code>$ python3 using_file.py
+当工作完成时
+编程是有趣的
+如果想让你的工作有趣
+    使用Python！</code></pre>
+<p>它是如何工作的：</p>
+<p>首先，通过内置的函数<code>open</code>，指定文件名和我们要打开的模式，打开一个文件。模式可以是读模式(<code>'r'</code>), 写模式(<code>'w'</code>)或追加模式(<code>'a'</code>)。我们也可以指定是否以文本格式(<code>'t'</code>) 或二进制格式(<code>'b'</code>)读,写或追加。实际上有更多可用的模式，<code>help(open)</code> 会给你更多的细节。默认情况下，<code>open()</code>认为是一个以读方式打开的文本格式的文件。</p>
+<p>在我们的例子中，我们首先以写文本格式打开文件，使用文件对象的<code>write</code>方法写文件，然后,我们最后 <code>close</code>(关闭)文件。</p>
+<p>接下来，为再次阅读，我们打开同一个文件。我们不需要指定一个模式,因为 '读文本文件' 是默认的模式。我们使用<code>readline</code>方法在一个循环中每次读文件的一行。该方法返回一个完整的行，包括换行符结束时的行。当返回一个<em>空</em>字符串时，这意味着我们已经到达文件的末尾，我们'打破'循环。</p>
+<p>在默认情况下，<code>print()</code>函数在屏幕上自动换行打印文本。我们是通过指定<code>end=''</code>禁止产生新行，因为从文件读取的行在结尾已经包含一个换行符。然后，我们最终<code>close</code>文件。</p>
+<p>现在，检查<code>poem.txt</code>的内容，确认程序确实写入和从那个文件读取。</p>
+<h2 id="拾取"><a href="#拾取">拾取</a></h2>
+<p>Python提供了一个标准的模块称为<code>pickle</code>，使用它你可以在一个文件中存储<strong>任何</strong>的Python对象，然后把它弄回来后，这就是所谓的<em>持续的</em>存储对象。</p>
+<p>例子 (保存为 <code>pickling.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> pickle
+ 
+<span class="co"># 我们将要存储对象的文件名</span>
+shoplistfile = <span class="st">&#39;shoplist.data&#39;</span>
+<span class="co"># 购物清单</span>
+shoplist = [<span class="st">&#39;苹果&#39;</span>, <span class="st">&#39;芒果&#39;</span>, <span class="st">&#39;胡萝卜&#39;</span>]
+ 
+<span class="co"># 定到文件</span>
+f = <span class="dt">open</span>(shoplistfile, <span class="st">&#39;wb&#39;</span>)
+pickle.dump(shoplist, f) <span class="co"># 把对象倒入一个文件</span>
+f.close()
+ 
+<span class="kw">del</span> shoplist <span class="co"># 释放shoplist变量</span>
+ 
+<span class="co"># 从仓库读回</span>
+f = <span class="dt">open</span>(shoplistfile, <span class="st">&#39;rb&#39;</span>)
+storedlist = pickle.load(f) <span class="co"># 从文件载入对象</span>
+<span class="kw">print</span>(storedlist)</code></pre>
+<p>输出：</p>
+<pre><code>$ python3 pickling.py
+[&#39;苹果&#39;, &#39;芒果&#39;, &#39;胡萝卜&#39;]</code></pre>
+<p>它是如何工作的：</p>
+<p>要在文件中存储一个对象，我们首先必须以'w'rite写'b'inary 二进制格式的方式<code>open</code>打开文件，然后调用<code>pickle</code>模块的<code>dump</code>函数，这个过程叫<em>拾取</em>。</p>
+<p>接下来，我们使用<code>pickle</code>模块的<code>load</code>函数取回对象，这个过程叫做<em>拆开</em>。</p>
+<h2 id="小结-8"><a href="#小结-8">小结</a></h2>
+<p>我们已经讨论了各种类型的输入/输出，文件处理和使用pickle模块。</p>
+<p>接下来，我们将探讨索异常的概念。</p>
+<h1 id="异常处理"><a href="#异常处理">异常处理</a></h1>
+<p>在你的程序中出现某些<em>异常</em>情况时，异常发生。例如，如果你要读一个文件而文件不存在？或者如果你不小心删除了正在运行的程序？这种情况的处理使用<strong>异常</strong>处理。</p>
+<p>同样,如果您的程序有一些无效的语句会怎样呢？这是由Python以<strong>举起</strong>它的句柄，告诉你有一个<strong>错误</strong>的方式处理。</p>
+<h2 id="错误"><a href="#错误">错误</a></h2>
+<p>考虑一个简单的<code>print</code>函数调用。如果我们把<code>print</code>错拼为<code>Print</code>，注意大小 写。在这种情况下，Python会<em>提出</em>一个语法错误。</p>
+<pre><code>&gt;&gt;&gt; Print(&#39;世界你好&#39;)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#0&gt;&quot;, line 1, in &lt;module&gt;
+    Print(&#39;世界你好&#39;)
+NameError: name &#39;Print&#39; is not defined
+&gt;&gt;&gt; print(&#39;世界你好&#39;)
+世界你好</code></pre>
+<p>观察到出现了一个<code>NameError</code>，且错误发生的地方也被打印出来，这就是为这个错误，<em>错误处理程序</em>所做的。</p>
+<h2 id="异常"><a href="#异常">异常</a></h2>
+<p>我们将<strong>尝试</strong>读取来自用户的输入。按<code>ctrl-d</code>后看看会发生什么？</p>
+<pre><code>&gt;&gt;&gt; s = input(&#39;输入一些东西 --&gt; &#39;)
+输入一些东西 --&gt; 
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#3&gt;&quot;, line 1, in &lt;module&gt;
+    s = input(&#39;输入一些东西 --&gt; &#39;)
+EOFError: EOF when reading a line</code></pre>
+<p>Python会产生一个称为<code>EOFError</code>的错误，这基本上意味着它发现了一个不希望看到的一个<em>文件结束符号</em> (这是由<code>ctrl-d</code>表示)。</p>
+<h2 id="处理异常"><a href="#处理异常">处理异常</a></h2>
+<p>我们可以使用<code>try..except</code>语句处理异常，我们基本上把通常的语句放在try块，把所有的错误处理程序放在except块。</p>
+<p>例子 (保存为 <code>try_except.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">try</span>:
+    text = <span class="dt">input</span>(<span class="st">&#39;输入一些东西 --&gt; &#39;</span>)
+<span class="kw">except</span> <span class="ot">EOFError</span>:
+    <span class="kw">print</span>(<span class="st">&#39;为什么你要输入文件结束符呢？&#39;</span>)
+<span class="kw">except</span> <span class="ot">KeyboardInterrupt</span>:
+    <span class="kw">print</span>(<span class="st">&#39;你取消了操作。&#39;</span>)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;你输入了 {0}&#39;</span>.<span class="dt">format</span>(text))</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 try_except.py
+Enter something --&gt;     # 按ctrl-d
+为什么你要输入文件结束符呢？
+
+$ python3 try_except.py
+Enter something --&gt;     # 按ctrl-c
+你取消了操作。
+
+$ python3 try_except.py
+Enter something --&gt; 没有例外
+你输入了 没有例外</code></pre>
+<p>它是如何工作的：</p>
+<p>我们把所有的可能导致异常/错误的语句放在<code>try</code>块中，然后把适当的错误/异常处理程序放在<code>except</code>子句/块中。<code>except</code>子句可以处理一个指定的错误或异常，或一个圆括号括起来的错误/异常列表。如果没有提供错误或异常的名字，它将处理<em>所有</em>错误和异常。</p>
+<p>注意，每一个<code>try</code>子句，必须有至少一个<code>except</code>子句与之相对应，否则，要一个试try块有什么用？</p>
+<p>如果不处理任何错误或异常，那么默认的Python处理程序被调用，它只是停止程序的执行和输出错误消息。这点在上面我们已经看到了。</p>
+<p>与<code>try..except</code>块相关，也可以使用<code>else</code>子句，没有例外发生的时候执行<code>else</code>子句。</p>
+<p>在下面的例子中，我们还将看到如何获得异常对象，以便我们重新得到附加的信息。</p>
+<h2 id="提出异常"><a href="#提出异常">提出异常</a></h2>
+<p>你可以使用<code>raise</code>语句通过指定错误/异常的名字<em>提出</em>异常，异常对象也被<em>抛出</em>。</p>
+<p>你可以提出的错误或异常应该是一个类,它必须直接或间接地是一 <code>Exception</code> (异常)类的一个派生类。</p>
+<p>例子 (保存为 <code>raising.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> ShortInputException(<span class="ot">Exception</span>):
+    <span class="co">&#39;&#39;&#39;一个用户定义的异常类。&#39;&#39;&#39;</span>
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, length, atleast):
+        <span class="ot">Exception</span>.<span class="ot">__init__</span>(<span class="ot">self</span>)
+        <span class="ot">self</span>.length = length
+        <span class="ot">self</span>.atleast = atleast
+
+<span class="kw">try</span>:
+    text = <span class="dt">input</span>(<span class="st">&#39;输入一些东西 --&gt; &#39;</span>)
+    <span class="kw">if</span> <span class="dt">len</span>(text) &lt; <span class="dv">3</span>:
+        <span class="kw">raise</span> ShortInputException(<span class="dt">len</span>(text), <span class="dv">3</span>)
+    <span class="co"># 像通常一样可以继续其它的工作</span>
+<span class="kw">except</span> <span class="ot">EOFError</span>:
+    <span class="kw">print</span>(<span class="st">&#39;为什么输入文件结束符？&#39;</span>)
+<span class="kw">except</span> ShortInputException <span class="ch">as</span> ex:
+    <span class="kw">print</span>(<span class="st">&#39;输入短的例外: 输入有 {0} 长, 预期至少 {1}&#39;</span>\
+          .<span class="dt">format</span>(ex.length, ex.atleast))
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;没有异常提出。&#39;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 raising.py
+输入一些东西 --&gt; 中国
+输入短的例外: 输入有 2 长, 预期至少 3
+
+$ python3 raising.py
+输入一些东西 --&gt; 中国功夫
+没有异常提出。</code></pre>
+<p>它是如何工作的：</p>
+<p>这里，我们创建了我们自己的异常类型，叫做<code>ShortInputException</code>，它有两个字段-输入字符串的长度 <code>length</code> 和程序期望的最小长度<code>atleast</code>。</p>
+<p>在 <code>except</code> 子句，我们提到被保存<code>为</code>变量名字的错误的类，控制相应的错误/异常对象，类似于在函数调用的的实参和形参。 在这个特别的<code>except</code>子句中，我们使用异常对象的<code>length</code>和<code>atleast</code>字段，给用户打印一个适当的消息。</p>
+<h2 id="try-..-finally"><a href="#try-..-finally">Try .. Finally</a></h2>
+<p>假设在你的程序中正在阅读一个文件，你如何确保文件对象是正常关闭，是否产生了常？这可以通过使用<code>finally</code>块实现。注意，,在相同的相应的<code>try</code>块中，您可以使用一个<code>except</code>子句以及 <code>finally</code>块。如果你想同时使用，你将不得不将一个嵌入到另一个中。</p>
+<p>保存为<code>finally.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> time
+
+<span class="kw">try</span>:
+    f = <span class="dt">open</span>(<span class="st">&#39;poem.txt&#39;</span>)
+    <span class="kw">while</span> <span class="ot">True</span>: <span class="co"># 通常的读文件</span>
+        line = f.readline()
+        <span class="kw">if</span> <span class="dt">len</span>(line) == <span class="dv">0</span>:
+            <span class="kw">break</span>
+        <span class="kw">print</span>(line, end=<span class="st">&#39;&#39;</span>)
+        time.sleep(<span class="dv">2</span>) <span class="co"># 确保它运行了一会儿</span>
+<span class="kw">except</span> <span class="ot">KeyboardInterrupt</span>:
+    <span class="kw">print</span>(<span class="st">&#39;!! 你取消了从文件读取操作。&#39;</span>)
+<span class="kw">finally</span>:
+    f.close()
+    <span class="kw">print</span>(<span class="st">&#39;(清理：关闭文件)&#39;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 finally.py
+当工作完成时
+编程是有趣的
+如果想让你的工作有趣
+    使用Python！
+(清理：关闭文件)</code></pre>
+<p>它是如何工作的：</p>
+<p>我们做了通常的文件读取工作，但是为了程序缓慢地运行（Python在自然状况下运行非常快）我们武断地使用<code>time.sleep</code>函数在每打印完一行后延迟2秒。当程序仍在运行时，,按<code>ctrl-c</code>可以中断/取消该程序的运行。</p>
+<p>观察到 <code>KeyboardInterrupt</code>异常发生程序退出。然而，在程序退出前，最后子句被执行，文件对象总是被关闭。</p>
+<h2 id="with语句"><a href="#with语句">with语句</a></h2>
+<p>在<code>try</code>块中获取资源和随后的在<code>finally</code>块释放释放资源是一种常见的模式。因此，这还有一个<code>with</code>语句，它使这一切以一个干净的方式运行:</p>
+<p>保存为 <code>using_with.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">with</span> <span class="dt">open</span>(<span class="st">&quot;poem.txt&quot;</span>) <span class="ch">as</span> f:
+    <span class="kw">for</span> line in f:
+        <span class="kw">print</span>(line, end=<span class="st">&#39;&#39;</span>)</code></pre>
+<p>它是如何工作的：</p>
+<p>输出应该与前面的示例相同，不同的是，我们使用的是带有<code>with</code>语句的<code>open</code>函数 --我们我们把关闭文件的工作留给<code>with open</code>自动完成。</p>
+<p>在幕后所发生的是，使用<code>with</code>语句有一个协议。它通过<code>open</code>语句获取返回的对象，在这种情况下我们称之为&quot;thefile&quot;。</p>
+<p>在开始代码块时，它<em>通常</em>称为 <code>thefile.__enter__</code>，代码块执行完毕时，<em>通常</em>称为<code>thefile.__exit__</code>。</p>
+<p>所以，在<code>finally</code>块中我们要写的代码将被 <code>__exit__</code>方法自动小心，这有利避免重复显式使用 <code>try..finally</code>。</p>
+<p>这一主题的更多讨论已超本书范围，更多的解释请参考<a href="http://www.python.org/dev/peps/pep-0343/">PEP 343</a></p>
+<h2 id="小结-9"><a href="#小结-9">小结</a></h2>
+<p>我们已经讨论了<code>try..except</code>和<code>try..finally</code>语句的使用方法。我们已经看到了如何创建我们自己的异常类型和如何提出异常。</p>
+<p>接下来，我们将探索Python标准库。</p>
+<h1 id="标准库"><a href="#标准库">标准库</a></h1>
+<p>Python标准库包含大量有用的模块，是每个标准Python安装的一部分。如何你熟悉这些库能做的事的范围，许多问题可以快速解决，因此，熟悉Python标准库是很重要的，</p>
+<p>在这个库中，我们将探讨一些经常使用的模块。在你安装的Python的文档中<a href="http://docs.python.org/py3k/library/index.html">'Library Reference' section</a>，你可以找到在Python标准库中所有模块的完整细节。</p>
+<p>让我们探讨几个有用的模块：</p>
+<dl>
+<dt>注意</dt>
+<dd>如果你发现本章的主题太先进，你可以跳过这一章。但是，当你更喜欢使用Python编程时，我强烈建议你回到本章。
+</dd>
+</dl>
+<h2 id="sys系统模块"><a href="#sys系统模块">sys（系统）模块</a></h2>
+<p><code>sys</code>模块包含系统特定的功能。我们已经看到, <code>sys.argv</code>列表包含的命令行参数。</p>
+<p>假设我们想要检查正在使用的Python命令的版本，也就是说，我们希望确保我们使用至少是版本3。<code>sys</code>模块给了我们这样的功能。</p>
+<pre><code>$ python3
+&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.version_info
+sys.version_info(major=3, minor=3, micro=0, releaselevel=&#39;final&#39;, serial=0)
+&gt;&gt;&gt; sys.version_info.major &gt;= 3
+True</code></pre>
+<p>它是如何工作的：</p>
+<p><code>sys</code>模块有一个给我们版本信息的<code>version_info</code>元组，第一部分是 major主版本号，例如，我们可以检查确保程序在Pythpn 3.0版本下运行。</p>
+<p>保存为<code>versioncheck.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys, warnings
+<span class="kw">if</span> sys.version_info.major &lt; <span class="dv">3</span>:
+    warnings.warn(<span class="st">&quot;程序需要在 Python 3.0 以上版本上运行&quot;</span>,
+        <span class="ot">RuntimeWarning</span>)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">&#39;按正常情况处理&#39;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python2.7 versioncheck.py
+versioncheck.py:6: 程序需要在 Python 3.0 以上版本上运行
+  RuntimeWarning)
+
+$ python3 versioncheck.py
+按正常情况处理</code></pre>
+<p>它是如何工作的：</p>
+<p>我们使用标准库的另一个模块，称为<code>warnings</code>(警告)，用于向最终用户显示警告。如果Python版本号小于3，我们显示相应的警告。</p>
+<h2 id="logging日志模块"><a href="#logging日志模块">logging（日志）模块</a></h2>
+<p>如果你想把一些调试信息或重要信息存储在某个地方，以便你可以检查你的程序是否按你的期望运行，你该如何做呢？你怎样将这些信息&quot;存储在某个地方&quot;？这可以通过使用 <code>logging</code>模块实现。</p>
+<p>保存为 <code>use_logging.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> os, platform, logging
+
+<span class="kw">if</span> platform.platform().startswith(<span class="st">&#39;Windows&#39;</span>):
+    logging_file = os.path.join(os.getenv(<span class="st">&#39;HOMEDRIVE&#39;</span>), os.getenv(<span class="st">&#39;HOMEPATH&#39;</span>), <span class="st">&#39;test.log&#39;</span>)
+<span class="kw">else</span>:
+    logging_file = os.path.join(os.getenv(<span class="st">&#39;HOME&#39;</span>), <span class="st">&#39;test.log&#39;</span>)
+
+<span class="kw">print</span>(<span class="st">&quot;记录到&quot;</span>, logging_file)
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    <span class="dt">format</span>=<span class="st">&#39;</span><span class="ot">%(asctime)s</span><span class="st"> : </span><span class="ot">%(levelname)s</span><span class="st"> : </span><span class="ot">%(message)s</span><span class="st">&#39;</span>,
+    filename = logging_file,
+    filemode = <span class="st">&#39;w&#39;</span>,
+)
+
+logging.debug(<span class="st">&quot;程序开始&quot;</span>)
+logging.info(<span class="st">&quot;做些事情&quot;</span>)
+logging.warning(<span class="st">&quot;现在结束&quot;</span>)</code></pre>
+<p>Output:</p>
+<pre><code>$ python3 use_logging.py
+记录到 C:\Users\swaroop\test.log</code></pre>
+<p>如果我们检查<code>test.log</code>文件的内容，它看起来像：</p>
+<pre><code>2013-02-05 21:38:24,592 : DEBUG : 程序开始
+2013-02-05 21:38:24,592 : INFO : 做些事情
+2013-02-05 21:38:24,592 : WARNING : 现在结束</code></pre>
+<p>它是如何工作的：</p>
+<p>我们从标准库使用三个模块，<code>os</code>（操作系统）模块，与操作系统交互，<code>platform</code>（平台）模块，操作平台的信息，信息平台即操作系统和<code>logging</code>（日志）模块，<em>记录</em>信息。</p>
+<p>首先,我们根据<code>platform.platform()</code> (更多信息，见<code>import platform; help(platform)</code>)返回的字符串检查我们正在使用哪个操作系统，如果是Windows，我们找出我们要存储信息的主盘（磁盘驱动器），目录和文件名。把这三部分组装在一起，我们得到文件的完整位置。其他平台，我们需要知道用户的主文件夹，然后我们就得到了完整的文件的位置。</p>
+<p>我们使用<code>os.path.join()</code>函数把这3部分连接在一起。之所以使用一个特殊的函数而不仅仅是字符串连接，是因为这个函数将确保整的位置的格式与操作系统所期望的相匹配。</p>
+<p>我们配置<code>logging</code>模块使之以我们指定的特定格式来编写所有的信息。</p>
+<p>最后，我们旋转为了调试、信息、警告甚至至关重要的信息。一旦程序已经运行，我们可以检查这个文件，我们将会知道在程序中发生了什么事，即使没有信息显示给运行程序的用户。</p>
+<h2 id="week周系列模块"><a href="#week周系列模块">Week（周）系列模块</a></h2>
+<p>在标准库中，有很多需要探索如 <a href="http://docs.python.org/py3k/library/pdb.html">debugging(调试)</a>,<a href="http://docs.python.org/py3k/library/argparse.html">handling command line options（处理命令行选项）</a>,<a href="http://docs.python.org/py3k/library/re.html">regular expressions(正则表达式)</a>等等。</p>
+<p>进一步探索标准库的最好方法就是阅读 Doug Hellmann的优秀的<a href="http://www.doughellmann.com/projects/PyMOTW/">Python Module of the Week</a>系列或阅读［Python文档］(http://docs.python.org/py3k/)。</p>
+<h2 id="小结-10"><a href="#小结-10">小结</a></h2>
+<p>我们已经探索过了Python标准库中许多模块的一些功能。强烈建议浏览［Python Standard Library documentation(Python标准库文档)］(http://docs.python.org/py3k/library/index.html)来了解可用的所有模块。</p>
+<p>接下来，我们将讨论Python的各个方面,这将使我们的Python旅程更<em>完整</em>。</p>
+<h1 id="更多"><a href="#更多">更多</a></h1>
+<p>到目前为止，我们已经涵盖了您将使用的Python各个方面的大部分。在这一章，我们将介绍使我们的Python知识更全面的更多方面。</p>
+<h2 id="passing-tuples-around"><a href="#passing-tuples-around">Passing tuples around</a></h2>
+<p>你是否一直希望可以从一个函数返回两个不同的值？你可以，你所要做的就是使用一个元组。</p>
+<pre><code>&gt;&gt;&gt; def get_error_details():
+...     return (2, &#39;第2个错误的细节&#39;)
+...
+&gt;&gt;&gt; errnum, errstr = get_error_details()
+&gt;&gt;&gt; errnum
+2
+&gt;&gt;&gt; errstr
+&#39;第2个错误的细节&#39;</code></pre>
+<p>注意，<code>a, b = &lt;some expression&gt;</code>的用法是表示将表达式的结果作为一个有两个值的元组。</p>
+<p>如果你想将结果解释为<code>(a, &lt;其它的一切&gt;)</code>，那么你只需要以星号开始，就像你在函数参数中做的：</p>
+<pre><code>&gt;&gt;&gt; a, *b = [1, 2, 3, 4]
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; b
+[2, 3, 4]</code></pre>
+<p>这也意味着，在Python中以最快的方式交换两个变量是:</p>
+<pre><code>&gt;&gt;&gt; a = 5; b = 8
+&gt;&gt;&gt; a, b = b, a
+&gt;&gt;&gt; a, b
+(8, 5)</code></pre>
+<h2 id="特别的方法"><a href="#特别的方法">特别的方法</a></h2>
+<p>有一些特别的方法，比如<code>__init__</code>和<code>__del__</code>方法在类中有特殊意义。</p>
+<p>特殊的方法用于模拟内置类型的某些行为，例如，如果您想要使用<code>x[key]</code>索引操作你的类(就像你用在列表和元组中使用的)，那么你所要做的就是实现<code>__getitem__()</code>的方法，做你的工作。如果你仔细想想，这就是Python为<code>list</code>类本身所做的!</p>
+<p>在下面的表中列出了一些有用的特别的方法。如果你想知道所有的特殊方法，<a href="http://docs.python.org/py3k/reference/datamodel.html#specialnames">参见手册</a>。</p>
+<dl>
+<dt><code>__init__(self, ...)</code></dt>
+<dd><p>这个方法在新创建对象返回用法之前被调用。</p>
+</dd>
+<dt><code>__del__(self)</code></dt>
+<dd><p>在对象被销毁前调用</p>
+</dd>
+<dt><code>__str__(self)</code></dt>
+<dd><p>当使用<code>print</code>函数或<code>str()</code>函数时调用。</p>
+</dd>
+<dt><code>__lt__(self, other)</code></dt>
+<dd><p>当使用<em>小于</em>(&lt;)操作符时调用，同样的，所有的操作符(+, &gt;,等。)都有特别的方法。</p>
+</dd>
+<dt><code>__getitem__(self, key)</code></dt>
+<dd><p>当使用<code>x[key]</code>索引操作时调用。</p>
+</dd>
+<dt><code>__len__(self)</code></dt>
+<dd><p>当序列对象的内建<code>len()</code>函数使用时调用。</p>
+</dd>
+</dl>
+<h2 id="单语句块"><a href="#单语句块">单语句块</a></h2>
+<p>我们已经看到,每个块语句以它自己的缩进级别与其它部分分离。嗯，有一个警告。如果你的块语句只包含一个单独的语句，那么您可以指定在同一行，例如，一个条件语句和循环语句。下面的示例应该清楚地说明这一点:</p>
+<pre><code>&gt;&gt;&gt; flag = True
+&gt;&gt;&gt; if flag: print(&#39;是的&#39;)
+是的</code></pre>
+<p>请注意，单个语句用于原地而不是作为一个单独的块。虽然，你这可以让你的程序<em>较小</em>，我强烈建议避免这种简化方法，除非是错误检查，主要因为如果你正在使用适当的缩进，它会更容易添加一个额外的声明。</p>
+<h2 id="lambda-形式"><a href="#lambda-形式">Lambda 形式</a></h2>
+<p>一个<code>lambda</code>语句是用来创建新的函数对象。从本质上讲，<code>lambda</code>取得一个参数，后面有一个函数主体的表达式，而表达式表达式的值由新函数返回。</p>
+<p>例子 (保存为 <code>lambda.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">points = [ { <span class="st">&#39;x&#39;</span> : <span class="dv">2</span>, <span class="st">&#39;y&#39;</span> : <span class="dv">3</span> }, { <span class="st">&#39;x&#39;</span> : <span class="dv">4</span>, <span class="st">&#39;y&#39;</span> : <span class="dv">1</span> } ]
+points.sort(key=<span class="kw">lambda</span> i : i[<span class="st">&#39;y&#39;</span>])
+<span class="kw">print</span>(points)</code></pre>
+<p>输出:</p>
+<pre><code>[{&#39;x&#39;: 4, &#39;y&#39;: 1}, {&#39;x&#39;: 2, &#39;y&#39;: 3}]</code></pre>
+<p>它是如何工作的:</p>
+<p>注意，<code>list</code>的<code>sort</code>方法可以取一个<code>key</code>(键)参数，用于确定列表如何排序(通常我们知道只有升序或降序)。在我们的例子中，我们要做一个自定义排序，为此，我们需要编写一个函数，我们只使用一个lambda表达式创建一个新的函数，而不是为只在这一个地方使用的函数写一个单独的<code>def</code>块。</p>
+<h2 id="列表解析"><a href="#列表解析">列表解析</a></h2>
+<p>列表解析用于从现有的列表派生一个新列表。假设您有一个数字列表，你想要得到一个相应的列表：只有当数字本身大于2时所有的数字乘以2，列表解析非常适合这种情况。</p>
+<p>例子 (保存为<code>list_comprehension.py</code>):</p>
+<pre class="sourceCode python"><code class="sourceCode python">listone = [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]
+listtwo = [<span class="dv">2</span>*i <span class="kw">for</span> i in listone <span class="kw">if</span> i &gt; <span class="dv">2</span>]
+<span class="kw">print</span>(listtwo)</code></pre>
+<p>输出:</p>
+<pre><code>$ python3 list_comprehension.py
+[6, 8]</code></pre>
+<p>它是如何工作的:</p>
+<p>这里，我们在满足一些条件的情况下(<code>if i &gt; 2</code>)通过指定的操作(<code>2*i</code>)得到一个新列表。注意，原始列表仍未修改。</p>
+<p>使用列表解析的优势是：当我们使用循环来处理列表中的每个元素，并将其存储在一个新的列表时，它可以减少需要代码的引用数量。</p>
+<h2 id="在函数中接受元组和字典"><a href="#在函数中接受元组和字典">在函数中接受元组和字典</a></h2>
+<p>函数有一种特殊的方式接收参数--分别使用<em>和</em>*前缀标识元组或字典。当函数获取数量可变的参数时这很有用。</p>
+<pre><code>&gt;&gt;&gt; def powersum(power, *args):
+...     &#39;&#39;&#39;返回每个参数指定次方的和。&#39;&#39;&#39;
+...     total = 0
+...     for i in args:
+...         total += pow(i, power)
+...     return total
+...
+&gt;&gt;&gt; powersum(2, 3, 4)
+25
+
+&gt;&gt;&gt; powersum(2, 10)
+100</code></pre>
+<p>因为我们有一个<code>*</code>前缀在<code>args</code>变量前，所有额外的传递给函数的参数存储作为元组的<code>args</code> 中。如果使用**前缀，额外的参数将被认为是键/值对的字典。</p>
+<h2 id="assert断言语句"><a href="#assert断言语句">assert(断言)语句</a></h2>
+<p><code>assert</code>语句是用来声称某样东西是确实的。例如，如果你很确定你将使用的列表中至少有一个元素，而你想检查如果它不是真实的出现一个错误。那么<code>assert</code>语句在这种情况下是一个好主意。当断言语句失败，出现一个<code>AssertionError</code>(断言错误)。</p>
+<pre><code>&gt;&gt;&gt; mylist = [&#39;条款&#39;]
+&gt;&gt;&gt; assert len(mylist) &gt;= 1
+&gt;&gt;&gt; mylist.pop()
+&#39;条款&#39;
+&gt;&gt;&gt; mylist
+[]
+&gt;&gt;&gt; assert len(mylist) &gt;= 1
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+AssertionError</code></pre>
+<p><code>assert</code>语句应该明智而审慎地使用。大多数时候，它能很好地捕捉异常，要么处理问题或向用户显示一条错误消息，然后退出。</p>
+<h2 id="转义字符"><a href="#转义字符">转义字符</a></h2>
+<p>假设,你想有一个包含单引号(<code>'</code>)的字符串，你将如何指定该字符串呢？例如，字符串是<code>What's your name?</code>，你不能指定为<code>'What's your name?'</code>因为Python会对在哪里开始和结束字符串感到困惑。所以，你必须指定这个单引号不表示是字符串的末尾。这可以在叫做<em>转义字符</em>的帮助下实现。你将单引号指定为<code>\'</code>——注意，反斜杠。现在，您可以指定字符串为<code>'What\'s your name?'</code>。</p>
+<p>指定这个特定的字符串的另一种方式是<code>&quot;What's your name?&quot;</code>，即使用双引号。同样的，在一个双引号的字符串中为双引号本身必须使用一个转义字符。另外，对反斜杠本身要使用转义字符 <code>\\</code>。</p>
+<p>如果你想指定一个两行的字符串该怎样在做呢？一种方法是使用[前面]](#三重引号) 介绍的三重引号，或者您可以使用新行转义字符--<code>\n</code>来表示一个新行开始。一个例子是 <code>这是第1行\n这是第2行</code>。另一个要知道的有用的转义字符是制表符 <code>\t</code>。有更多的转义字符，但在这我只提到最有用的几个。</p>
+<p>需要注意的是，在一个字符串中，在一行结束处的反斜杠表明字符串在下一行仍在继续，并没有换行。例如:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">&quot;这是第1个句子。\</span>
+<span class="co">这是第2个句子。&quot;</span></code></pre>
+<p>相当于</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">&quot;这是第1个句子。这是第2个句子。&quot;</span></code></pre>
+<h3 id="原始字符串"><a href="#原始字符串">原始字符串</a></h3>
+<p>如果你需要指定没有经过像转义字符一样进行处理的字符串，那么，你需要通过对字符串前加前缀<code>r</code>或<code>R</code>来指定一个<em>原始</em>的字符串。一个例子是 <code>r&quot;\n表明新行&quot;</code>。</p>
+<dl>
+<dt>正则表达式用户需要注意</dt>
+<dd>在处理正则表达式时总是使用原始字符串，否则，需要大量的反斜杠。例如，反向引用可以被指向<code>'\\1'</code>或<code>r'\1'</code>。
+</dd>
+</dl>
+<h2 id="小结-11"><a href="#小结-11">小结</a></h2>
+<p>在这一章，我们讨论了一些Python的更多功能，然而我们还没有覆盖所有Python的特点。然而，,在这个阶段，我们已经覆盖了在实践中你会用到的大部分。对于你开始创造任何程序是足够的。</p>
+<p>接下来，我们将讨论如何深入探索Python。 # 下一步做什么</p>
+<p>到现在为止，如果你彻底读过这本书和练习写作过大量的程序，那么你一定变得舒服而且熟悉Python。你可能已经创建了一些Python程序去尝试这些东西，去锻炼你的Python技能。如果你还没有这样做了，你应该去做。现在的问题是“下一步做什么呢?”。</p>
+<p>我建议你处理这个问题：</p>
+<blockquote>
+<p>创建你自己的命令行<em>地址簿</em>程序，使用它可以浏览、添加、修改、删除和搜索你的联系人如朋友、家人和同事及他们的信息，如电子邮件地址和/或电话号码。细节必须存储供以后检索。</p>
+</blockquote>
+<p>如果你想依据直到现在我们遇到的各种各样的材料中考虑它，这是相当容易的。如果你仍然想知道如何处理的方向，那么这是一个提示。</p>
+<dl>
+<dt>提示(不先试不要看)</dt>
+<dd>创建一个代表人们信息的类。使用字典存储成员对象，用他们的名字做键。使用pickle模块将对象存储在你的硬盘中，使用字典的内建方法添加、删除和修改成员信息。
+</dd>
+</dl>
+<p>一旦你能做这个，你可以声明是一名Python程序员了。现在，立即<a href="http://www.swaroopch.com/contact/">发电子邮件给我</a>感谢我的这本伟大的书;-). 这个步骤是可选 的但是推荐的。同样，请考虑<a href="http://www.swaroopch.com/buybook/">购买一个印刷版</a>来支持这本书的可持续发展。</p>
+<p>如果你发现这个程序简单，这有另外一个：</p>
+<blockquote>
+<p>编写<a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?replace">替换命令</a>. 这个命令将使用指定文件列表中的字符串替换一个字符串。</p>
+</blockquote>
+<p>replace命令可以是简单或复杂的，这随你所愿，从简单的字符串替换到寻找模式(正则表达式)。</p>
+<p>在那之后，下面是一些继续使用Python旅程的一些方法：</p>
+<h2 id="示例代码"><a href="#示例代码">示例代码</a></h2>
+<p>学习一门程序语言的最好方式是写许多代码和读许多代码：</p>
+<ul>
+<li><a href="http://code.activestate.com/recipes/langs/python/">Python Cookbook</a> 是使用Python解决某些问题的技巧和秘诀的非常有用的集合，这是每个Python使用者必读的。</li>
+<li><a href="http://www.doughellmann.com/PyMOTW/contents.html">Python Module of the Week</a>是另一本杰出的<a href="#标准库">Python标准库</a>必读指南。</li>
+</ul>
+<h2 id="问题及解答"><a href="#问题及解答">问题及解答</a></h2>
+<ul>
+<li><a href="http://docs.python.org/py3k/howto/doanddont.html">Official Python Dos and Don'ts（Python官方的注意事项）</a></li>
+<li><a href="http://www.python.org/doc/faq/general/">Official Python FAQ(Python官方的问题解答)</a></li>
+<li><a href="http://norvig.com/python-iaq.html">Norvig's list of Infrequently Asked Questions(很少发生的提问列表)</a></li>
+<li><a href="http://dev.fyicenter.com/Interview-Questions/Python/index.html">Python Interview Q &amp; A(Python问题解答访谈)</a></li>
+<li><a href="http://beta.stackoverflow.com/questions/tagged/python">StackOverflow questions tagged with python(使用Python标记的堆栈溢出问题)</a></li>
+</ul>
+<h2 id="学习指南"><a href="#学习指南">学习指南</a></h2>
+<ul>
+<li><a href="http://www.awaretek.com/tutorials.html">Awaretek's comprehensive list of Python tutorials(Awaretek的Python学习指南的综合列表)</a></li>
+</ul>
+<h2 id="视频"><a href="#视频">视频</a></h2>
+<ul>
+<li><a href="http://www.pyvideo.org/category">PyVideo</a></li>
+</ul>
+<h2 id="讨论"><a href="#讨论">讨论</a></h2>
+<p>当你遇到一个Python问题而无法进行下去时，不知道去问谁，那么 <a href="http://mail.python.org/mailman/listinfo/tutor">python-tutor list(Python辅导列表)</a> 是你提问的最好的地方。</p>
+<p>前提是确保你做你的家庭作业和你自己试图解决问题。</p>
+<h2 id="新闻"><a href="#新闻">新闻</a></h2>
+<p>如果你想了解世界是最新的Python，那么请跟随[Python的官方行星](http://planet.python.org。</p>
+<h2 id="安装库"><a href="#安装库">安装库</a></h2>
+<p>在[Python包索引)(http://pypi.python.org/pypi)中有一个巨大的数量的，你可以在你自己的程序中使用的开源库。安装和使用这些库，你可以使用<a href="http://www.pip-installer.org/en/latest/">pip</a>。</p>
+<h2 id="图形软件"><a href="#图形软件">图形软件</a></h2>
+<p>假设您想要使用Python创建自己的图形程序，这可以通过使用一个GUI(图形用户接口）库与Python绑定来实现。绑定是允许你用Python编写程序和使用用C或C++语言编写的库。</p>
+<p>使用Python有很多GUI可供选择：</p>
+<dl>
+<dt>Kivy</dt>
+<dd><p><a href="http://kivy.org">http://kivy.org</a></p>
+</dd>
+<dt>PyGTK</dt>
+<dd><p>这是Python为GTK+工具包的绑定，GTK+工具包是GNOME建立的基础。GTK+在使用上有许多怪癖，但一旦你适应，您可以快速创建GUI应用程序。这是图形界面设计者必不可少的。文档是没有改善。GTK+在Linux上工作良好，但它转到Windows是不完整的。您可以使用GTK+创建自由以及专有软件。 要开始使用,阅读[PyGTK教程)(http://www.pygtk.org/tutorial.html)。</p>
+</dd>
+<dt>PyQt</dt>
+<dd><p>这是Python为Qt工具包绑定的，Qt工具包是KDE建立的基础。由于Qt设计器和惊人的Qt文档，Qt非常易用、非常强大。如果你想创建开源(GPL'ed)软件，PyQt是免费的。如果你想创建专有的闭源软件，你需要购买它。从Qt4.5开始你同样可以使用它创建非gpl软件。要开始使用，首先阅读<a href="http://zetcode.com/tutorials/pyqt4/">PyQt教程</a>或(PyQt书)(http://www.qtrac.eu/pyqtbook.html)。</p>
+</dd>
+<dt>wxPython</dt>
+<dd><p>这是Python为wxWidgets工具包绑定的。wxPython有一个与之关联的学习曲线。然而，它是非常轻便，运行在Linux、Windows、Mac和甚至嵌入式平台。有许多可供wxPython使用的ide，包括GUI设计师,例如<a href="http://spe.pycs.net/">SPE(Stani的Python编辑器)</a>和<a href="http://wxglade.sourceforge.net/">wxGlade</a>GUI构建器。使用wxPython您可以创建自由以及专有软件。首先,阅读[wxPython教程)(http://zetcode.com/wxpython/)。</p>
+</dd>
+</dl>
+<h3 id="gui工具小结"><a href="#gui工具小结">GUI工具小结</a></h3>
+<p>更多选择，请参见[Python官方网站的GuiProgramming wiki页面)(http://www.python.org/cgi-bin/moinmoin/GuiProgramming)。</p>
+<p>不幸的是，对于Python没有一个标准的GUI工具。我建议你根据你的情况，从以上工具中选择一个。第一个因素是，你是否愿意为使用GUI工具支付费用。第二个因素是，你是否想让程序只在Windows、或Mac或Linux上运行，还是所有这些都可以。第三个因素，如果Linux是选择的平台，你是Linux上的KDE用户，还是GNOME用户。</p>
+<p>对于更详细和全面的分析,请看<a href="http://archive.pythonpapers.org/ThePythonPapersVolume3Issue1.pdf">The Python Paper,Volume 3, Issue 1</a>的第26页。</p>
+<h2 id="各种实现"><a href="#各种实现">各种实现</a></h2>
+<p>一个编程语言通常有两部分,语言和软件。语言是你<em>怎样</em>写点东西。软件是程序实际运行<em>什么</em>。</p>
+<p>我们一直使用<em>CPython</em>软件来运行我们程序。因为它写是用C语言编写的，<em>Classical(经典)的Python解释器</em>,因此被称为CPython。还有其它的软件可以运行你的程序：</p>
+<dl>
+<dt><a href="http://www.jython.org">Jython</a></dt>
+<dd><p>运行在Java平台上的一个Python实现。这意味着您可以在Python语言中使用Java库和类，反之亦然。</p>
+</dd>
+<dt><a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython">IronPython</a></dt>
+<dd><p>运行在.NET平台的一个Python实现，这意味着您可以在Python中使用.NET库和类，反之亦然。</p>
+</dd>
+<dt><a href="http://codespeak.net/pypy/dist/pypy/doc/home.html">PyPy</a></dt>
+<dd><p>用Python写的一个Python实现！这是一个研究项目，使改进解释器又快又好，因为解释器本身是用一种动态语言编写的(与静态语言相反(如C、Java或c#)在上面的三个实现)</p>
+</dd>
+</dl>
+<p><a href="http://www.stackless.com">Stackless Python</a></p>
+<p>: 一个Python实现,是专门基于线程性能的。</p>
+<p>还有其它的，例如，<a href="http://common-lisp.net/project/clpython/">CLPython</a> - 用 Common Lisp语言编写的一个Python实现、[IronMonkey]，这是一个工作在JavaScript解释器上的IronPython端口，这可能意味着您可以使用Python(而不是JavaScript)来写你的网络浏览器(&quot;Ajax&quot;)程序。</p>
+<p>每一种实现都有自己的有用的专业领域。</p>
+<h2 id="函数程序设计为高级读者"><a href="#函数程序设计为高级读者">函数程序设计(为高级读者)</a></h2>
+<p>当你开始编写大型程序,你应该明确地了解更多我们在(面向对象编程一章)(#面向对象编程)学会的，关于函数编程方法与基于类的编程方法。</p>
+<ul>
+<li><a href="http://docs.python.org/dev/howto/functional.html">Functional Programming Howto by A.M. Kuchling(A.M. Kuchling编写的如何进行函数编程)</a></li>
+<li><a href="http://www.diveintopython.net/functional_programming/index.html">Functional programming chapter in 'Dive Into Python' book('Dive Into Python' 书中函数编程一章)</a></li>
+<li><a href="http://ua.pycon.org/static/talks/kachayev/index.html">Functional Programming with Python presentation（使用Python描述的函数编程）</a></li>
+</ul>
+<h2 id="小结-12"><a href="#小结-12">小结</a></h2>
+<p>现在，我们到了本书尽头，但是，正如他们所说，这是<em>结束的开始</em>!。你现在是一个狂热的Python用户,毫无疑问，你准备使用Python解决许多问题。你可以让你的计算机自动开始做各种各样的，从前不可想象的事情或编写自己的游戏和许许多多。所以，开始吧!</p>
+<h1 id="免费自由和开放源码软件"><a href="#免费自由和开放源码软件">免费/自由和开放源码软件</a></h1>
+<p>Free/Libre and Open Source Software(免费/自由和开放源码软件)，缩写为<a href="http://en.wikipedia.org/wiki/FLOSS">FLOSS</a>，是基于社区的概念，它本身是基于共享的概念，尤其是知识的共享。FLOSS是免费使用、修改和再分配的。</p>
+<p>如果你已经读过这本书，那么你已经熟悉FLOSS，因为你已经一直使用<strong>Python</strong>，Python是一个开源的软件!</p>
+<p>这里是社区共享的和可以创建的各种各样事情给出一种想法的FLOSS的一些例子：</p>
+<dl>
+<dt><a href="http://www.kernel.org">Linux</a></dt>
+<dd><p>这是一个使用在GNU / Linux操作系统中的一个FLOSS操作系统内核。Linux，内核，是由Linus Torvalds还是学生的时候开始的。安卓系统是基于Linux。现在你使用的任何网站主要是在Linux上运行。</p>
+</dd>
+<dt><a href="http://www.ubuntu.com">Ubuntu</a></dt>
+<dd><p>这是一个社区驱动的发行版，由Canonical赞助,这是今天最流行的Linux发行版。它允许您安装大量的可用FLOSS，所有这些都有易于使用和易于安装的方式。最好的是，你可以重启你的计算机，在CD上运行GNU/Linux了!这允许在你的电脑安装操作系统前完全尝试新的操作系统。然而，Ubuntu是不完全自由软件;它包含专有的驱动、固件和应用程序。</p>
+</dd>
+</dl>
+<p><a href="http://www.libreoffice.org/">LibreOffice</a></p>
+<p>: 这是一个很好的社区主导型和成熟的办公套件，包括一个作家、演示、电子表格和其中的画图组件。它甚至可以轻松地打开并编辑微软的Word和PowerPoint文件。它在几乎所有平台上运行，且是完全免费的，自由和开放源码软件。</p>
+<dl>
+<dt><a href="http://www.mozilla.org/products/firefox">Mozilla Firefox</a></dt>
+<dd><p>这是<em>最好</em>的极其快速的网络浏览器，其明智和深刻的特性已经获得了评论界的好评。扩展的概念允许使用任何类型的插件。</p>
+<p>它包含<a href="http://www.mozilla.org/products/thunderbird">Thunderbird</a>是一个优秀的电子邮件客户端，它使邮件阅读轻而易举。</p>
+</dd>
+<dt><a href="http://www.mono-project.com">Mono</a></dt>
+<dd><p>这是微软.NET平台上开放源码的一个实现。它允许在GNU/Linux, Windows, FreeBSD, Mac OS和其它许多平台上创建和运行.NET应用。</p>
+</dd>
+<dt><a href="http://httpd.apache.org">Apache web server</a></dt>
+<dd><p>这是流行的开源web服务器。事实上,它是地球上<em>最流行的</em>web服务器！近一半以上的网站在运行它。是的，是这样－－Apache处理比所有竞争(包括Microsoft IIS)的组合更多的网站。</p>
+</dd>
+<dt><a href="http://www.videolan.org/vlc/">VLC Player</a></dt>
+<dd><p>这是一个视频播放器，可以播放从DivX到MP3、Ogg、vcd、dvd到……谁说开源不好玩呢?:-)</p>
+</dd>
+</dl>
+<p>这个列表仅仅是给你一个简短的想法－－有很多优秀的FLOSS，比如Perl语言，PHP语言，Drupal网站内容管理系统，PostgreSQL数据库服务器，TORCS赛车游戏，KDevelop IDE，Xine——电影播放器，VIM编辑器,编辑器，Quanta+音频播放器，GIMP图像编辑程序，…这个列表可以永远持续下去。</p>
+<p>得到FLOSS世界最新的声音，看看下面的网站：</p>
+<ul>
+<li><a href="http://www.linux.com">linux.com</a></li>
+<li><a href="http://www.linuxtoday.com">LinuxToday</a></li>
+<li><a href="http://www.newsforge.com">NewsForge</a></li>
+<li><a href="http://www.distrowatch.com">DistroWatch</a></li>
+</ul>
+<p>关于更多FLOSS的信息，请访问下列网站：</p>
+<ul>
+<li><a href="http://github.com/explore">GitHub Explore</a></li>
+<li><a href="http://www.omgubuntu.co.uk">OMG! Ubuntu!</a></li>
+<li><a href="http://www.sourceforge.net">SourceForge</a></li>
+<li><a href="http://www.freshmeat.net">FreshMeat</a></li>
+</ul>
+<p>所以,继续探索广阔、自由和开放的FLOSS世界! # 跋</p>
+<p>本书用到的所有软件几乎都是<a href="#floss">FLOSS</a>。</p>
+<h2 id="本书的诞生"><a href="#本书的诞生">本书的诞生</a></h2>
+<p>我用Linux的Red Hat 9.0作为组织本书初稿的基础，我使用Linux的Fedora Core 3作为组织本书第6草稿的基础。</p>
+<p>最初，我是使用KWord写这本书(在前言的[历史课程]中(#历史课程)中解释的)。</p>
+<h2 id="初长成"><a href="#初长成">初长成</a></h2>
+<p>后来，我使用Kate转到了DocBook XML，但我发现太乏味。所以，我切换到带有级别控制的OpenOffice，它提供与生成PDF一样好的格式，但它从文档生成HTML非常浅陋。</p>
+<p>最后，我发现XEmacs，当我决定把DocBook XML格式作为长远的解决方案后，我(再一次)重写了本书。</p>
+<p>在第六个草稿，我决定使用Quanta+做所有的编辑。来自Linux的Fedora Core 3 的标准XSL样式表正在被使用。然而，我为HTML页面的颜色和样式写了一个CSS文件。我也写了一个粗糙的词法分析程序，当然，Python为所有列出的程序自动提供语法高亮显示。</p>
+<p>对于这个第七草稿中，我使用[MediaWiki)(http://www.mediawiki.org)为我<a href="http://www.swaroopch.com/notes/的基础">组织</a>。现在，我在线编辑的任何东西，读者都可以在wiki网站直接读/编辑/讨论。</p>
+<p>我使用Vim编辑，感谢用 Vin整合的[为Firefox的扩展ViewSourceWith)(https://addons.mozilla.org/en-US/firefox/addon/394)。</p>
+<h2 id="现在"><a href="#现在">现在</a></h2>
+<p>使用 <a href="http://www.swaroopch.com/notes/vim">Vim</a>, <a href="http://johnmacfarlane.net/pandoc/README.html">Pandoc</a>, 和 Mac OS X.</p>
+<h2 id="关于作者"><a href="#关于作者">关于作者</a></h2>
+<p><a href="http://www.swaroopch.com/about/">http://www.swaroopch.com/about/</a></p>
+<h1 id="修订历史"><a href="#修订历史">修订历史</a></h1>
+<ul>
+<li>2.0
+<ul>
+<li>2012年10月20日</li>
+<li>用[Pandoc格式]重写(http://johnmacfarlane.net/pandoc/README.html), 这要归功于我的妻子做了大部分从Mediawiki格式的转换</li>
+<li>简化文本，删除不必要的部分如<code>nonlocal</code>(非局部的)和元类</li>
+</ul></li>
+<li>1.90
+<ul>
+<li>2008年9月4日并仍在改进</li>
+<li>空闲3年半后复兴！</li>
+<li>为Python 3.0重写</li>
+<li>(再一次)用<a href="http://www.mediawiki.org">MediaWiki</a>重写</li>
+</ul></li>
+<li>1.20
+<ul>
+<li>2005年1月13日</li>
+<li>在<a href="http://fedoraproject.org/">Fedora</a>Core(核心)3上使用<a href="https://en.wikipedia.org/wiki/Quanta_Plus">Quanta+</a> 完全重写，大量的修正和更新和许多新的例 子。我从头重写资料收集库设置。</li>
+</ul></li>
+<li>1.15
+<ul>
+<li>2004年3月28日</li>
+<li>次要的修正</li>
+</ul></li>
+<li>1.12
+<ul>
+<li>2004年3月16日</li>
+<li>补充和修正</li>
+</ul></li>
+<li>1.10
+<ul>
+<li>2004年3月9日</li>
+<li>许多排印错误，感谢许多热心的助人的读者。More typo corrections, thanks to many enthusiastic and helpful readers.</li>
+</ul></li>
+<li>1.00
+<ul>
+<li>2004年3月8日</li>
+<li>来自读者的巨大的反馈和建议，我做了很多重要的内容修订以及错误更正。</li>
+</ul></li>
+<li>0.99
+<ul>
+<li>2004年2月22日</li>
+<li>添加了一个新的关于模块的章节，在函数中数量可变参数的细节。</li>
+</ul></li>
+<li>0.98
+<ul>
+<li>2004年2月16日</li>
+<li>为改进XHTML输出，写了一个Python脚本和CSS样式表，包括为自动VIM像程序列表的语法高亮显示而编写的粗糙但具有功能的词汇分析器，</li>
+</ul></li>
+<li>0.97
+<ul>
+<li>2014年2月13日</li>
+<li>再一次使用 DocBook XML完全重写的另一个草稿。书已经有了很大改善,更具连贯性和可读性。</li>
+</ul></li>
+<li>0.93
+<ul>
+<li>2004年1月25日</li>
+<li>增加了IDLE讨论和Windonws特定的东西</li>
+</ul></li>
+<li>0.92
+<ul>
+<li>2004年1月5日</li>
+<li>换了几个例子</li>
+</ul></li>
+<li>0.91
+<ul>
+<li>2003年12月30日</li>
+<li>纠正拼写错误，简易许多话题。</li>
+</ul></li>
+<li>0.90
+<ul>
+<li>2003年12月18日</li>
+<li>添加2章。校正使用<a href="https://en.wikipedia.org/wiki/OpenOffice">OpenOffice(办公套件)</a>格式。</li>
+</ul></li>
+<li>0.60
+<ul>
+<li>2003年11月21日</li>
+<li>完全重写和扩展。</li>
+</ul></li>
+<li>0.20
+<ul>
+<li>2003年11月20日</li>
+<li>纠正打字错误和其它错误</li>
+</ul></li>
+<li>0.15
+<ul>
+<li>2003年11月20日</li>
+<li>转换为<a href="https://en.wikipedia.org/wiki/DocBook">DocBook XML</a>.</li>
+</ul></li>
+<li>0.10
+<ul>
+<li>2003年11月14日</li>
+<li>最初的草稿使用<a href="https://en.wikipedia.org/wiki/Kword">KWord</a>.</li>
+</ul></li>
+</ul>
+<h1 id="翻译"><a href="#翻译">翻译</a></h1>
+<p>感谢许多孜孜不卷的志愿者，本书有许多使用不同人类语言的翻译。</p>
+<p>如果你想翻译，请看下面的语言和志愿者列表，决定是想开始一个新的翻译或是帮助已有的翻译项目。</p>
+<p>如果你想开始一个全新的翻译，请看<a href="#翻译的基本知识">翻译的基本知识</a>。</p>
+<h2 id="阿拉伯语"><a href="#阿拉伯语">阿拉伯语</a></h2>
+<p>下面是阿拉伯语版本的链接。感谢Ashraf Ali Khalaf翻译本书，(在这里)(http://www.khaledhosny.org/byte-of-python/index.html)你可以在线阅读整本书,或从<a href="http://downloads.sourceforge.net/omlx/byteofpython_arabic.pdf?%20use_mirror=osdn">sourceforge.net</a>下载它，更多的信息<a href="http://itwadi.com/byteofpython_arabi">点击这里</a>。</p>
+<h2 id="巴西葡萄牙语"><a href="#巴西葡萄牙语">巴西葡萄牙语</a></h2>
+<p>有两种翻译:</p>
+<p>当Python在2.3.5版本时，<a href="http://www.samueldiasneto.com/aprendendopython/index.html">Samuel Dias Neto</a> (samuel.arataca-at-gmail-dot-com)做了本书巴西葡萄牙语的第一版。</p>
+<p>Samuel的翻译在<a href="http://www.samueldiasneto.com/aprendendopython/index.html">aprendendopython</a>.</p>
+<p><a href="http://rodrigoamaral.net">Rodrigo Amaral</a> (rodrigoamaral-at-gmail-dot-com)志愿把本书翻译为巴西葡萄牙语。</p>
+<p>Rodrigo的翻译在<a href="http://www.swaroopch.org/notes/Python_pt-br:Indice">http://www.swaroopch.org/notes/Python_pt-br:Indice</a>.</p>
+<h2 id="加泰罗尼亚语"><a href="#加泰罗尼亚语">加泰罗尼亚语</a></h2>
+<p>Moises Gomez (moisesgomezgiron-at-gmail-dot-com)志愿把本书翻译为加泰罗尼亚语。翻译正在进行中，在<a href="http://www.swaroopch.com/notes/">erstwhile wiki</a>可以看到。</p>
+<blockquote>
+<p>Mois猫s G贸mez - 我是一名开发者，也是一名编程教师(通常教没有任何经验的人们).</p>
+<p>前一段时间，我需要学习如何用Python编程，Swaroop的工作真有帮助，足够清楚、简洁、完整，这正是我需要的。</p>
+<p>在这次的经验,我想让我们国家的一些人也从中受益，但是英语可能是一个障碍。</p>
+<p>所以，为什么不试着翻译它呢？我做了Bop的以前版本。</p>
+<p>我、我的国家有两种语言。假设别人会将其转换为更广泛的西班牙语，我选择了加泰罗尼亚语言。</p>
+</blockquote>
+<h2 id="中文"><a href="#中文">中文</a></h2>
+<p>当前版本:</p>
+<ul>
+<li><a href="http://zhgdg.gitcafe.com/static/doc/byte_of_python.html">A Byte of Python @ 珠海GDG</a></li>
+</ul>
+<p>历史版本:</p>
+<ul>
+<li>沈洁元 译 1.20版本: <a href="http://woodpecker.org.cn/abyteofpython_cn/chinese/">简明 Python 教程</a></li>
+<li>已失效:
+<ul>
+<li>这里<a href="http://www.swaroopch.org/notes/Python_cn:Table_of_Contents">http://www.swaroopch.org/notes/Python_cn:Table_of_Contents</a>有一个中文版。</li>
+<li>Juan Shen (orion-underscore-val-at-163-dot-com)志愿把本书翻译为中文，在<a href="http://www.pycn.org/python%E5%9C%A8%E7%BA%BF%E6%89%8B%E5%86%8C">http://www.pycn.org/</a>可以看到。
+<ul>
+<li>我是中国北京科技大学无线电通讯研究所的一名研究生。我现在的研究领域主要在多载波CDMA系统的同步、信道估计、多用户检测等方面。实际上，Python语言（和Numeric库）是我目前在仿真和其他科研工作时日常使用的主要编程语言。我只是在关年前开始Python，但你能知道，它是容易理解、容易使用和富有成效的。正像在Swaroop的书中强调的，'现在，这是我最喜欢的编程语言'。在业余时间，他乐衷于各种FLOSS，如FreeBSD操作系统、PyGTK等等。电影、F1赛车和网球也是他的兴趣爱好。</li>
+<li>'A Byte of Python'是我学习Python的指南。在短时间内,它清晰、有效地带领你进入一个Python世界。本书不太长，但有效地覆盖了Python中几乎所有的重要的事情。我认为应该向初学者强烈推荐'A Byte of Python'，把它作为他们的第一个Python教程。把我的翻译奉献给中国可能数以百万计的Python用户。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="繁体中文"><a href="#繁体中文">繁体中文</a></h2>
+<p>Fred Lin (gasolin-at-gmail-dot-com)志愿把本书翻译为繁体中文。</p>
+<p>在<a href="http://code.google.com/p/zhpy/wiki/ByteOfZhpy">http://code.google.com/p/zhpy/wiki/ByteOfZhpy</a>可以看到。</p>
+<p>这个翻译的一个令人兴奋的特点是，它也含有与原始Python代码并列的<em>可执行中文Python源代码</em>。 &gt; <strong>Fred Lin</strong> - 我作为一名网络固件工程师在三角洲网络工作，我也是TurboGears网络框架的一名贡献者。 &gt; &gt; 作为一名python的传教士(:- p)，我需要一些材料来促进python语言。我发现的'A Byte of Python'对于新手和有经验的程序员击中了要点。'A Byte of Python'以可接受的篇幅阐述了Python本质。 &gt; &gt; 翻译最初基于简体中文版本,很快做了大量的重写以适合当前版本和阅读重量。 &gt; &gt; 最近的繁体中文版本同样具有可执行的中文python源代码，这是通过我的新'zhpy'(python中文版)项目实现的(从07年8月开始)。 &gt; &gt; zhpy(发(Z.H.?,或zippy音)在Python上建立一个层，翻译或用中文(繁体或简体)与Python交互(Traditional or Simplified)。这个项目的主要目的是为了教学。</p>
+<h2 id="法语"><a href="#法语">法语</a></h2>
+<p>Gregory (coulix-at-ozforces-dot-com-dot-au)志愿把本书翻译为法语。</p>
+<p>G茅rard Labadie (Palmipede)完成了本书的法语翻译，它从<a href="http://www.swaroopch.org/notes/Python_fr:Table_des_Mati%C3%A8res">http://www.swaroopch.org/notes/Python_fr:Table_des_Mati%C3%A8res</a>开始。</p>
+<h2 id="德语"><a href="#德语">德语</a></h2>
+<p>Lutz Horn (lutz-dot-horn-at-gmx-dot-de), Bernd Hengelein (bernd-dot-hengelein-at-gmail-dot-com) 和 Christoph Zwerschke (cito-at-online-dot-de) 志愿把本书翻译为德语。</p>
+<p>他们的翻译在 <a href="http://abop-german.berlios.de">http://abop-german.berlios.de</a>。</p>
+<p><em>Lutz Horn</em> 说：</p>
+<blockquote>
+<p>我32岁,有一个德国海德堡大学数学学位。目前，我作为一名软件工程师在公共资金资助的，以建立一个所有与计算数学有关的门户网站的项目上工作。作为职业我使用的主要语言是Java，但我试着尽可能在幕后使用Python，使用Python尤其是用来作文本分析和转换是非常容易的。我不是很熟悉GUI工具包，因为大多数的编程是关于web应用程序，用户界面使用Java框架像Struts等构建。目前，我想制造更多的Python和它的生成器的函数功能的用途。经过短期观察Ruby，这个语言的块的使用给我留下非常深刻的印象。通常我喜欢语言的动态特性，像Python和Ruby，因为它允许我做在更多的静态语言像Java不能做的事。我已经寻找了很多适合教一个完全非程序员的编程。我发现这本书 'How to Think Like a Computer Scientist: Learning with Python(如何像计算机科学家一样思考:学习与Python)'和'Dive into Python(深入Python)'，第一个是适合初学者但翻译很长，第二个不适合初学者。我认为 'A Byte of Python'很好地介于两者之间，它不是很长，切入要点，同时详细到足以教一个新手。除此之外，我喜欢简单的DocBook结构,这使得翻译文本生成以各种格式的输出成为一个魅力。</p>
+</blockquote>
+<p><em>Bernd Hengelein</em> 说：</p>
+<blockquote>
+<p>Lutz和我要在一起做德语的翻译。我们刚刚开始简介和前言，但是我们会让你了解我们所取得的进步。好的，下面是我的一些个人资料。我34岁，自1980年开始玩电脑，当时&quot;海军准将C64（注：一款计算机)&quot;统治了托儿所。在研究计算机科学后，我开始成为一名软件工程师。目前我从事医学成像领域，在德国一家大型公司工作。尽管C++是我日常工作的(不得不)使用的主要语言，我还是不断寻找新东西要学。去年我爱上了Python，这是一个美妙的语言，无论其发展潜力还是它的美。我在网上某处读到过一个家伙说他喜欢python，因为代码看起来如此美丽。在我看来他说的非常正确。当时我决定学习python，我发现可用的好的德语文档很少。当我遇到你的书，一个德语翻译的想法突然闪过我的脑海。幸运的是，鲁茨有同样的想法，我们现在可以分工。我期待一个好的合作!</p>
+</blockquote>
+<h2 id="希腊语"><a href="#希腊语">希腊语</a></h2>
+<p>The Greek Ubuntu Community <a href="http://wiki.ubuntu-gr.org/byte-of-python-el">translated the book in Greek</a>, for use in our on-line asynchronous Python lessons that take place in our forums. Contact <a href="https://twitter.com/savvasradevic">@savvasradevic</a> for more information.</p>
+<p>Greek Ubuntu Community（希腊乌班图社区）(用希腊语翻译了本书)(http://wiki.ubuntu-gr.org/byte-of-python-el),在我们的论坛有我们异步Python教程。更多信息，联系(@savvasradevic](https://twitter.com/savvasradevic)。</p>
+<h2 id="印尼语"><a href="#印尼语">印尼语</a></h2>
+<p>在<a href="http://python.or.id/moin.cgi/ByteofPython">http://python.or.id/moin.cgi/ByteofPython</a>Daniel(daniel-dot-mirror-at-gmail-dot-com)正在把本书翻译为印尼语。</p>
+<p>W. Priyambodo也志愿把本书翻译为印尼语，翻译正在进展，它在<a href="http://www.swaroopch.org/notes/Python_id:Daftar_Isi">http://www.swaroopch.org/notes/Python_id:Daftar_Isi</a>.</p>
+<h2 id="意大利语"><a href="#意大利语">意大利语</a></h2>
+<p>Enrico Morelli (mr-dot-mlucci-at-gmail-dot-com) 和 Massimo Lucci (morelli-at-cerm-dot-unifi-dot-it) 志愿把本书翻译为意大利语。</p>
+<p>意大利语翻译在<a href="http://www.gentoo.it/Programmazione/byteofpython">www.gentoo.it/Programmazione/byteofpython</a>。新在翻译正在进行中，从<a href="http://www.swaroopch.org/notes/Python_it:Prefazione">http://www.swaroopch.org/notes/Python_it:Prefazione</a>开始。</p>
+<blockquote>
+<p><strong>Massimo Lucci 和 Enrico Morelli</strong> -我们正在进行(意大利)佛罗伦萨大学的化学系工作。我(Massimo)是一名核磁共振光谱仪服务工程师和系统管理员，Enrico是我们CED和并行/集群系统的一名服务工程师和系统管理员。我们有7年python编程经历，我们有10年Linux平台工作经验。在意大利，我们负责管理Gentoo Linux发行的www.gentoo.it，www.nmr.it(在建)为核磁共振应用和国会组织和管理。就这些！我们为用你的书而感到感动，我们认为对于接近Python的新用户是必要的(我们正在考虑几百学生和研究人员致力于我们的实验室)。</p>
+</blockquote>
+<h2 id="日语"><a href="#日语">日语</a></h2>
+<p>日语的一个版本在<a href="http://www.swaroopch.org/notes/Python_ja:Table_of_Contents">http://www.swaroopch.org/notes/Python_ja:Table_of_Contents</a>。</p>
+<p>Shunro Dozono (dozono-at-gmail-dot-com)正在把本书翻译为日语。</p>
+<h2 id="蒙古语"><a href="#蒙古语">蒙古语</a></h2>
+<p>Ariunsanaa Tunjin (luftballons2010-at-gmail-dot-com)志愿把本书翻译为蒙古语。</p>
+<p><em>2009年11月的更新</em> : Ariunsanaa的翻译接近完成。</p>
+<h2 id="挪威语bokm氓l"><a href="#挪威语bokm氓l">挪威语(bokm氓l)</a></h2>
+<p>Eirik V氓geskar (<a href="http://www.swaroopch.org/notes/User:Vages">http://www.swaroopch.org/notes/User:Vages</a>)是在挪威<a href="http://no.wikipedia.org/wiki/Sandvika_videreg%C3%A5ende_skole">Sandvika videreg氓ende skole</a>的高中生。[博客]在(http://forbedre.blogspot.com/)，现在正在将本书翻译为挪威语(bokm氓l)。翻译工作正在进行，细节详见<a href="http://www.swaroopch.org/notes/Python_nb-no:Innholdsfortegnelse">http://www.swaroopch.org/notes/Python_nb-no:Innholdsfortegnelse</a>。</p>
+<blockquote>
+<p><em>Eirik V氓geskar</em>: 我一直想要编程，但是因为我使用小语种，学习的过程是非常困难的。大多数教程和书籍都用非常专业的英语写成，所以大多数高中毕业生甚至都没有理解教程大概的词汇。当我发现这本书，我所有的问题就解决了。&quot;A Byte of Python&quot;使用能简单就简单的非技术语言去解释一个编程语言，这两件事使我学习Python产生了乐趣。当读了一半后，我认为这本书值得翻译。我希望翻译会帮助和我有相同处境(尤其是年轻人)的那些人,也许使用较少的技术知识可以在人们之间传播这种语言。</p>
+</blockquote>
+<h2 id="波兰语"><a href="#波兰语">波兰语</a></h2>
+<p>Dominik Kozaczko (dkozaczko-at-gmail-dot-com)志愿把本书翻译为波兰语。翻译正在进行，它的主页在: <a href="http://wiki.lo5.bielsko.pl/index.php/Uk%C4%85%C5%9B_Pythona">Uk膮艣 Pythona</a>.</p>
+<p><em>更新</em> : 到2009年10月2日，翻译已经完成。感谢Dominik，他的两个学生和他们的朋友所付出的时间和精力!</p>
+<blockquote>
+<p><em>Dominik Kozaczko</em> - 我是一名计算机科学与信息技术老师。</p>
+</blockquote>
+<h2 id="葡萄牙语"><a href="#葡萄牙语">葡萄牙语</a></h2>
+<p>Fidel Viegas (fidel-dot-viegas-at-gmail-dot-com)志愿把本书翻译为葡萄牙语。</p>
+<h2 id="罗马尼亚语"><a href="#罗马尼亚语">罗马尼亚语</a></h2>
+<p>Paul-Sebastian Manole (brokenthorn-at-gmail-dot-com) 志愿把本书翻译为罗马尼亚语。</p>
+<blockquote>
+<p><em>Paul-Sebastian Manole</em> - I'm a second year Computer Science student at Spiru Haret University, here in Romania. I'm more of a self-taught programmer and decided to learn a new language, Python. The web told me there was no better way to do so but read ''A Byte of Python''. That's how popular this book is (congratulations to the author for writing such an easy to read book). I started liking Python so I decided to help translate the latest version of Swaroop's book in Romanian. Although I could be the one with the first initiative, I'm just one volunteer so if you can help, please join me. 我是罗马尼亚Spiru Haret大学计算机科学二年级学生。在更大程度上，我是自学的程序员，决定学一门新的语言－－Python。网络告诉我，除了读''A Byte of Python'' 没有更好的办法。本书是多么的流行(祝贺作者编写这样一个易读的书)，我开始喜欢Python，所以我决定帮助用罗马尼亚语翻译Swaroop的最新版本的书在。虽然我可以成为第一次主动参与者之一，但我只是一个志愿者，所以如果你可以帮忙，请加入我。 翻译将在<a href="http://www.swaroopch.org/notes/Python_ro">http://www.swaroopch.org/notes/Python_ro</a>。</p>
+</blockquote>
+<h2 id="俄语和乌克兰语"><a href="#俄语和乌克兰语">俄语和乌克兰语</a></h2>
+<p>Averkiev Andrey (averkiyev-at-ukr-dot-net) 志愿把本书翻译为俄语，也许会翻译为乌克兰语(时间允许)。</p>
+<p>Vladimir Smolyar (v_2e-at-ukr-dot-net)开始了一个俄语翻译维基页。你可以在<a href="http://www.swaroopch.org/notes/Python_ru:Table_of_Contents">http://www.swaroopch.org/notes/Python_ru:Table_of_Contents</a>看开发版。</p>
+<h2 id="斯洛伐克语"><a href="#斯洛伐克语">斯洛伐克语</a></h2>
+<p>Albertio Ward (albertioward-at-gmail-dot-com) 在<a href="http://www.fatcow.com/edu/python-swaroopch-sl/">fatcow.com/edu/python-swaroopch-sl/</a>翻译了本书:</p>
+<blockquote>
+<p>我们是一个非营利性的称为鈥淭教育鈥ranslation ?的组织，我们代表了斯拉夫大学的一群人，主要是学生和教授。这里的学生来自不同的院系：语言学、化学、生物学等。我们试图在互联网上找到有趣的和我们及我们的大学同事有关的出版物。有时我们自己发现文章，有时我们的教授帮助我们选择翻译材料。从作者处获得许可后，我们翻译文章，张贴在我们大学同事和朋友可以访问的博客中，这些翻译出版物经常在日常学习中帮助学生。</p>
+<p>我为什么要选择你的文章进行翻译呢？它被用来帮助保加利亚人在所有可能的上理解本文。已经做过一些涉及新奇和相关性的话题，我发现对于那些生活在我的国家中的那些人，这是非常紧急的。所以，我认为它可以成为非常受欢迎的。语言障碍在这个小事中不再存在，因为在我的翻译被淘汰。 ## 西班牙语</p>
+</blockquote>
+<p>Alfonso de la Guarda Reyes (alfonsodg-at-ictechperu-dot-net), Gustavo Echeverria (gustavo-dot-echeverria-at-gmail-dot-com), David Crespo Arroyo (davidcrespoarroyo-at-hotmail-dot-com) 和 Cristian Bermudez Serna (crisbermud-at-hotmail-dot-com) 志愿把本书翻译为西班牙语。翻译正在进行，你可以从<a href="http://www.swaroopch.org/notes/Python_es-ar:Tabla_de_Contenidos">http://www.swaroopch.org/notes/Python_es-ar:Tabla_de_Contenidos</a>开始阅读西班牙语(阿根廷)的翻译。</p>
+<p><em>Gustavo Echeverria</em> 说：</p>
+<blockquote>
+<p>我是工作在阿根廷的一名软件工程师。在工作中我主要使用c#和.Net技术，但是在我的个人项目中，严格使用Python或Ruby。很多年前我就知道Python，我被Python吸引了。我知道Python不久之后，我发现这本书，它帮助我学习Python。然后我志愿把本书翻译为西班牙语。现在，收到一些请求后，在Maximiliano Soler的帮助下，我开始翻译&quot;A Byte of Python&quot;。</p>
+</blockquote>
+<p><em>Cristian Bermudez Serna</em> 说：</p>
+<blockquote>
+我是(哥伦比亚)安蒂奥基亚大学通信工程的学生。几个月前，我开始学习Python，发现这个奇妙的书，所以我志愿把本书翻译为西班牙语。
+</blockquote>
+
+</blockquote>
+<h2 id="瑞典语"><a href="#瑞典语">瑞典语</a></h2>
+<p>Mikael Jacobsson (leochingkwake-at-gmail-dot-com)志愿把本书翻译为瑞典语。</p>
+<h2 id="土耳其语"><a href="#土耳其语">土耳其语</a></h2>
+<p>T眉rker SEZER (tsezer-at-btturk-dot-net) 和 Bugra Cakir (bugracakir-at-gmail-dot-com) 志愿把本书翻译为土耳其语。土耳其语版本在哪？Bitse de okusak.</p>
+<p><em>注意</em> : 在本页中提到的电子邮件地址中用<code>@</code>替换<code>-at-</code>，用<code>.</code>替换<code>-dot-</code>，用<code>_</code>替换<code>-underscore-</code>。邮件地址中其它地方的连字符仍然为<code>-</code>。 # 翻译的基本知识</p>
+<p>Git<https://github.com/swaroopch/byte_of_python>的资源库有本书的所有原始资料。</p>
+<p>请<a href="https://help.github.com/articles/fork-a-repo">forkthe repository(叉资源)</a>.</p>
+<p>然后，提取资源到你的电脑，你需要知道怎样使用<a href="http://www.git-scm.com">Git</a> 来做它。</p>
+<p>开始用你的本土语言编辑<code>.pd</code>文件。请阅读<a href="http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown">Pandoc README</a>来了解文本的格式。</p>
+<p>然后，按照<a href="http://github.com/swaroopch/byte_of_python#README">README</a>安装需要的能将原始文件转换为PDF等格式的软件。</p>
+</body>
+</html>
