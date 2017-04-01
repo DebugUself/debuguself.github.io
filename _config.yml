@@ -31,6 +31,14 @@ authors:
         web: http://zoomquiet.io
         github: ZoomQuiet
         gittip: https://www.gittip.com/ZoomQuiet/
+    zoe:
+        name: Zoe Jane
+        display_name: Zoe Jane
+        gravatar: 20923f7c8894084554282df11e745e80
+        email: dadac123@gmail.com
+        web: http://zoejane.net
+        github: zoejane
+        gittip: https://www.gittip.com/
 
 exclude:
   - README.md
