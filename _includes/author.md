@@ -16,7 +16,7 @@
       </i>
 
       <i>
-        ;<a href="mailto:{{ author.gittip }}">
+        ;<a href="{{ author.gittip }}">
         gittip
         </a>
       </i>
