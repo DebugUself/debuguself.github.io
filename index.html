@@ -24,7 +24,7 @@ type: post
 		<i class="icon-calendar"></i>{{  post.date| date: "%Y-%m-%d"  }} &nbsp;
 	    <i class="icon-cogs"></i>
 	    {% for cat in post.categories %} 
-	    <a href="/categories.html#{{ cat }}-ref" title="{{ cat }}" rel="category">{{ cat }}</a>
+	    <a href="/categories#{{ cat }}-ref" title="{{ cat }}" rel="category">{{ cat }}</a>
 	    {% endfor %}
 	    &nbsp;&nbsp;
 	    <i class="icon-tags"></i>
