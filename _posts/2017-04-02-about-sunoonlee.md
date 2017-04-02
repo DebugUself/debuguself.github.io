@@ -25,4 +25,4 @@ tags: author
 * 未来：
   * 或许从事机器学习/程序开发/煮夫
   * 尽量怂吧
-* Links: [github](http://github.com/sunoonlee) / [gitbook](https://www.gitbook.com/@sunoonlee) / [blog](https://sunoonlee.github.io)
+* Links: [GitHub](http://github.com/sunoonlee) / [gitbook](https://www.gitbook.com/@sunoonlee) / [Blog](https://sunoonlee.github.io)

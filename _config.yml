@@ -47,6 +47,14 @@ authors:
         web: https://sunoonlee.github.io
         github: sunoonlee
         gittip: https://www.gittip.com/sunoonlee
+    xpgeng:
+        name: xpgeng
+        display_name: xpgeng
+        gravatar: 4e8debd173dd76ba7982011ea4b3ffa4
+        email: xpgeng.me@gmail.com
+        web: http://xpgeng.me/
+        github: xpgeng
+        gittip: https://www.gittip.com/xpgeng
 
 
 exclude:
