@@ -39,6 +39,15 @@ authors:
         web: http://zoejane.net
         github: zoejane
         gittip: https://www.gittip.com/
+    sunoonlee:
+        name: sunoonlee
+        display_name: sunoonlee
+        gravatar: 25ef0e368c1d7acbfc9af8e9ff2a2ee2
+        email: helloliming@gmail.com
+        web: https://sunoonlee.github.io
+        github: sunoonlee
+        gittip: https://www.gittip.com/sunoonlee
+
 
 exclude:
   - README.md
