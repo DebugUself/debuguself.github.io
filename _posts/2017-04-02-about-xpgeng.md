@@ -18,7 +18,7 @@ tags: author
 
 May the force be with you!
 
-- Links: [GitHub](https://github.com/xpgeng) | [Blog](http://xpgeng.me/) 
+Links: [GitHub](https://github.com/xpgeng)/[Blog](http://xpgeng.me/) 
 
 
 
