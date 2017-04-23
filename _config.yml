@@ -55,6 +55,14 @@ authors:
         web: http://xpgeng.me/
         github: xpgeng
         gittip: https://www.gittip.com/xpgeng
+    bambooom:
+        name: bambooom
+        display_name: bamboo
+        gravatar: fa1b9bd7025779aeb9a53cfff1c371ac
+        email: nmz89825@gmail.com
+        web: https://bambooom.github.io/
+        github: bambooom
+        gittip: https://gratipay.com/~bambooom/
 
 
 exclude:

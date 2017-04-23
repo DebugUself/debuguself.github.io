@@ -91,7 +91,7 @@ code .lineno { color: #FF0000; } /* Literal.Number.Integer.Long */
 code {
   font-family: monospace !important;
   background-color: #FAFAFA;
-  border: 1px solid #CCCCCC;
+  /*border: 1px solid #CCCCCC;*/
   margin: 0;
   padding: 1px 3px;
 }
