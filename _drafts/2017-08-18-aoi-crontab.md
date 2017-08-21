@@ -55,6 +55,14 @@ tags: scm ubuntu python
 
 
 
+# 用时
+
+- .5h install pyenv
+- 1.5h 各种 py 环境安装/镜像
+- 1.h _bsddb_ 问题研究
+- .5h 完成 planet 工作驱动
+
+
 
 
 
