@@ -182,6 +182,7 @@ tags: scm ubuntu python
 
 有独立的 bsddb 产品?
 
+- [Berkeley DB\-6\.2\.23](http://www.linuxfromscratch.org/blfs/view/stable/server/db.html)
 - [Python "bindings" for Oracle Berkeley DB](https://www.jcea.es/programacion/pybsddb.htm)
 - 好吧, 忒复杂了...
 
@@ -228,6 +229,7 @@ tags: scm ubuntu python
     >>>
 
 
+### in pyenv ?
 只是比较尴尬的, 这样一来, 只能使用系统 python 2.7.12
 
 之前通过 pyenv 安装的 2.7.14/3.6.2 什么的都无法正常驱动 planet 了...
@@ -254,7 +256,26 @@ tags: scm ubuntu python
 
 不过, 没关系先用起来再说 `(￣▽￣)`
 
+好在也额外的学到从 shell 脚本中调用 pyenv 环境的技巧:
 
+- [Is there a preferred way to use pyenv in a shell script? · Issue \#492 · pyenv/pyenv](https://github.com/pyenv/pyenv/issues/492)
+- pyenv 原作者的分享:
+    + Both PYENV_VERSION and pyenv shell should work even in shell scripts. Latter requires you to add eval "$(pyenv init -)" in your script, though.
+    + Personally I like to use PYENV_VERSION since it doesn't require additional shell setup....
+
+e.g:
+
+    #!/bin/bash
+    # Set version to 2.7.10
+    export PYENV_VERSION=2.7.10
+
+    # DO STUFF
+    # python --version # ==> Python 2.7.10
+
+    # Reset version
+    unset PYENV_VERSION
+
+> 直接使用环境变量来切换就对了
 
 # 用时
 
