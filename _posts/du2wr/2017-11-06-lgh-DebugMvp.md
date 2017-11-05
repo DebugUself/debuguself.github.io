@@ -8,7 +8,6 @@ categories: Log
 tags: summary
 ---
 
-怼圈 MVP
 
 所谓 MVP, 即最小行动,内含持续, 积少成多. 
 
