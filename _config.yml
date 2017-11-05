@@ -63,7 +63,15 @@ authors:
         web: https://bambooom.github.io/
         github: bambooom
         gittip: https://gratipay.com/~bambooom/
-
+    OMlalala:
+        name: OMlalala
+        display_name: OMlalala
+        gravatar: 9778ec7d3ffa1c786e5be08a429cc037
+        email: omlalala0827@gmail.com
+        web: https://omlalala.github.io/
+        github: OMlalala
+        gittip: 
+        
 
 exclude:
   - README.md
