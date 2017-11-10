@@ -2,7 +2,7 @@
 layout: post
 comments: true
 author: bear
-title: 熊本->怼圈感受:泽鱼与溪鱼
+title: 熊本怼圈感受:泽鱼与溪鱼
 description:  熊本怼圈感受
 categories: Log
 tags: summary
