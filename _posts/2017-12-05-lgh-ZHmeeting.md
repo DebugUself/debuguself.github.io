@@ -58,7 +58,7 @@ lgh 持念使然 也是
 大家都不是程序员，但挺多人关心程序员这个职业，也发现程序员更多有意思的地方。比如程序员的天职就是消灭程序员、重复三遍的事情他们就会想着如何自动化解决、未来越来越少写具体业务的程序员，越来越多开发自动化工具和接口的程序员。
 
 ### 广鹤的随想
-+ [成为程序员十问 | Li Guanghe's blog](https://liguanghe.github.io/2017/12/03/meetZH/)
++ [成为程序员十问](https://liguanghe.github.io/2017/12/03/meetZH/)
 
 ### 牛魔王的随想
 - [随想](http://www.jianshu.com/p/2fed42459f48?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends&from=groupmessage&isappinstalled=0)
