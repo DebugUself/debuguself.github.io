@@ -2,7 +2,7 @@
 layout: post
 comments: true
 author: zoe
-title: 结束又是新的开始
+title: 结束又是新的开始 table-remove
 description: DebugUself 的快乐启程
 categories: DUW
 tags:  md
@@ -45,61 +45,6 @@ tags:  md
 
 # 进展 Progress
 ~ 整体圈内活跃指标情况([st](https://github.com/DebugUself/du4proto/tree/DU_tools/st) 专用服务, 尚少使用手册)
-<table>
-<tr><th>allcic Commit</th><th> times</th><th>weekly Commit</th><th> times</th></tr>
-<tr><td>
-            <a href='http://github.com/ZoomQuiet'>ZoomQuiet</a></td><td>529</td>
-        <td>
-            <a href='http://github.com/zoejane'>zoejane</a></td><td>4</td>
-            
-<tr><td>
-            <a href='http://github.com/liguanghe'>liguanghe</a></td><td>505</td>
-        <td>
-            <a href='http://github.com/Hugo1030'>Hugo1030</a></td><td>3</td>
-            
-<tr><td>
-            <a href='http://github.com/zhangshiyinrunwithcc'>zhangshiyinrunwithcc</a></td><td>463</td>
-        <td>
-            <a href='http://github.com/ZoomQuiet'>ZoomQuiet</a></td><td>1</td>
-            
-<tr><td>
-            <a href='http://github.com/leilayanhui'>leilayanhui</a></td><td>393</td>
-        <td>
-            <a href='http://github.com/leilayanhui'>leilayanhui</a></td><td>1</td>
-            
-<tr><td>
-            <a href='http://github.com/zoejane'>zoejane</a></td><td>329</td>
-        <td>
-            <a href='http://github.com/guoyuming'>guoyuming</a></td><td>1</td>
-            
-<tr><th>all Commit </th><th>Comments times</th><th>weekly Commit</th><th>Comments times</th></tr>
-<tr><th>all Issue </th><th>Comments times</th><th>weekly Issue</th><th>Comments times</th></tr>
-<tr><td>
-            <a href='http://github.com/liguanghe'>liguanghe</a></td><td>829</td>
-        <td>
-            <a href='http://github.com/ZoomQuiet'>ZoomQuiet</a></td><td>3</td>
-            
-<tr><td>
-            <a href='http://github.com/ZoomQuiet'>ZoomQuiet</a></td><td>548</td>
-        <td>
-            <a href='http://github.com/Hugo1030'>Hugo1030</a></td><td>2</td>
-            
-<tr><td>
-            <a href='http://github.com/zhangshiyinrunwithcc'>zhangshiyinrunwithcc</a></td><td>416</td>
-        <td>
-            <a href='http://github.com/zoejane'>zoejane</a></td><td>1</td>
-            
-<tr><td>
-            <a href='http://github.com/mxclover'>mxclover</a></td><td>115</td>
-        <td>
-            <a href='http://github.com/littlexiaocai'>littlexiaocai</a></td><td>1</td>
-            
-<tr><td>
-            <a href='http://github.com/zoejane'>zoejane</a></td><td>114</td>
-        <td>
-            <a href='http://github.com/leilayanhui'>leilayanhui</a></td><td>1</td>
-            
-</table>
 
 
 # 成果 Achievements
