@@ -3,9 +3,9 @@ layout: post
 comments: true
 author: zoe
 title: [合辑] 回顾 2017 年自怼进步
-description: Progress in 2017
+description: [合辑] 回顾 2017 年自怼进步
 categories: About
-tags: 关乎社群
+tags: 
 ---
 
 # [合辑] 回顾 2017 年自怼进步
