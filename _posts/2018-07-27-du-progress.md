@@ -7,12 +7,14 @@ description: ~ 回顾 2017 年自怼进步
 categories: About
 tags: 
 ---
-    
+
+回顾 2017 年自怼进步
+
+<!--more-->
+
 ## Backgroud
     
 - [3m[TASK]回顾17年自怼进步 · Issue #332 · DebugUself/du4proto](https://github.com/DebugUself/du4proto/issues/332)
-
-<!-- more -->
 
 ## @OMlalala
 ### 总览
