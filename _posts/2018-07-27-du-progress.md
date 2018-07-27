@@ -3,12 +3,10 @@ layout: post
 comments: true
 author: zoe
 title: 合辑-回顾 2017 年自怼进步
-description: 回顾 2017 年自怼进步
+description: ~ 回顾 2017 年自怼进步
 categories: About
 tags: 
 ---
-
-# [合辑] 回顾 2017 年自怼进步
     
 ## Backgroud
     
