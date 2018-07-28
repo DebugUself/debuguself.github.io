@@ -8,7 +8,6 @@ categories: Handbook
 tags: 4free
 ---
 
-凭借此指南，您可掌握怼圈免费公开渠道~<br>
 直观的看看怼圈是啥, [点此订阅](http://du.zoomquiet.io/atom.xml)可持续看到怼圈出品和动态<br>
 
 
