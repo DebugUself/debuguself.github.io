@@ -9,7 +9,7 @@ tags: 4free
 ---
 
 凭借此指南，您可掌握怼圈免费公开渠道~<br>
-直观的看看怼圈是啥, 订阅本博客可持续看到怼圈出品和动态<br>
+直观的看看怼圈是啥, [点此订阅](http://du.zoomquiet.io/atom.xml)可持续看到怼圈出品和动态<br>
 
 
 <!--more-->
@@ -59,6 +59,8 @@ tags: 4free
 * [Debug U self ~ 自怼圈 <- Github](https://github.com/DebugUself)
 * [Home <- DebugUself with DAMA ;-) <- Blog](http://du.zoomquiet.io/)
 * [Planet DebugUself <- Subscriptions](http://du.zoomquiet.io/planet/)
+
+[点此订阅](http://du.zoomquiet.io/atom.xml)可持续看到怼圈出品和动态
 
 ### changelog
 18-07-27 熊本 init
