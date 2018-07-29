@@ -12,6 +12,15 @@ tags:
 
 <!--more-->
 
+加入自怼圈
+
+- 报名入口 
+    - [https://jinshuju.net/f/K1TWKE](https://jinshuju.net/f/K1TWKE) (2018.08.01 20:42 准时开放, 报满21日即止)
+- 帮助
+    - 如果你的报名表单不小心写错了, 或者有其他需要帮助和咨询的, 可以发邮件给 [du@zoejane.net](du@zoejane.net)
+    
+***
+
 ## Backgroud
     
 - [3m[TASK]回顾17年自怼进步 · Issue #332 · DebugUself/du4proto](https://github.com/DebugUself/du4proto/issues/332)
