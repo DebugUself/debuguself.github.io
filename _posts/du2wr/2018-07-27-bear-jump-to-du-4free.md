@@ -61,6 +61,13 @@ tags: 4free
 
 [点此订阅](http://du.zoomquiet.io/atom.xml)可持续看到怼圈出品和动态
 
+##  加入自怼圈
+
+- 报名入口 
+    - [https://jinshuju.net/f/K1TWKE](https://jinshuju.net/f/K1TWKE) (2018.08.01 20:42 准时开放, 报满21日即止)
+- 帮助
+    - 如果你的报名表单不小心写错了, 或者有其他需要帮助和咨询的, 可以发邮件给 [du@zoejane.net](du@zoejane.net)
+
 ### changelog
 18-07-27 熊本 init
 18-07-28 lgh init 
