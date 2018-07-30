@@ -76,7 +76,7 @@ authors:
         display_name: liguanghe
         gravater: 52e801eb696dc321c14e31cf8abf2ab8
         email: liguanghe218317@gmail.com
-        wet: https://liguanghe.github.io/
+        web: https://liguanghe.github.io/
         github: liguanghe
         gittip:
     leilayanhui:
@@ -84,10 +84,17 @@ authors:
         display_name: leilayanhui
         gravater: 69d4c0fc78b743d8ceac2c6a94296102
         email: leilayanhui@gmail.com
-        wet: 
+        web: 
         github: leilayanhui
         gittip:
-        
+    NBR:
+        name: BiRong Ni
+        display_name: NBR-hugh
+        gravatar: a5098e3e68affe8e12c1a8b613a1f30a
+        email: nbr19940905@gmail.com
+        web: https://nbr-hugh.github.io/
+        github: NBR-hugh
+        gittip:
 
 exclude:
   - README.md
