@@ -95,6 +95,13 @@ authors:
         web: https://nbr-hugh.github.io/
         github: NBR-hugh
         gittip:
-
+    bear:
+        name: bear
+        display_name: bear
+        gravatar: 
+        email: jennifezhangshiying@gmail.com
+        web: zhangshiying.in
+        github: izhangshiying
+        gittip:
 exclude:
   - README.md
