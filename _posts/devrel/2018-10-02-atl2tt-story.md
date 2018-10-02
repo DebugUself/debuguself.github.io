@@ -237,9 +237,9 @@ tags: PKM IMHO 2LDR
 
 在理解,并组织开发统计脚本之后, 怼员们开始了自己的再定制,比如:
 
-[TimeReport2018| Li Guanghe's blog](https://liguanghe.github.io/2018/07/30/TimeReport2018/)
+[TimeReport2018 Li Guanghe's blog](https://liguanghe.github.io/2018/07/30/TimeReport2018/)
 
-~ [Time Report's Report 时间报告的报告 | Li Guanghe's blog](https://liguanghe.github.io/2017/11/18/PyTimeReport1/)
+~ [Time Report's Report 时间报告的报告  Li Guanghe's blog](https://liguanghe.github.io/2017/11/18/PyTimeReport1/)
 
 
 ## 反省
