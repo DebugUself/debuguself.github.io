@@ -119,6 +119,35 @@ tags: scm tools logging
 - Chrome 进行翻越和 gmail
 - Safari 作为调试器, 配合进行各种了 web app 前端检验环境, 以及云盘等需要口令安全记忆的网站
 
+### ps:
+
+    Package Control Messages
+    ========================
+
+    GhostText
+    ---------
+
+    GhostText for Sublime Text
+    ==========================
+
+    We put a lot of effort to bring you GhostText, an updated experience to write in the browser with Sublime Text.
+
+    Don't forget to install the Chrome extension:
+    https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
+
+    Or the Firefox add-on:
+    https://addons.mozilla.org/de/firefox/addon/ghosttext-for-firefox/
+
+    Usage
+    -----
+
+    In Chrome or Firefox, when you're in a page with a text field (<textarea>, content editable element, code mirror or ACE editor), click the GhostText button in the upper-right corner to open up Sublime Text. Everything you type in the editor will be instantly updated in the browser (and vice versa).
+
+    To close the link, either close the tab in Sublime Text or click on the GhostText button again.
+
+    For more specific instructions, read this: https://github.com/Cacodaimon/GhostText-for-SublimeText/blob/master/README.md
+
+
 
 
 ## 是也乎
