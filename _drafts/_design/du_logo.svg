@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448"
+   height="524.40942"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="du_logo.svg"
+   inkscape:export-filename="/Users/zoomq/Sites/DU.xmq/debuguself.github.io/_drafts/_design/du_logo_h42.png"
+   inkscape:export-xdpi="9"
+   inkscape:export-ydpi="9">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5255256"
+     inkscape:cx="372.04724"
+     inkscape:cy="262.20471"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1646"
+     inkscape:window-height="1006"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-527.95275)">
+    <rect
+       style="fill:#333333;fill-opacity:1;stroke:none"
+       id="rect3797"
+       width="420"
+       height="420"
+       x="162.04724"
+       y="580.15747"
+       ry="54.407478" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3017"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e9ddaf;fill-opacity:1;stroke:none;font-family:'喜鹊古字典简体';-inkscape-font-specification:'喜鹊古字典简体'"
+       transform="matrix(10.532571,0,0,10.532571,-1851.395,-482.10021)"><flowRegion
+         id="flowRegion3019"><rect
+           id="rect3021"
+           width="226.80708"
+           height="252.37204"
+           x="190.75392"
+           y="91.116135"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#e9ddaf;font-family:'喜鹊古字典简体';-inkscape-font-specification:'喜鹊古字典简体'" /></flowRegion><flowPara
+         id="flowPara3025">怼</flowPara></flowRoot>  </g>
+</svg>
