@@ -1,4 +1,4 @@
-## 自怼圈公笔 bloggin
+## 自怼圈共笔 blogging
 > du.101.camp
 
 ### 背景
