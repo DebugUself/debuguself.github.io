@@ -1,32 +1,33 @@
-## Welcome to GitHub Pages
+## 自怼圈公笔 bloggin
+> du.101.camp
 
-You can use the [editor on GitHub](https://github.com/DebugUself/debuguself.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### 背景
+> 自怼圈 -> DebugUself 自学社区
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- 170401 启动
+- 每年翻新一次
+- 以 大妈 蠎营式自学节奏为核心:
+    + 在相对固定的 github/lib 仓库中
+    + 和相对固定的 怼友
+    + 向相对固定的 阶段自学目标
+    + 搞查对固定的 互助式自学
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 之前
+> 有感内部良好自学氛围, 应该有相对固定的宣传/显摆渠道
 
-```markdown
-Syntax highlighted code block
+- 所以, 自然的使用 gh-pages 基于 Jekyll 发布集体 blogging
+- 只是, 怼圈, 一直没有合适的域名
+- 于是, 暂时绑定在 大妈 私人域名上:
+    + du.zoomquiet.io
 
-# Header 1
-## Header 2
-### Header 3
+### 现在
+> 蠎营 重构后, 进行启动
 
-- Bulleted
-- List
+- 自怼圈 是最好也最好自然的 蠎营 学员 课后复习营
+- 那么, 自然的也就重新绑定到:
+    + http://du.101.camp
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
