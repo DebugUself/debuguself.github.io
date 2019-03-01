@@ -1,5 +1,5 @@
 root: /
-baseurl: http://du.zoomquiet.io
+baseurl: http://du.101.camp
 permalink: /:year-:month/:title/
 markdown: kramdown
 
