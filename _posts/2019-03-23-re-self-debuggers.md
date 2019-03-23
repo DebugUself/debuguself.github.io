@@ -144,6 +144,8 @@ tags: reg, scm, doc, act
 
 ![006tKfTcgy1flse2nl7slj30zo0ay40t.jpg (JPEG Image, 1284 × 394 pixels)](https://ws4.sinaimg.cn/large/006tKfTcgy1flse2nl7slj30zo0ay40t.jpg)
 
+(来自怼友 @guoyuming)
+
 > 进行
 
 - 立即, 开始自学权限相关所有服务/系统/工具的安装/配置/使用
@@ -194,3 +196,5 @@ tags: reg, scm, doc, act
 
 ![](https://ipic.zoomquiet.top/2019-03-23-hw-How%20to%20Ask%20Questions%20the%20Smart%20Way.jpg)
 
+- [提问的智慧 - 简体中文版](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+- [提问的智慧 通读版 - DAMA](https://www.lizhi.fm/3475110/2594272414557458950)
