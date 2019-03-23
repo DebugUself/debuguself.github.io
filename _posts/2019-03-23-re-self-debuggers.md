@@ -190,4 +190,5 @@ tags: reg, scm, doc, act
 1. 社会学习理论:成员中成功戒除成瘾的或是摆脱共同困扰问题的,可以作为模仿对象,让更多人效仿学习. (AA中的sponsor的角色就是一对一的指导学习)
 1. 助人:助人本身可以提供给成员一种成就感,形成一种良性的互助传递模式. 
 
-![](https://ipic.zoomquiet.top/2019-03-23-How%20to%20Ask%20Questions%20the%20Smart%20Way.jpg)
+![](https://ipic.zoomquiet.top/2019-03-23-hw-How%20to%20Ask%20Questions%20the%20Smart%20Way.jpg)
+
