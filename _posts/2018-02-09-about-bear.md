@@ -12,7 +12,7 @@ tags: author
 三十迷修辞<br>
 品味渐次提升<br>
 是为好事<br>
-熊本，一只慵懒的熊**<br>
+熊本,一只慵懒的熊**<br>
 
 <!--more-->
 
@@ -30,8 +30,8 @@ tags: author
 老残游记<br>
 叶嘉莹说诗<br>
 蒲松龄聊斋<br>
-认知科学——有限理性<br>
-认知科学——工作记忆与任务转换成本<br>
+认知科学---有限理性<br>
+认知科学---工作记忆与任务转换成本<br>
 
 ### 联系方式
 [GitHub](https://github.com/zhangshiyinrunwithcc)<br>
