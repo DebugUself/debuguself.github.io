@@ -27,7 +27,7 @@ tags: reg, scm, doc, act
 ##  报名入圈
 > 限时报名:
 >> 截止 190412 1242
->> 或报满 128 人
+>>> 或报满 128 人
 
 
 ![](https://ipic.zoomquiet.top/2019-03-23-190323DU1904reg.jpg)
@@ -124,9 +124,9 @@ tags: reg, scm, doc, act
 严格的说自怼圈是什么, 取决于所有怼友们的共同行为倾向.
 如果一定要类比的话, 自怼圈最相似的是:
 
-    AA
-        Alcoholics Anonymous
-        匿名戒酒会
+> AA
+>> Alcoholics Anonymous
+>> 匿名戒酒会
 
 - 固定节奏和形式
 - 固定行为和任务
