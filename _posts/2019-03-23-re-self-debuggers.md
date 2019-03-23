@@ -2,13 +2,12 @@
 layout: post
 comments: true
 author: zq
-title: 自怼圈1904 招新
+title: 自怼圈/1904 招新
 description: re-self-debugging with DUr
 categories: ANN
 tags: reg, scm, doc, act
 ---
 
-# 自怼圈 2019.4.1 招新
 
 春天来了, 大草原上的生物叕开始了新一轮激情和嗯哼...
 
