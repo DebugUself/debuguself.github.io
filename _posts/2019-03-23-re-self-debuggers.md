@@ -2,7 +2,7 @@
 layout: post
 comments: true
 author: zq
-title: 自怼圈/1904 招新
+title: 自怼圈 2019 叒招新
 description: re-self-debugging with DUr
 categories: ANN
 tags: reg, scm, doc, act
