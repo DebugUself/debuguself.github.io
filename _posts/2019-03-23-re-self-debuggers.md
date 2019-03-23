@@ -19,7 +19,7 @@ tags: reg, scm, doc, act
     莫等莫盼 自先动手
     自怼自学 才好嗯哼
     玻璃花园 怼友相互
-    据汝行径 才知前路
+    应汝尝试 才现前路
 
 <!--more-->
 
@@ -53,7 +53,6 @@ tags: reg, scm, doc, act
 
 这就是这个小圈子的一切秘密了...
 
-[006tKfTcgy1flse2nl7slj30zo0ay40t.jpg (JPEG Image, 1284 × 394 pixels)](https://ws4.sinaimg.cn/large/006tKfTcgy1flse2nl7slj30zo0ay40t.jpg)
 
 ### 由来
 
@@ -135,6 +134,8 @@ tags: reg, scm, doc, act
 - 付费, 证明决心
 - 承诺, 未来4个月到一年中, 每周付出至少10小时在圈内任务上
 - 获取, 圈内环境权限
+
+![006tKfTcgy1flse2nl7slj30zo0ay40t.jpg (JPEG Image, 1284 × 394 pixels)](https://ws4.sinaimg.cn/large/006tKfTcgy1flse2nl7slj30zo0ay40t.jpg)
 
 > 进行
 
