@@ -66,10 +66,7 @@ tags: reg, scm, doc, act
 >>> 或报满 128 人
 
 
-![](https://ipic.zoomquiet.top/2019-03-23-190323DU1904reg.jpg)
-
-> 优惠:
->> 老怼员一律9折 <- 报名时说明入怼日期, 以便核查.
+![](https://ipic.zoomquiet.top/2019-03-30-190330DUr19reg.jpg)
 
 > 帮助
 
