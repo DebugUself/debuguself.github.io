@@ -134,6 +134,9 @@ tags: reg, scm, doc, act
     + 一般课程会鼓励+赞的多,就像电视里多数评委点评选手额时候,挑好听的说不好也要挤点好的说. 
     + 大妈则认真找不足提改进思路,这种怼选手或怼友才真有帮助
 
+@Li Guanghe
+
+- [“死板”的得趣之人(怼圈两年, 传统法律业转行到法律互联网)](https://liguanghe.github.io/2019/04/03/Re2yearsInDebuguself/#more?nsukey=iJRNhG7NxSfox%2FniPBd8hqpJVBimpVl3orZv31Uluamx2PaLY%2BQpEk4l8ukO%2FdSLvmuK%2F9rmjnbXMUR8C1I8%2FXJpCaVsXbnXOA162ASYHv7BMikFEvmn9Gq%2FNBRAcDRRYqTDJrxk9DdiJCyDRnT2jw%3D%3D)
 
 ## PS: 释名
 > 其实, 为什么有 怼圈? 一直是个没有最优解释的问题
