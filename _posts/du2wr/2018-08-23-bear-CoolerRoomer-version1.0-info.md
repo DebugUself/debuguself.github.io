@@ -19,7 +19,7 @@ tags: 4fun
     + 每个问题后都跟随一个回答框，回答完毕后可跳转到下一问题，所有回答答案被记录在B.txt。
     + 比喻：類似中国古代散文的语录体，可用于门人弟子记录先生和自我的言行。
 - **示意图**
-    + ![CRV1.0](http://p3gjd3dx2.bkt.clouddn.com/2018-08-23-CR-V1.0-TRY1.gif)
+    + ![CR-V1 0-TRY1](https://user-images.githubusercontent.com/19412465/55927060-41a04780-5c46-11e9-84dd-b3c10c8fb739.gif)
 
 # Documentation 开发过程
 - 开发过程遭遇不少问题，皆以ipynb形式记录之。
