@@ -11,7 +11,7 @@ tags: scm tools logging
 
 # 难以割舍的扩展: It's all text
 
-但是, 参考: [嫑升级 FireFox 到 56 以上](http://du.zoomquiet.io/2017-11/ff-no-upgrade/)
+但是, 参考: [嫑升级 FireFox 到 56 以上](https://du.101.camp/2017-11/ff-no-upgrade/)
 
 ![11568](https://addons.cdn.mozilla.net/user-media/previews/thumbs/11/11568.png?modified=1530208138)
 
