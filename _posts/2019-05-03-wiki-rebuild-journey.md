@@ -8,8 +8,6 @@ categories: Log
 tags: wiki
 ---
 
-# WIKI 重建的旅程 - 从误解到改变
-
 ## 误解
 
 我用 wiki 很少。  
