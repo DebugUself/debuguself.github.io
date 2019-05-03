@@ -1,5 +1,5 @@
 ## 自怼圈共笔 blogging
-> du.101.camp
+~ https://du.101.camp
 
 ### 背景
 > 自怼圈 -> DebugUself 自学社区
@@ -10,8 +10,7 @@
     + 在相对固定的 github/lib 仓库中
     + 和相对固定的 怼友
     + 向相对固定的 阶段自学目标
-    + 搞查对固定的 互助式自学
-
+    + 做相对固定的 互助式自学
 
 ### 之前
 > 有感内部良好自学氛围, 应该有相对固定的宣传/显摆渠道
@@ -26,7 +25,7 @@
 
 - 自怼圈 是最好也最好自然的 蠎营 学员 课后复习营
 - 那么, 自然的也就重新绑定到:
-    + http://du.101.camp
+    + https://du.101.camp
 
 
 ### Jekyll Themes
@@ -36,3 +35,8 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+## Changelog
+
+- 20190503 zoejane update links
+- 20170331 ZQ init
