@@ -2,7 +2,7 @@
 layout: post
 comments: true
 author: bear
-title: PoDU 综述1: 绿巨人
+title: PoDU 综述1:绿巨人
 description: 
 categories: Log
 tags: PoDU
