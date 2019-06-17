@@ -8,8 +8,6 @@ categories: Log
 tags: PoDU
 ---
 
-# PoDU综述1: 绿巨人
-
 > Github的绿巨人？
 
 ## 0.导语

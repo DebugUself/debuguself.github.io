@@ -8,8 +8,6 @@ categories: Log
 tags: PoDU
 ---
 
-# PoDU综述3:瑶台镜
-
 > 参差多态,曲曲回回.乃是何物,循镜可鉴.
 
 ## 0.导语
