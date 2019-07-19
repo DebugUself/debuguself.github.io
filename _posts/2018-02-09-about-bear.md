@@ -35,5 +35,4 @@ tags: author
 
 ### 联系方式
 [GitHub](https://github.com/zhangshiyinrunwithcc)<br>
-[博客:张诗颖的作品积累](http://zhangshiying.in/)<br>
 邮箱: jenniferzhangshiying@gmail.com<br>
