@@ -131,10 +131,10 @@ tags: reg, scm, doc, act
     + 或报满 21 人
     
 
-<img width=“400" alt="短图-自怼圈2019年8月 001" src="https://user-images.githubusercontent.com/19412465/62006421-f49f9d00-b172-11e9-87c1-d3d98f560f2b.jpeg">
+![短图-自怼圈2019年8月 001](https://user-images.githubusercontent.com/19412465/62006421-f49f9d00-b172-11e9-87c1-d3d98f560f2b.jpeg)
 
 
-<img width=“400" alt="DU1908reg" src="https://user-images.githubusercontent.com/22494/62004235-ea6ea600-b154-11e9-970f-cd05026496ef.PNG">
+![DU1908regresizeimage (1)](https://user-images.githubusercontent.com/19412465/62178164-8299a480-b37a-11e9-90c1-523f3a6860f3.png)
 
 
 - 帮助
