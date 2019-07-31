@@ -129,8 +129,13 @@ tags: reg, scm, doc, act
 - 自怼圈 1908 番夏限时报名:
     + 截止 190812 2042
     + 或报满 21 人
+    
 
-![DU1908reg](https://user-images.githubusercontent.com/22494/62004235-ea6ea600-b154-11e9-970f-cd05026496ef.PNG)
+<img width=“400" alt="短图-自怼圈2019年8月 001" src="https://user-images.githubusercontent.com/19412465/62006421-f49f9d00-b172-11e9-87c1-d3d98f560f2b.jpeg">
+
+
+<img width=“400" alt="DU1908reg" src="https://user-images.githubusercontent.com/22494/62004235-ea6ea600-b154-11e9-970f-cd05026496ef.PNG">
+
 
 - 帮助
     + 如果报名单不小心写错了, 
