@@ -1,17 +1,17 @@
 <br/>
 
 <h3>FAQ:</h3>
-
+<blockquote>
 <p>
-    自怼圈 -> 
-    营造被动节奏外韵律
+    自怼圈 -> 营造被动节奏外韵律
+</p>
+</blockquote>
+<p>
+<b>每年 4.1/8.1/12.1 定时开放报名进入
+</b>
 
 </p>
-
-<p>
-- 每年 4.1/8.1/12.1 定时开放报名进入
-</p>
-<p>想及时获得通知, 请关注公众号:
+<p>想及时获得相关嗯哼, 请关注公众号:
     <br/>
 <img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
     <br/>
@@ -23,24 +23,20 @@
 </p>
 
 <h4>蟒营:</h4>
-<p>
-    伴你重新享受<b>自学</b>乐趣
-</p>
 <blockquote>
 <p>
+    伴你重新享受<b>自学</b>乐趣
+<br/>
     <b>
     <a href="https://101.camp/">101.camp</a>
     </b>
-</p>
-<p>
+<br/>
     <i>
     Reactivate Joy by Self-teach with You
     </i>
 </p>
 
-<p>
-    101camp3py ~ 第3期, 预计 九月一号 上线;
-</p>
+101camp3py ~ 第3期, 预计 九月一号 上线;
 </blockquote>
 
 
