@@ -13,7 +13,10 @@
 </p>
 <p>想及时获得相关嗯哼, 请关注公众号:
     <br/>
+<img alt="mainium" src="https://ipic.zoomquiet.top/2019-10-12-mainium-qr-barnner.jpg"/>
+<!--
 <img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
+-->
     <br/>
 实在想立即开始感受, 可以加入知识星球(免费):
     <br/>
