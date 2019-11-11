@@ -40,14 +40,49 @@
 </p>
 
 </blockquote>
-<p>
-<b>101camp3py ~ 第3期</b>, 预计 <b>九月一号</b> 上线;
-</p>
+<hr/>
+
+<h3>精品小班, 正在报名</h3>
+
+<blockquote><p>
+    101camp4py ~ 第4期 Python 入门班:
+<br/>
+<img alt="限时特惠" 
+    src="http://ydlj.zoomquiet.top/ipic/2019-11-11-101camp4py11_11.jpeg"/>
+<br/>
+
+<img alt="报名" 
+    src="http://ydlj.zoomquiet.top/ipic/2019-11-01-4py-reg-qr.jpg"/>
+<br/>
+
+费用: <b>1642元/位</b>
+<br/>
+有各种<a href="https://py.101.camp/faq/#_3">优惠可选...</a>
+    
+<ul>
+    <li>
+    正式报名: <b>191102</b>
+    </li>
+    <li>
+    报名截止: <b>191124</b>
+    </li>
+    <li>
+    正式开课: <b>191201</b>
+    </li>
+    <li>
+    课程结束: <b>200112</b>
+    </li>
+</ul>
 
 
-<h3>PS:</h3>
+<br/>
+任何疑问可先进入知识星球<b>(免费)</b>咨询:
+<br/>
+<img alt="FAQ" 
+    src="https://ipic.zoomquiet.top/2019-08-28-FAQ101camp.jpeg"/>
+<br/>
 
-<p>若无意外,题图都是从原文提取或是通过 Google 图片搜索出来的, 版权属左, 不负责任 ;-)</p>
+</p></blockquote>
 
 <h3>PPS:</h3>
 <p>
