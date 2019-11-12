@@ -47,9 +47,6 @@
 <blockquote><p>
     101camp4py ~ 第4期 Python 入门班:
 <br/>
-<img alt="限时特惠" 
-    src="http://ydlj.zoomquiet.top/ipic/2019-11-11-101camp4py11_11.jpeg"/>
-<br/>
 
 <img alt="报名" 
     src="http://ydlj.zoomquiet.top/ipic/2019-11-01-4py-reg-qr.jpg"/>
