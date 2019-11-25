@@ -16,13 +16,13 @@
 <img alt="mainium" src="https://ipic.zoomquiet.top/2019-10-12-mainium-qr-barnner.jpg"/>
 <!--
 <img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
--->
     <br/>
 实在想立即开始感受, 可以加入知识星球(免费):
     <br/>
 
 <img alt="蟒营101camp" src="https://ipic.zoomquiet.top/2019-08-09-190809camp101.jpeg"/>
 
+-->
 </p>
 
 <h4>蟒营:</h4>
@@ -41,28 +41,12 @@
 
 </blockquote>
 <hr/>
+<hr/>
 
-<h3>精品小班, 正在报名</h3>
-
+<h3>精品小班4Py 已在行进</h3>
 <blockquote><p>
-    101camp4py ~ 第4期 Python 入门班:
-<br/>
-
-<img alt="报名" 
-    src="http://ydlj.zoomquiet.top/ipic/2019-11-01-4py-reg-qr.jpg"/>
-<br/>
-
-费用: <b>1642元/位</b>
-<br/>
-有各种<a href="https://py.101.camp/faq/#_3">优惠可选...</a>
     
 <ul>
-    <li>
-    正式报名: <b>191102</b>
-    </li>
-    <li>
-    报名截止: <b>191124</b>
-    </li>
     <li>
     正式开课: <b>191201</b>
     </li>
@@ -70,16 +54,54 @@
     课程结束: <b>200112</b>
     </li>
 </ul>
+</p></blockquote>
+
+<h3>下期5Py 年后初十报名</h3>
+
+<hr/>
+
+<h2>蟒营</h2>
+<p>
+    伴你重享<b>学习</b>乐趣
+</p>
+<blockquote>
+<p>
+    <b>
+    101.camp
+    </b>
+</p>
+<p>
+    <i>
+    Reactivate Joy by Self-teach with You
+    </i>
+</p>
+</blockquote>
 
 
 <br/>
-任何疑问可先进入知识星球<b>(免费)</b>咨询:
+任何问题可先进入知识星球<b>(免费)</b>咨询:
 <br/>
 <img alt="FAQ" 
     src="https://ipic.zoomquiet.top/2019-08-28-FAQ101camp.jpeg"/>
-<br/>
 
-</p></blockquote>
+
+<p>关注公众号, 持续获得相关各种咨询, :
+<img alt="mainium" src="https://ipic.zoomquiet.top/2019-10-12-mainium-qr-barnner.jpg"/>
+
+<!--
+<img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
+
+    <br/>
+实在想立即开始感受蟒营, 可以加入知识星球(免费):
+    <br/>
+
+<img alt="蟒营101camp" src="https://ipic.zoomquiet.top/2019-08-09-190809camp101.jpeg"/>
+
+-->
+</p>
+
+<hr/>
+
 
 <h3>PPS:</h3>
 <p>
