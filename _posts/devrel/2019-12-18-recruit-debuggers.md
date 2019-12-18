@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-author: zq, bear
+author: bear
 title: 自怼圈 2019 圣诞招新:在调试中提高效能
 description: re-self-debugging with DUr
 categories: ANN
