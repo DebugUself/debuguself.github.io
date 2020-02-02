@@ -26,37 +26,30 @@
 </p>
 
 <h4>蟒营:</h4>
-<blockquote>
-<p>
-    伴你重新享受<b>自学</b>乐趣
-<br/>
-    <b>
-    <a href="https://101.camp/">101.camp</a>
-    </b>
-<br/>
-    <i>
-    Reactivate Joy by Self-teach with You
-    </i>
-</p>
-
-</blockquote>
-<hr/>
 <hr/>
 
-<h3>精品小班4Py 已在行进</h3>
+<h3>精品小班5Py 初十上线</h3>
 <blockquote><p>
     
 <ul>
     <li>
-    正式开课: <b>191201</b>
+    开始报名: <b>2020.2.3</b>
     </li>
     <li>
-    课程结束: <b>200112</b>
+    报名结束: <b>2020.2.24</b>
+    </li>
+    <li>
+    正式开课: <b>2020.3.2</b>
+    </li>
+    <li>
+    课程结束: <b>2020.4.12</b>
     </li>
 </ul>
+
+<img alt="101camp5py" src="http://ydlj.zoomquiet.top/ipic/2020-02-02-200202RQ5py_only.jpg"/>
+
 </p></blockquote>
 
-<h3>下期5Py 年后初十报名</h3>
 
 <hr/>
 
@@ -72,7 +65,7 @@
 </p>
 <p>
     <i>
-    Reactivate Joy by Self-teach with You
+    Reactivate Joy by Self-teach <b>with You</b>
     </i>
 </p>
 </blockquote>
@@ -85,9 +78,6 @@
     src="https://ipic.zoomquiet.top/2019-08-28-FAQ101camp.jpeg"/>
 
 
-<p>关注公众号, 持续获得相关各种咨询, :
-<img alt="mainium" src="https://ipic.zoomquiet.top/2019-10-12-mainium-qr-barnner.jpg"/>
-
 <!--
 <img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
 
@@ -99,8 +89,6 @@
 
 -->
 </p>
-
-<hr/>
 
 
 <h3>PPS:</h3>
