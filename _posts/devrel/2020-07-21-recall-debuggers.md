@@ -31,7 +31,7 @@ tags: reg, scm, doc, act
             * 在现实中行动,解决这个问题.
 
 
-![报名](http://ydlj.zoomquiet.top/ipic/2020-07-21-reg200721RQ-zip.jpg)
+![报名10](http://ydlj.zoomquiet.top/ipic/2020-10-11-201011regDU-zip.jpg)
 
 <!--more-->
 
