@@ -4,8 +4,8 @@ comments: true
 author: leila
 title: 2018.12.1自怼圈招新
 description: Start the journey of DebugUself 
-categories: About
-tags: 
+categories: ANN
+tags: reg, ann, doc, act
 ---
 
 2018.12.1自怼圈招新
