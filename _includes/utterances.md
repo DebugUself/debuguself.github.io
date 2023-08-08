@@ -19,7 +19,7 @@
     var _xhh_style = "max-width: 750px; margin:8px 0px; border-radius: 4px;";
 
     // 以下部分不要改动
-    var host = 'http://xhh.club';
+    var host = 'https://xhh.club';
     var _xhh_service_url = host + '/summarize-this/';
     (function() {
       var smmr = document.createElement("script");
