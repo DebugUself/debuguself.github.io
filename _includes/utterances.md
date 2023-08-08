@@ -12,7 +12,7 @@
     // 可修改，摘要将显示在这个选择器选中的元素之上。
     // var _xhh_selector = ".czr-wp-the-content";
     //var _xhh_selector = "#articlexxx";
-    var _xhh_selector = ".agi_xhh_selector";
+    var _xhh_selector = "#agi_xhh_selector";
     
     // 可修改，定制最外层 DIV 的风格。
     // 默认限制宽度为 750px，上下加 8px 的镶边，4 像素圆角。
